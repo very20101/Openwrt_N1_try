@@ -103,8 +103,8 @@ jobs:
         #svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds/packages/utils/runc/Makefile
         #rm -rf package/lean/libcryptopp/Makefile
         #wget -O package/lean/libcryptopp/Makefile https://raw.githubusercontent.com/WYC-2020/lede/master/package/lean/libcryptopp/Makefile
-        rm -rf /target/linux/armvirt/Makefile
-        wget -O /target/linux/armvirt/Makefile https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/makefile
+        rm -rf /linux/armvirt/Makefile
+        wget -O /linux/armvirt/Makefile https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/makefile
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
         echo "::set-output name=status::success"
