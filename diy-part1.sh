@@ -18,6 +18,15 @@
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 echo  'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
 echo  'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
+echo  'src-git packages https://github.com/coolsnowwolf/packages' >>feeds.conf.default
+echo  'src-git luci https://github.com/coolsnowwolf/luci' >>feeds.conf.default
+#src-git routing https://git.openwrt.org/feed/routing.git
+echo  'src-git routing https://github.com/coolsnowwolf/routing' >>feeds.conf.default
+echo  'src-git telephony https://git.openwrt.org/feed/telephony.git' >>feeds.conf.default
+#src-git video https://github.com/openwrt/video.git
+#src-git targets https://github.com/openwrt/targets.git
+#src-git oldpackages http://git.openwrt.org/packages.git
+#src-link custom /usr/src/openwrt/custom-feed
 
 
 # themes
