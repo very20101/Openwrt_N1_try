@@ -60,9 +60,9 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-        cd openwrt
-        rm -rf package/feeds/packages/containerd/Makefile
-        wget -O package/feeds/packages/containerd/Makefile https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/Makefile
+        #cd openwrt
+        #rm -rf package/feeds/packages/containerd/Makefile
+        #wget -O package/feeds/packages/containerd/Makefile https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/Makefile
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
