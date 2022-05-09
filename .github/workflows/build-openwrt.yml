@@ -23,7 +23,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .config-gcc11-breakings
+  CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -104,10 +104,10 @@ jobs:
         #svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds/packages/utils/runc/Makefile
         #rm -rf package/lean/libcryptopp/Makefile
         #wget -O package/lean/libcryptopp/Makefile https://raw.githubusercontent.com/WYC-2020/lede/master/package/lean/libcryptopp/Makefile
-        rm -rf target/linux/armvirt/Makefile
-        wget -O target/linux/armvirt/Makefile https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/Makefile
-        wget -O target/linux/armvirt/64/config-5.15 https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/config-5.15-64-wyc-2020
-        wget -O target/linux/armvirt/config-5.15 https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/config-5.15-wyc-2020
+        #rm -rf target/linux/armvirt/Makefile
+        #wget -O target/linux/armvirt/Makefile https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/Makefile
+        #wget -O target/linux/armvirt/64/config-5.15 https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/config-5.15-64-wyc-2020
+        #wget -O target/linux/armvirt/config-5.15 https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/config-5.15-wyc-2020
         #rm -rf package/feeds/packages/containerd/Makefile
         #wget -O package/feeds/packages/containerd/Makefile https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/Makefile
         echo -e "$(nproc) thread compile"
