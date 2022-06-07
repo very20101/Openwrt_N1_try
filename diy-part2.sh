@@ -14,3 +14,5 @@
   sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_generate
 # kernel
 sed -i "s/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g" target/linux/armvirt/Makefile
+
+sed -i "1292a\+kmod-crypto-lib-blake2s\ \" package/kernel/linux/modules/netsupport.mk
