@@ -48,7 +48,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@main
-        git checkout 9fdd43d6ed3e41c261b2b14cc3ac04bde21bb14a
 
     - name: Initialization environment
       env:
