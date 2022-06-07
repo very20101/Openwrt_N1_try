@@ -15,4 +15,4 @@
 # kernel
 sed -i "s/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g" target/linux/armvirt/Makefile
 
-sed -i "1292a\+kmod-crypto-lib-blake2s\ \" package/kernel/linux/modules/netsupport.mk
+sed -i "1292a/+kmod-crypto-lib-blake2s/" package/kernel/linux/modules/netsupport.mk
