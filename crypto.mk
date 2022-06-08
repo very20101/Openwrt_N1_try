@@ -452,6 +452,7 @@ define KernelPackage/crypto-lib-blake2s
   DEPENDS:=@(LINUX_5_4||LINUX_5_10)
   FILES:= \
   	$(LINUX_DIR)/lib/crypto/libblake2s.ko \
+	$(LINUX_DIR)/lib/crypto/libblake2s-generic.ko
  	##$(LINUX_DIR)/lib/crypto/libblake2s.ko@lt5.9 \
 	##$(LINUX_DIR)/lib/crypto/libblake2s-generic.ko@lt5.9
   $(call AddDepends/crypto,+PACKAGE_kmod-crypto-hash:kmod-crypto-hash)
