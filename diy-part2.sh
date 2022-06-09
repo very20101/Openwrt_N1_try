@@ -14,3 +14,7 @@
   sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_generate
 # kernel
 sed -i "s/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g" target/linux/armvirt/Makefile
+
+sagernet-core
+sed -i 's|$(LN) v2ray $(1)/usr/bin/xray|#$(LN) v2ray $(1)/usr/bin/xray|g' package/sagernet/Makefile
+sed -i 's|CONFLICTS:=v2ray-core xray-core|#CONFLICTS:=v2ray-core xray-core|g' package/sagernet/Makefile
