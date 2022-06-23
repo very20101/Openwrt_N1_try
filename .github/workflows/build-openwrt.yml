@@ -42,7 +42,7 @@ env:
   TZ: Asia/Shanghai
   
 jobs:
-  build1:
+  build:
     runs-on: ubuntu-20.04
 
     steps:
