@@ -145,8 +145,8 @@ jobs:
         #wget -O target/linux/armvirt/config-5.15 https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/config-5.15-wyc-2020
         #rm -rf package/feeds/packages/containerd/Makefile
         #wget -O package/feeds/packages/containerd/Makefile https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/Makefile
-        rm -rf package/kernel/linux/modules/crypto.mk
-        wget -O package/kernel/linux/modules/crypto.mk https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/crypto.mk
+        #rm -rf package/kernel/linux/modules/crypto.mk
+        #wget -O package/kernel/linux/modules/crypto.mk https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/crypto.mk
         rm -rf package/kernel/linux/modules/netfilter.mk
         wget -O package/kernel/linux/modules/netfilter.mk https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/netfilter.mk
         echo -e "$(nproc) thread compile"
