@@ -153,6 +153,8 @@ jobs:
         #wget -O package/kernel/linux/modules/netfilter.mk https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/netfilter.mk
         #rm -rf feeds/packages/lang/python/python-cryptography/patches/0004-disable-rust.patch
         #wget -O feeds/packages/lang/python/python-cryptography/patches/0004-disable-rust.patch https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/openwrt-0004-disable-rust.patch
+        rm -rf package/kernel/mac80211
+        svn co https://github.com/openwrt/openwrt/trunk/package/kernel/mac80211 package/kernel/mac80211
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
         echo "::set-output name=status::success"
