@@ -2901,7 +2901,7 @@ CONFIG_GOLANG_BUILD_CACHE_DIR=""
 
 # CONFIG_PACKAGE_golang-doc is not set
 # CONFIG_PACKAGE_golang-github-jedisct1-dnscrypt-proxy2-dev is not set
-# CONFIG_PACKAGE_golang-github-nextdns-nextdns-dev is not set
+CONFIG_PACKAGE_golang-github-nextdns-nextdns-dev=y
 # CONFIG_PACKAGE_golang-gitlab-yawning-obfs4-dev is not set
 # CONFIG_PACKAGE_golang-src is not set
 # CONFIG_PACKAGE_golang-torproject-tor-fw-helper-dev is not set
@@ -4151,7 +4151,7 @@ CONFIG_PACKAGE_libyaml=y
 # CONFIG_PACKAGE_libuhttpd-wolfssl is not set
 # CONFIG_PACKAGE_libulfius-gnutls is not set
 # CONFIG_PACKAGE_libulfius-nossl is not set
-# CONFIG_PACKAGE_libunbound is not set
+CONFIG_PACKAGE_libunbound=y
 # CONFIG_PACKAGE_libuwsc-mbedtls is not set
 # CONFIG_PACKAGE_libuwsc-nossl is not set
 # CONFIG_PACKAGE_libuwsc-openssl is not set
@@ -5161,7 +5161,7 @@ CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_Plugin=y
 # CONFIG_PACKAGE_luci-app-syncdial is not set
 # CONFIG_PACKAGE_luci-app-syncthing is not set
 # CONFIG_PACKAGE_luci-app-sysuh3c is not set
-# CONFIG_PACKAGE_luci-app-tcpdump is not set
+CONFIG_PACKAGE_luci-app-tcpdump-y
 # CONFIG_PACKAGE_luci-app-tencentcloud-cos is not set
 # CONFIG_PACKAGE_luci-app-tencentddns is not set
 CONFIG_PACKAGE_luci-app-timecontrol=y
@@ -5182,8 +5182,7 @@ CONFIG_PACKAGE_luci-app-uhttpd=y
 # CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go is not set
 # CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_NodeJS is not set
 # CONFIG_PACKAGE_luci-app-unblockneteasemusic is not set
-# CONFIG_PACKAGE_luci-app-unbound is not set
-CONFIG_PACKAGE_luci-app-upnp=y
+ONFIG_PACKAGE_luci-app-unbound=y
 # CONFIG_PACKAGE_luci-app-usb-printer is not set
 # CONFIG_PACKAGE_luci-app-usb3disable is not set
 # CONFIG_PACKAGE_luci-app-uugamebooster is not set
@@ -6042,12 +6041,12 @@ CONFIG_PACKAGE_pdnsd-alt=y
 # CONFIG_PACKAGE_stubby is not set
 # CONFIG_PACKAGE_tor-hs is not set
 # CONFIG_PACKAGE_torsocks is not set
-# CONFIG_PACKAGE_unbound-anchor is not set
-# CONFIG_PACKAGE_unbound-checkconf is not set
-# CONFIG_PACKAGE_unbound-control is not set
-# CONFIG_PACKAGE_unbound-control-setup is not set
-# CONFIG_PACKAGE_unbound-daemon is not set
-# CONFIG_PACKAGE_unbound-host is not set
+CONFIG_PACKAGE_unbound-anchor=y
+CONFIG_PACKAGE_unbound-checkconf=y
+CONFIG_PACKAGE_unbound-control=y
+CONFIG_PACKAGE_unbound-control-setup=y
+CONFIG_PACKAGE_unbound-daemon=y
+CONFIG_PACKAGE_unbound-host=y
 # CONFIG_PACKAGE_v2ray-geoip is not set
 # CONFIG_PACKAGE_v2ray-geosite is not set
 CONFIG_PACKAGE_wsdd2=y
@@ -6991,7 +6990,7 @@ CONFIG_PACKAGE_smartdns=y
 # CONFIG_PACKAGE_tac_plus is not set
 # CONFIG_PACKAGE_tac_plus-pam is not set
 # CONFIG_PACKAGE_tayga is not set
-# CONFIG_PACKAGE_tcpdump is not set
+CONFIG_PACKAGE_tcpdump=y
 # CONFIG_PACKAGE_tcpdump-mini is not set
 CONFIG_PACKAGE_tcping=y
 # CONFIG_PACKAGE_tcpping is not set
