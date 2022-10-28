@@ -24,7 +24,7 @@ jobs:
       run: |
         [ -d openwrt-armvirt ] || mkdir -p openwrt-armvirt
         curl -s "https://api.github.com/repos/${GITHUB_REPOSITORY}/releases" | grep -o "openwrt_armvirt_.*/openwrt-armvirt-.*\.tar.gz" | head -n 1 > DOWNLOAD_ARMVIRT
-        [ -s DOWNLOAD_ARMVIRT ] && wget -q -P openwrt-armvirt https://github.com/very20101/Openwrt_N1_try/releases/download/2022.10.20-0428/openwrt-armvirt-64-default-rootfs.tar.gz
+        [ -s DOWNLOAD_ARMVIRT ] && wget -q -P openwrt-armvirt https://github.com/very20101/Openwrt_N1_try/releases/download/2022.10.28-1425/openwrt-armvirt-64-default-rootfs.tar.gz
           
     - name: Package Armvirt as OpenWrt
       uses: unifreq/openwrt_packit@master
