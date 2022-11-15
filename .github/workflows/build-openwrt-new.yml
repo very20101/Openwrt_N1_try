@@ -135,7 +135,7 @@ jobs:
         prefix: ${{ github.workspace }}/openwrt
         
     - name: Load custom feeds
-        run: |
+      run: |
           [[ -e "${FEEDS_CONF}" ]] && cp -f ${FEEDS_CONF} openwrt/feeds.conf.default
           chmod +x ${DIY_P1_SH}
           cd openwrt/
@@ -148,7 +148,7 @@ jobs:
       run: cd openwrt && ./scripts/feeds install -a
 
     - name: Load custom configuration
-        run: |
+      run: |
           [[ -d "files" ]] && mv -f files openwrt/files
           [[ -e ${CONFIG_FILE} ]] && cp -f ${CONFIG_FILE} openwrt/.config
           chmod +x ${DIY_P2_SH}
@@ -186,13 +186,13 @@ jobs:
         echo "build_tag=OpenWrt_Armvirt_$(date +"%m.%d.%H%M")" >> ${GITHUB_OUTPUT}
     
     - name: Upload OpenWrt Firmware to Release
-        uses: ncipollo/release-action@main
-        if: ${{ steps.compile.outputs.status }} == 'success' && !cancelled()
-        with:
-          tag: ${{ steps.compile.outputs.build_tag }}
-          artifacts: openwrt/bin/targets/*/*/*rootfs.tar.gz
-          allowUpdates: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+      uses: ncipollo/release-action@main
+      if: ${{ steps.compile.outputs.status }} == 'success' && !cancelled()
+      with:
+        tag: ${{ steps.compile.outputs.build_tag }}
+        artifacts: openwrt/bin/targets/*/*/*rootfs.tar.gz
+        allowUpdates: true
+        token: ${{ secrets.GITHUB_TOKEN }}
           
     - name: Check space usage
       if: (!cancelled())
