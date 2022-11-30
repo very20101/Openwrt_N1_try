@@ -17,7 +17,7 @@ on:
 env:
   SOURCE_URL: https://github.com/openwrt/openwrt
   SOURCE_BRANCH: master
-  CONFIG_FILE: .config
+  CONFIG_FILE: .confign1try0619
   DIY_SCRIPT: diy-script.sh
   TOOLCHAIN_TAG: Toolchain
   CLASH_KERNEL: armv8
