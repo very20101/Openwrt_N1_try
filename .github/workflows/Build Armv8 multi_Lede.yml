@@ -19,6 +19,7 @@ env:
   SOURCE_URL: https://github.com/coolsnowwolf/lede
   SOURCE_BRANCH: master
   CONFIG_FILE: ARMv8/lede-huge.config
+  FEEDS_CONF: multi-feeds.conf.default
   DIY_SCRIPT: diy-script-lede.sh
   TOOLCHAIN_TAG: Toolchain_multi
   CLASH_KERNEL: armv8
