@@ -18,9 +18,10 @@
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 #echo  'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
 #echo  'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
- echo  'src-git small8 https://github.com/kenzok8/small-package' >>feeds.conf.default
+#echo  'src-git small8 https://github.com/kenzok8/small-package' >>feeds.conf.default
 
-
+## Add extra package
+git clone https://github.com/kenzok8/small-package package/small-package
 
 # themes
 git clone https://github.com/rosywrt/luci-theme-rosy/tree/openwrt-18.06/luci-theme-rosy.git package/luci-theme-rosy
@@ -41,3 +42,6 @@ git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme
 #sagernet-core
   #sed -i 's|$(LN) v2ray $(1)/usr/bin/xray|#$(LN) v2ray $(1)/usr/bin/xray|g' feeds/small8/sagernet-core/Makefile
   #sed -i 's|CONFLICTS:=v2ray-core xray-core|#CONFLICTS:=v2ray-core xray-core|g' feeds/small8/sagernet-core/Makefile
+  
+  ./scripts/feeds update -a
+  ./scripts/feeds install -a
