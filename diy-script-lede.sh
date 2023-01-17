@@ -74,7 +74,10 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/
 pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
 popd
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/brook
+
+svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/libiconv-full package/libiconv
+#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/brook
+svn co https://github.com/kenzok8/small-package/trunk/brook package/brook
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/chinadns-ng
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping package/tcping
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/trojan-go
@@ -146,6 +149,7 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns packa
 #添加ddnsto
 #svn co https://github.com/linkease/ddnsto-openwrt/trunk/ddnsto package/ddnsto
 #svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto package/luci-app-ddnsto
+
 #添加udp2raw
 #git clone https://github.com/sensec/openwrt-udp2raw package/openwrt-udp2raw
 svn co https://github.com/sensec/openwrt-udp2raw/trunk package/openwrt-udp2raw
