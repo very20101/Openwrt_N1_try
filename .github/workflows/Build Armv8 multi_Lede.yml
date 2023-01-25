@@ -13,7 +13,7 @@ name: ARMv8 multi Openwrt
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 20 */3 * *
+    - cron: 0 20 * * *
 
 env:
   SOURCE_URL: https://github.com/coolsnowwolf/lede
