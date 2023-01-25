@@ -11,25 +11,13 @@
 name: Build OpenWrt
 
 on:
-  repository_dispatch:
   workflow_dispatch:
-    inputs:
-      url:
-        description: 'OpenWrt Repository URL'
-        required: true
-        default: 'https://github.com/coolsnowwolf/lede'
-      branch:
-        description: 'OpenWrt Repository Branch'
-        required: true
-        default: 'master'
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
+  schedule:
+    - cron: 0 2 */3 * *
 
 env:
-  REPO_URL: ${{github.event.inputs.url}}
-  REPO_BRANCH: ${{github.event.inputs.branch}}
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
@@ -47,9 +35,9 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@main
       
-    - name: 检查服务器配置
+    - name: Checkout server performance
       run: |
         #sudo rm -rf /usr/local/share/boost $AGENT_TOOLSDIRECTORY /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         echo "警告⚠"
@@ -74,10 +62,11 @@ jobs:
       run: |
       
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* adoptopenjdk* mysql* php* mongodb* dotnet* moby* snapd* || true
         sudo -E apt-get -qq update
-        sudo -E apt-get -qq full-upgrade -y
-        sudo -E apt-get -qq -y install  $(curl -fsSL https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/ubutun2004-update)
-        #sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004)
+        #sudo -E apt-get -qq full-upgrade -y
+        #sudo -E apt-get -qq -y install  $(curl -fsSL https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/ubutun2004-update)
+        sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004)
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
@@ -117,13 +106,6 @@ jobs:
         chmod +x ${DIY_P2_SH}
         cd openwrt
         ${GITHUB_WORKSPACE}/${DIY_P2_SH}
-        
-    - name: SSH connection to Actions
-      uses: P3TERX/ssh2actions@v1.0.0
-      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
-      env:
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
     - name: Download package
       id: package
@@ -138,22 +120,6 @@ jobs:
       id: compile
       run: |
         cd openwrt
-        #rm -rf feeds/packages/utils/runc/Makefile
-        #svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile feeds/packages/utils/runc/Makefile
-        #rm -rf package/lean/libcryptopp/Makefile
-        #wget -O package/lean/libcryptopp/Makefile https://raw.githubusercontent.com/WYC-2020/lede/master/package/lean/libcryptopp/Makefile
-        #rm -rf target/linux/armvirt/Makefile
-        #wget -O target/linux/armvirt/Makefile https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/Makefile
-        #wget -O target/linux/armvirt/64/config-5.15 https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/config-5.15-64-wyc-2020
-        #wget -O target/linux/armvirt/config-5.15 https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/config-5.15-wyc-2020
-        #rm -rf package/feeds/packages/containerd/Makefile
-        #wget -O package/feeds/packages/containerd/Makefile https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/Makefile
-        #rm -rf package/kernel/linux/modules/crypto.mk
-        #wget -O package/kernel/linux/modules/crypto.mk https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/crypto.mk
-        #rm -rf package/kernel/linux/modules/netfilter.mk
-        #wget -O package/kernel/linux/modules/netfilter.mk https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/netfilter.mk
-        #rm -rf feeds/packages/lang/python/python-cryptography/patches/0004-disable-rust.patch
-        #wget -O feeds/packages/lang/python/python-cryptography/patches/0004-disable-rust.patch https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/openwrt-0004-disable-rust.patch
         rm -rf package/kernel/mac80211
         svn co https://github.com/openwrt/openwrt/trunk/package/kernel/mac80211 package/kernel/mac80211
         echo -e "$(nproc) thread compile"
