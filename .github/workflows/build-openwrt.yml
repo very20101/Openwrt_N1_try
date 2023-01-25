@@ -236,7 +236,7 @@ jobs:
       env:
         OPENWRT_ARMVIRT: openwrt-armvirt/*rootfs.tar.gz
         PACKAGE_SOC: s905d
-        KERNEL_VERSION_NAME: 5.15.60
+        KERNEL_VERSION_NAME: 5.15.88
         
     - name: Upload OpenWrt Firmware to Releases
       uses: softprops/action-gh-release@v1
