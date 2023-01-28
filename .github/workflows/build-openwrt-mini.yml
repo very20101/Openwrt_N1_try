@@ -11,15 +11,15 @@ name: ARMv8 mini OpenWrt
 
 on:
   workflow_dispatch:
-  #schedule:
-    #- cron: 0 2 */3 * *
+  schedule:
+    - cron: 0 2 */3 * *
 
 env:
   SOURCE_URL: https://github.com/coolsnowwolf/lede
   SOURCE_BRANCH: master
   CONFIG_FILE: .config
   DIY_SCRIPT: diy-script.sh
-  TOOLCHAIN_TAG: Toolchain
+  TOOLCHAIN_TAG: Toolchain_mini
   CLASH_KERNEL: armv8
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
