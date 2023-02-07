@@ -1,0 +1,25 @@
+From ec8e1fd73e3eba026323cdb7f2c267f121d56762 Mon Sep 17 00:00:00 2001
+From: W_Y_CPP <383152993@qq.com>
+Date: Sun, 5 Feb 2023 00:17:50 +0900
+Subject: [PATCH] fix build with golang 1.20
+
+---
+ common/protocol/quic/qtls_go118.go | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/common/protocol/quic/qtls_go118.go b/common/protocol/quic/qtls_go118.go
+index e701adf..61414fe 100644
+--- a/common/protocol/quic/qtls_go118.go
++++ b/common/protocol/quic/qtls_go118.go
+@@ -3,7 +3,7 @@ package quic
+ import (
+ 	"crypto/cipher"
+ 
+-	"github.com/quic-go/qtls-go1-20"
++	"github.com/quic-go/qtls-go1-18"
+ )
+ 
+ type (
+-- 
+2.17.1
+
