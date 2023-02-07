@@ -301,10 +301,6 @@ jobs:
         cd $OPENWRT_PATH
         echo -e "$(nproc) thread compile"
         make diffconfig
-        rm -rf package/small-package/xray-plugin
-        svn co  https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/xray-plugin package/small-package/xray-plugin
-        rm -rf package/small-package/xray-core
-        svn co  https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/xray-core package/small-package/xray-core
         make target/compile -j$(nproc) IGNORE_ERRORS="m n" BUILD_LOG=1 || \
         yes n | make target/compile -j1 V=s IGNORE_ERRORS=1
         #make package/feeds/packages/xz/compile -j1 V=s
