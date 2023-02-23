@@ -37,7 +37,7 @@ git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme
   sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_generate
 # kernel
   #sed -i "s/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g" target/linux/armvirt/Makefile
-  #sed -i "s/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=5.15/g" target/linux/armvirt/Makefile
+  sed -i "s/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=5.15/g" target/linux/armvirt/Makefile
 
 #sagernet-core
   #sed -i 's|$(LN) v2ray $(1)/usr/bin/xray|#$(LN) v2ray $(1)/usr/bin/xray|g' feeds/small8/sagernet-core/Makefile
