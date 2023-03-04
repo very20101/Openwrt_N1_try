@@ -268,7 +268,7 @@ jobs:
     - name: Install Feeds
       run: |
         cd $OPENWRT_PATH
-        git config --global pull.ff true
+        ./scripts/feeds clean
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
