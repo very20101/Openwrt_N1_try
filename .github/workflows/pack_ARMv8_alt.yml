@@ -30,7 +30,7 @@ jobs:
       run: |
         [ -d openwrt-armvirt ] || mkdir -p openwrt
         cd openwrt
-        curl -s https://api.github.com/repos/very20101/Openwrt_retry/releases/latest | grep "browser_download_url.*tar.gz" | cut -d : -f 2,3 | tr -d \" | wget -qi -
+        curl -s https://api.github.com/repos/very20101/Openwrt_N1_try/releases/latest | grep "browser_download_url.*tar.gz" | cut -d : -f 2,3 | tr -d \" | wget -qi -
         #openwrt_url="$(curl -H "authorization: Bearer ${{ secrets.GH_TOKEN }}" -s "https://api.github.com/very20101/Openwrt_retry/releases/latest | grep "*rootfs.tar.gz" )"
         #[[ -z "${openwrt_url}" ]] && echo -e "OpenWrt file not found!" && exit 1
         #wget -q -P openwrt https://github.com/very20101/Openwrt_retry/releases/download/latest/openwrt-armvirt-64-default-rootfs.tar.gz
