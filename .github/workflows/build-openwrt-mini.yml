@@ -267,7 +267,7 @@ jobs:
         sudo mount -o loop $TOOLCHAIN_IMAGE.img openwrt-ro
         sudo mount -t overlay overlay -o lowerdir=openwrt-ro,upperdir=overlay,workdir=workdir openwrt
         cd $OPENWRT_PATH
-        git pull
+        git config pull.rebase false
 
     - name: Install Feeds
       run: |
