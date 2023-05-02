@@ -5,12 +5,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=naiveproxy
-PKG_VERSION:=107.0.5304.87-3
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=112.0.5615.49-1
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/klzgrad/naiveproxy/tar.gz/v$(PKG_VERSION)?
-PKG_HASH:=a97787c8fff1d3569398dd9cbd263ca8688c919352db08478d2cc2668559cf23
+PKG_HASH:=a19110347a5dedd800f3978c7204e9a5e1b1a26935ead61086547807380610da
 
 PKG_LICENSE:=BSD 3-Clause
 PKG_LICENSE_FILES:=LICENSE
@@ -58,31 +58,31 @@ ifneq ($(CONFIG_CCACHE),)
   export naive_ccache_flags=cc_wrapper="$(CCACHE)"
 endif
 
-CLANG_VER:=16-init-4609-g025a5b22-2
+CLANG_VER:=17-init-2387-g68e81d7e-1
 CLANG_FILE:=clang-llvmorg-$(CLANG_VER).tgz
 define Download/CLANG
 	URL:=https://commondatastorage.googleapis.com/chromium-browser-clang/Linux_x64
 	URL_FILE:=$(CLANG_FILE)
 	FILE:=$(CLANG_FILE)
-	HASH:=bbcf6a3456cb6d8648a6bb15fca27bcb77902318090d2eee6cbc9472acc0ef69
+	HASH:=6335f2e1f35bb235b8fe610559bbf97e630c4e50662a31b6e70226c2f4b0c290
 endef
 
-GN_VER:=fff29c1b3f9703ea449f720fe70fa73575ef24e5
+GN_VER:=ffeea1b1fd070cb6a8d47154a03f8523486b50a7
 GN_FILE:=gn-git_revision-$(GN_VER).zip
 define Download/GN_TOOL
 	URL:=https://chrome-infra-packages.appspot.com/dl/gn/gn/linux-amd64/+
 	URL_FILE:=git_revision:$(GN_VER)
 	FILE:=$(GN_FILE)
-	HASH:=3fa137a6a090f5ac69593de6b19f8bfe6115e2383f15b6394509d431eea3cb5b
+	HASH:=14e18b007ce1b3fe8b3ea627e70d285bf164cc01e4d2fd03561e16ab6bfed99e
 endef
 
-PGO_VER:=5304-1666778341-6952d9583ad8c5425ae6677daa28778c2175311f
+PGO_VER:=5615-1679995307-0baae343d55c36a01b20eb4c600fca3ba7e0825e
 PGO_FILE:=chrome-linux-$(PGO_VER).profdata
 define Download/PGO_PROF
 	URL:=https://storage.googleapis.com/chromium-optimization-profiles/pgo_profiles
 	URL_FILE:=$(PGO_FILE)
 	FILE:=$(PGO_FILE)
-	HASH:=7ac8186cec385515c6164dbfe05b05e4c6c2b25b5733e2d6b2c932670b2bd6cf
+	HASH:=06a181474ca4b34f53dec1d2993e97895665cad85e5c4456ae94ed0c1d10e3ec
 endef
 
 define Build/Prepare
@@ -113,7 +113,7 @@ define Build/Configure
 endef
 
 define Build/Compile
-	ninja -C "$(PKG_BUILD_DIR)/src/out/Release" naive
+	+$(NINJA) -C "$(PKG_BUILD_DIR)/src/out/Release" naive
 endef
 
 define Package/naiveproxy/install
