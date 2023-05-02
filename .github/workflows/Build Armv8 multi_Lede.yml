@@ -289,9 +289,8 @@ jobs:
         $GITHUB_WORKSPACE/scripts/preset-terminal-tools.sh
 
     - name: Download package
-      id: package
       run: |
-        cd openwrt/
+        cd openwrt
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
