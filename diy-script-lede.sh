@@ -259,8 +259,8 @@ sed -i "s/PKG_HASH:=.*/PKG_HASH:=40dce7845bc156dce7878b304e05b19f1ce7dedd4221c67
 #sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' feeds/packages/utils/docker/Makefile
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=55563b87050ce7b9b2124a9b882fdef4fa17e23f431ad502c8227101d5e789fd/g' feeds/packages/utils/docker/Makefile
 #sed -i 's/PKG_GIT_SHORT_COMMIT:=100c701/PKG_GIT_SHORT_COMMIT:=7155243/g' feeds/packages/utils/docker/Makefile
-rm -rf feeds/packages/utils/docker
-cp -rf $GITHUB_WORKSPACE/general/docker feeds/packages/utils/docker
+#rm -rf feeds/packages/utils/docker
+#cp -rf $GITHUB_WORKSPACE/general/docker feeds/packages/utils/docker
 
 # dockerd
 #sed -i 's/PKG_VERSION:=20.10.17/PKG_VERSION:=20.10.23/g' feeds/packages/utils/dockerd/Makefile
@@ -268,18 +268,18 @@ cp -rf $GITHUB_WORKSPACE/general/docker feeds/packages/utils/docker
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=61bb3f4f0c935ac9a719adbac69fca0d727b6b5c3eb889571e00b1cc3ff1e368/g' feeds/packages/utils/dockerd/Makefile
 #sed -i 's/PKG_GIT_SHORT_COMMIT:=a89b842/PKG_GIT_SHORT_COMMIT:=6051f14/g' feeds/packages/utils/dockerd/Makefile
 #sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' feeds/packages/utils/dockerd/Makefile
-rm -rf feeds/packages/utils/dockerd
-cp -rf $GITHUB_WORKSPACE/general/dockerd feeds/packages/utils/dockerd
+#rm -rf feeds/packages/utils/dockerd
+#cp -rf $GITHUB_WORKSPACE/general/dockerd feeds/packages/utils/dockerd
 
 # docker-compose
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.17.3/g' feeds/packages/utils/docker-compose/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=e5e9bdfc3a827240381b656da88f92b408ea2e203c3f8cfd9e0bbfe03f825f16/g' feeds/packages/utils/docker-compose/Makefile
+#sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.17.3/g' feeds/packages/utils/docker-compose/Makefile
+#sed -i 's/PKG_HASH:=.*/PKG_HASH:=e5e9bdfc3a827240381b656da88f92b408ea2e203c3f8cfd9e0bbfe03f825f16/g' feeds/packages/utils/docker-compose/Makefile
 
 # containerd
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.5.11/g' feeds/packages/utils/containerd/Makefile
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=skip/g' feeds/packages/utils/containerd/Makefile
 #sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=3df54a852345ae127d1fa3092b95168e4a88e2f8/g' feeds/packages/utils/containerd/Makefile
-cp -f $GITHUB_WORKSPACE/general/containerd/Makefile feeds/packages/utils/containerd
+#cp -f $GITHUB_WORKSPACE/general/containerd/Makefile feeds/packages/utils/containerd
 
 # runc
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.1.5/g' feeds/packages/utils/runc/Makefile
