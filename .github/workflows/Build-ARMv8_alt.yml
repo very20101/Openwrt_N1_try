@@ -297,7 +297,7 @@ jobs:
       run: |
         cd $OPENWRT_PATH
         rm -rf package/small-package/brook/patches/010-chore-deps-update-iploc-to-fix-build-with-mips.patch
-        #rm -rf package/small-package/firewall
+        rm -rf package/small-package/firewall
         #svn export https://github.com/coolsnowwolf/lede/trunk/package/network/config/firewall package/network/config/firewall
         echo -e "$(nproc) thread compile"
         make diffconfig
