@@ -268,7 +268,7 @@ jobs:
     - name: Install Feeds
       run: |
         cd $OPENWRT_PATH
-        ./scripts/feeds clean
+        #./scripts/feeds clean
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
@@ -297,7 +297,7 @@ jobs:
       run: |
         cd $OPENWRT_PATH
         rm -rf package/small-package/brook/patches/010-chore-deps-update-iploc-to-fix-build-with-mips.patch
-        rm -rf package/small-package/firewall
+        #rm -rf package/small-package/firewall
         #svn export https://github.com/coolsnowwolf/lede/trunk/package/network/config/firewall package/small-package/firewall
         echo -e "$(nproc) thread compile"
         make diffconfig
