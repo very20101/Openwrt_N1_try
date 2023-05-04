@@ -10,11 +10,12 @@ on:
   repository_dispatch:
   workflow_dispatch:
   
+  schedule:
+    - cron: 30 6 */2 * *
 env:
    
   OPENWRT_TAG: ARMv8_alt
   TZ: Asia/Shanghai 
-    
     
 jobs:
   build:
