@@ -98,12 +98,6 @@ jobs:
         echo "useVersionInfo=$useVersionInfo" >> $GITHUB_ENV
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "DATE1=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
-        
-    #- name: toolchain cache
-     # uses: klever1988/cachewrtbuild@main
-      #with:
-       # ccache: 'true'
-       # prefix: ${{ github.workspace }}/openwrt
        
     - name: Load custom feeds
       run: |
@@ -125,13 +119,6 @@ jobs:
           chmod +x ${DIY_P2_SH}
           cd openwrt/
           ${GITHUB_WORKSPACE}/${DIY_P2_SH}
-          
-    - name: SSH connection to Actions
-      uses: P3TERX/ssh2actions@v1.0.0
-      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
-      env:
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
     - name: Download package
       id: package
@@ -145,16 +132,9 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
-        cd openwrt/
+        cd openwrt
         #make dirclean
         make defconfig
-        #rm -rf package/small-package/xray-plugin
-        #svn co  https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/xray-plugin package/small-package/xray-plugin
-        #rm -rf package/small-package/xray-core
-        #svn co  https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/xray-core package/small-package/xray-core
-        #rm -rf feeds/packages/net/bind/Makefile
-        #get -O feeds/packages/net/bind/Makefile https://raw.githubusercontent.com/very20101/Openwrt_retry/main/Makefile-bind
-        #rm -rf package/small-package/brook/patches/010-chore-deps-update-iploc-to-fix-build-with-mips.patch
         #rm -rf package/small-package/firewall
         #svn export https://github.com/coolsnowwolf/lede/trunk/package/network/config/firewall package/firewall
         echo -e "$(nproc) thread compile"
