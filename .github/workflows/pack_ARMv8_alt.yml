@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
   
   schedule:
-    - cron: 30 6 */2 * *
+    - cron: 30 18 */2 * *
 env:
    
   OPENWRT_TAG: ARMv8_alt
