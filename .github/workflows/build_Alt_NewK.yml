@@ -139,8 +139,8 @@ jobs:
         #svn export https://github.com/coolsnowwolf/lede/trunk/package/network/config/firewall package/firewall
         rm -rf toolchain/musl
         svn export https://github.com/coolsnowwolf/lede/trunk/toolchain/musl toolchain/musl
-        rm -rf feeds/packages/net/smartdns
-        svn export https://github.com/pymumu/smartdns feeds/packages/net/smartdns
+        rm -rf feeds/packages/net/smartdns/Makefile
+        wget -O  https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/Makefile-smartdns feeds/packages/net/smartdns/Makefile
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
         echo "status=success" >> ${GITHUB_OUTPUT}
