@@ -140,7 +140,7 @@ jobs:
         rm -rf toolchain/musl
         svn export https://github.com/coolsnowwolf/lede/trunk/toolchain/musl toolchain/musl
         rm -rf feeds/packages/net/smartdns/Makefile
-        wget https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/Makefile-smartdns feeds/packages/net/smartdns/Makefile
+        wget -q -P https://raw.githubusercontent.com/very20101/Openwrt_N1_try/main/Makefile-smartdns feeds/packages/net/smartdns/Makefile
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
         echo "status=success" >> ${GITHUB_OUTPUT}
