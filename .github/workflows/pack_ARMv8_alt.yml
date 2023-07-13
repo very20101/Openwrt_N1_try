@@ -45,7 +45,7 @@ jobs:
       with:
         openwrt_path: openwrt/*rootfs.tar.gz
         openwrt_board: s905d
-        openwrt_kernel: 5.15.90
+        openwrt_kernel: 5.15.120_6.1.38
         gh_token: ${{ secrets.GH_TOKEN }}
 
 
