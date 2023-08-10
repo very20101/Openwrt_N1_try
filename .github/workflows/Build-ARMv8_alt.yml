@@ -7,7 +7,7 @@
 # Code from https://github.com/haiibo/OpenWrt
 #===============================================
 
-name: ARMv8 alt OpenWrt
+name: ARMv8 lede OpenWrt
 
 on:
   workflow_dispatch:
@@ -19,13 +19,13 @@ env:
   SOURCE_BRANCH: master
   CONFIG_FILE: .confign1try0619
   DIY_SCRIPT: diy-script.sh
-  TOOLCHAIN_TAG: Toolchain_alt
+  TOOLCHAIN_TAG: Toolchain_lede
   CLASH_KERNEL: armv8
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: ROOTFS_alt
+  FIRMWARE_TAG: ROOTFS_lede
   OPENWRT_RELEASE: true
-  OPENWRT_TAG: ARMv8_alt
+  OPENWRT_TAG: ARMv8_lede
   TZ: Asia/Shanghai
 
 jobs:
