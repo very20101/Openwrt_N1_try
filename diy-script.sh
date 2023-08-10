@@ -44,7 +44,7 @@ git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme
   #sed -i 's|CONFLICTS:=v2ray-core xray-core|#CONFLICTS:=v2ray-core xray-core|g' feeds/small8/sagernet-core/Makefile
 
 # delete extra package 
-rm -rf package/small-package/firewall
+#rm -rf package/small-package/firewall
 
   ./scripts/feeds update -a
   ./scripts/feeds install -a
