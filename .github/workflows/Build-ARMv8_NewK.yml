@@ -11,8 +11,8 @@ name: ARMv8_NewK_Opwrt
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 0 16 */3 * *
+  #schedule:
+    #- cron: 0 16 */3 * *
 
 env:
   SOURCE_URL: https://github.com/coolsnowwolf/lede
