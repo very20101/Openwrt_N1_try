@@ -7,7 +7,7 @@
 # Code from https://github.com/haiibo/OpenWrt
 #===============================================
 
-name: ARMv8_NewK_opwrt
+name: ARMv8_NewK_OPwrt
 
 on:
   workflow_dispatch:
