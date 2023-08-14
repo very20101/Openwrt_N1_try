@@ -46,6 +46,7 @@ git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme
 
 # delete extra package 
 rm -rf package/small-package/firewall
+rm -rf package/small-package/firewall4
 
   ./scripts/feeds update -a
   ./scripts/feeds install -a
