@@ -979,5 +979,13 @@ svn export https://github.com/openwrt/packages/trunk/libs/libpfring feeds/packag
 svn export https://github.com/sbwml/luci-app-alist/trunk/alist package/alist
 svn export https://github.com/sbwml/luci-app-alist/trunk/luci-app-alist package/luci-app-alist
 
+# netsupport
+rm -rf 	package/kernel/linux/modules/netsupport.mk
+svn export https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/netsupport.mk package/kernel/linux/modules/netsupport.mk
+
+# ruby      
+rm -rf package/feeds/packages/ruby
+svn export https://github.com/openwrt/packages/trunk/lang/ruby  package/feeds/packages/ruby
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
