@@ -319,6 +319,9 @@ jobs:
         rm -rf feeds/packages/lang/rust
         svn export https://github.com/openwrt/packages/trunk/lang/rust feeds/packages/lang/rust
         rm -rf package/lean/libcryptopp
+        svn export https://github.com/very20101/Openwrt_N1_try/trunk/libcryptopp package/lean/libcryptopp
+        rm -rf package/feeds/packages/ruby
+        svn export https://github.com/openwrt/packages/trunk/lang/ruby  package/feeds/packages/ruby
         echo -e "$(nproc) thread compile"
         make diffconfig
         make target/compile -j$(nproc) IGNORE_ERRORS="m n" BUILD_LOG=1 || \
