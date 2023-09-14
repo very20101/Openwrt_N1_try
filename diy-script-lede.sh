@@ -275,7 +275,7 @@ sed -i "s/PKG_HASH:=.*/PKG_HASH:=66f46c9729c831dce431778a9c561cca32daceaede1c7e5
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=55563b87050ce7b9b2124a9b882fdef4fa17e23f431ad502c8227101d5e789fd/g' feeds/packages/utils/docker/Makefile
 #sed -i 's/PKG_GIT_SHORT_COMMIT:=100c701/PKG_GIT_SHORT_COMMIT:=7155243/g' feeds/packages/utils/docker/Makefile
 rm -rf feeds/packages/utils/docker
-cp -rf $GITHUB_WORKSPACE/general/docker feeds/packages/utils/docker
+svn export https://github.com/very20101/Openwrt_N1_try/trunk/general/docker feeds/packages/utils/docker
 
 # dockerd
 #sed -i 's/PKG_VERSION:=20.10.17/PKG_VERSION:=20.10.23/g' feeds/packages/utils/dockerd/Makefile
@@ -284,7 +284,7 @@ cp -rf $GITHUB_WORKSPACE/general/docker feeds/packages/utils/docker
 #sed -i 's/PKG_GIT_SHORT_COMMIT:=a89b842/PKG_GIT_SHORT_COMMIT:=6051f14/g' feeds/packages/utils/dockerd/Makefile
 #sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' feeds/packages/utils/dockerd/Makefile
 rm -rf feeds/packages/utils/dockerd
-cp -rf $GITHUB_WORKSPACE/general/dockerd feeds/packages/utils/dockerd
+svn export https://github.com/very20101/Openwrt_N1_try/trunk/general/dockerd feeds/packages/utils/dockerd
 
 # docker-compose
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.20.3/g' feeds/packages/utils/docker-compose/Makefile
@@ -294,7 +294,7 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=af8025623de3991a15a89575ae4fc4f3f38a17311af9641
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.5.11/g' feeds/packages/utils/containerd/Makefile
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=skip/g' feeds/packages/utils/containerd/Makefile
 #sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=3df54a852345ae127d1fa3092b95168e4a88e2f8/g' feeds/packages/utils/containerd/Makefile
-cp -f $GITHUB_WORKSPACE/general/containerd/Makefile feeds/packages/utils/containerd
+svn export https://github.com/very20101/Openwrt_N1_try/trunk/general/containerd feeds/packages/utils/containerd
 
 # runc
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.1.8/g' feeds/packages/utils/runc/Makefile
