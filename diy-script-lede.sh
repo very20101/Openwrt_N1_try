@@ -26,6 +26,7 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_generate
 
+
 # 删除软件包
  #rm -rf feeds/packages/net/openssh
  #rm -rf feeds/packages/sound/fdk-aac
@@ -47,6 +48,9 @@ sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_gener
 sed -i 's/DEPENDS:=@(.*/DEPENDS:=@(TARGET_bcm27xx||TARGET_bcm53xx||TARGET_ipq40xx||TARGET_ipq806x||TARGET_ipq807x||TARGET_mvebu||TARGET_rockchip||TARGET_armvirt) \\/g' package/lean/autocore/Makefile
 # Add cputemp.sh
 #cp -rf $GITHUB_WORKSPACE/PATCH/new/script/cputemp.sh ./package/base-files/files/bin/cputemp.sh
+
+# Modify default IP
+#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 
 #添加额外软件包
 #git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic package/luci-app-unblockneteasemusic
@@ -73,7 +77,7 @@ svn export https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic pack
 pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
 popd
-#svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/brook package/brook
+#svn export https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/brook
 cp -rf $GITHUB_WORKSPACE/general/brook package/brook
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/chinadns-ng package/chinadns-ng
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/tcping package/tcping
@@ -275,7 +279,7 @@ sed -i "s/PKG_HASH:=.*/PKG_HASH:=66f46c9729c831dce431778a9c561cca32daceaede1c7e5
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=55563b87050ce7b9b2124a9b882fdef4fa17e23f431ad502c8227101d5e789fd/g' feeds/packages/utils/docker/Makefile
 #sed -i 's/PKG_GIT_SHORT_COMMIT:=100c701/PKG_GIT_SHORT_COMMIT:=7155243/g' feeds/packages/utils/docker/Makefile
 rm -rf feeds/packages/utils/docker
-svn export https://github.com/very20101/Openwrt_N1_try/trunk/general/docker feeds/packages/utils/docker
+cp -rf $GITHUB_WORKSPACE/general/docker feeds/packages/utils/docker
 
 # dockerd
 #sed -i 's/PKG_VERSION:=20.10.17/PKG_VERSION:=20.10.23/g' feeds/packages/utils/dockerd/Makefile
@@ -284,22 +288,22 @@ svn export https://github.com/very20101/Openwrt_N1_try/trunk/general/docker feed
 #sed -i 's/PKG_GIT_SHORT_COMMIT:=a89b842/PKG_GIT_SHORT_COMMIT:=6051f14/g' feeds/packages/utils/dockerd/Makefile
 #sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' feeds/packages/utils/dockerd/Makefile
 rm -rf feeds/packages/utils/dockerd
-svn export https://github.com/very20101/Openwrt_N1_try/trunk/general/dockerd feeds/packages/utils/dockerd
+cp -rf $GITHUB_WORKSPACE/general/dockerd feeds/packages/utils/dockerd
 
 # docker-compose
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.20.3/g' feeds/packages/utils/docker-compose/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=af8025623de3991a15a89575ae4fc4f3f38a17311af9641815500c01f0775950/g' feeds/packages/utils/docker-compose/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.21.0/g' feeds/packages/utils/docker-compose/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=0014b23382a50c90f91849e491500568366052882e22011822ca2d8a3b2976f2/g' feeds/packages/utils/docker-compose/Makefile
 
 # containerd
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.5.11/g' feeds/packages/utils/containerd/Makefile
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=skip/g' feeds/packages/utils/containerd/Makefile
 #sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=3df54a852345ae127d1fa3092b95168e4a88e2f8/g' feeds/packages/utils/containerd/Makefile
-svn export https://github.com/very20101/Openwrt_N1_try/trunk/general/containerd feeds/packages/utils/containerd
+cp -f $GITHUB_WORKSPACE/general/containerd/Makefile feeds/packages/utils/containerd
 
 # runc
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.1.8/g' feeds/packages/utils/runc/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=9076322ded5c7ae30471ea8a6a43e7c62fb357957592f5cb668abc2f7cb5e4bb/g' feeds/packages/utils/runc/Makefile
-sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=82f18fe0e44a59034f3e1f45e475fa5636e539aa/g' feeds/packages/utils/runc/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.1.9/g' feeds/packages/utils/runc/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=509993674481aad7e14aedfb280e0eb160f3a34c0b77e2e98c4b3c0b1df76894/g' feeds/packages/utils/runc/Makefile
+sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=ccaecfcbc907d70a7aa870a6650887b901b25b82/g' feeds/packages/utils/runc/Makefile
 #sed -i '12d' feeds/packages/utils/runc/Makefile
 
 # bsdtar
@@ -979,13 +983,7 @@ svn export https://github.com/openwrt/packages/trunk/libs/libpfring feeds/packag
 svn export https://github.com/sbwml/luci-app-alist/trunk/alist package/alist
 svn export https://github.com/sbwml/luci-app-alist/trunk/luci-app-alist package/luci-app-alist
 
-# netsupport
-rm -rf 	package/kernel/linux/modules/netsupport.mk
-svn export https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/netsupport.mk package/kernel/linux/modules/netsupport.mk
-
-# ruby      
-rm -rf package/feeds/packages/ruby
-svn export https://github.com/openwrt/packages/trunk/lang/ruby  package/feeds/packages/ruby
-
 ./scripts/feeds update -a
 ./scripts/feeds install -a
+
+
