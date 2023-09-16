@@ -983,6 +983,18 @@ svn export https://github.com/openwrt/packages/trunk/libs/libpfring feeds/packag
 svn export https://github.com/sbwml/luci-app-alist/trunk/alist package/alist
 svn export https://github.com/sbwml/luci-app-alist/trunk/luci-app-alist package/luci-app-alist
 
+## package refresh
+rm -rf packages/tuic-client
+svn export https://github.com/very20101/Openwrt_N1_try/trunk/tuic-client packages/tuic-client
+rm -rf 	package/kernel/linux/modules/netsupport.mk
+svn export https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/netsupport.mk package/kernel/linux/modules/netsupport.mk
+rm -rf feeds/packages/lang/rust
+svn export https://github.com/openwrt/packages/trunk/lang/rust feeds/packages/lang/rust
+rm -rf package/lean/libcryptopp
+svn export https://github.com/very20101/Openwrt_N1_try/trunk/libcryptopp package/lean/libcryptopp
+rm -rf package/feeds/packages/ruby
+svn export https://github.com/openwrt/packages/trunk/lang/ruby  package/feeds/packages/ruby
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
