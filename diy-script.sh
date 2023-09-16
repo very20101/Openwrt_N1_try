@@ -48,5 +48,20 @@ git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme
 rm -rf package/small-package/firewall
 rm -rf package/small-package/firewall4
 
-  ./scripts/feeds update -a
-  ./scripts/feeds install -a
+## package refresh
+rm -rf packages/tuic-client
+svn export https://github.com/very20101/Openwrt_N1_try/trunk/tuic-client packages/tuic-client
+rm -rf 	package/kernel/linux/modules/netsupport.mk
+svn export https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/netsupport.mk package/kernel/linux/modules/netsupport.mk
+rm -rf feeds/packages/lang/rust
+svn export https://github.com/openwrt/packages/trunk/lang/rust feeds/packages/lang/rust
+rm -rf package/lean/libcryptopp
+svn export https://github.com/very20101/Openwrt_N1_try/trunk/libcryptopp package/lean/libcryptopp
+rm -rf package/feeds/packages/ruby
+svn export https://github.com/openwrt/packages/trunk/lang/ruby  package/feeds/packages/ruby
+rm -rf feeds/packages/net/unbound
+svn export https://github.com/openwrt/packages/tree/master/net/unbound feeds/packages/net/unbound
+
+
+./scripts/feeds update -a
+./scripts/feeds install -a
