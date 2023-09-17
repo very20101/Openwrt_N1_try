@@ -996,6 +996,9 @@ rm -rf package/feeds/packages/ruby
 svn export https://github.com/openwrt/packages/trunk/lang/ruby  package/feeds/packages/ruby
 rm -rf feeds/packages/net/unbound
 svn export https://github.com/openwrt/packages/trunk/net/unbound feeds/packages/net/unbound
+rm -rf package/libs/openssl
+svn export https://github.com/openwrt/openwrt/trunk/package/libs/openssl package/libs/openssl
+
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
