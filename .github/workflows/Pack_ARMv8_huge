@@ -1,0 +1,68 @@
+#========================================================================================================================
+# https://github.com/very20101/N1_try
+# Description: Use Releases file to packaging
+# Code modified from https://github.com/quanjindeng/Actions_OpenWrt-Amlogic
+#========================================================================================================================
+
+name: Pack_ARMv8_full
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+  
+  schedule:
+    - cron: 40 18 * * 6
+env:
+   
+  OPENWRT_TAG: ARMv8_full
+  TZ: Asia/Shanghai 
+    
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@main
+
+    - name: Download Armvirt Firmware
+      id: download
+      run: |
+        [ -d openwrt-armvirt ] || mkdir -p openwrt
+        cd openwrt
+        curl -s https://api.github.com/repos/very20101/Openwrt_N1_try/releases/latest | grep "browser_download_url.*tar.gz" | cut -d : -f 2,3 | tr -d \" | wget -qi -
+        #openwrt_url="$(curl -H "authorization: Bearer " -s "https://api.github.com/very20101   /Openwrt_retry/releases/latest | grep "*rootfs.tar.gz" )"
+        #[[ -z "${openwrt_url}" ]] && echo -e "OpenWrt file not found!" && exit 1
+        #wget -q -P openwrt https://github.com/very20101/Openwrt_retry/releases/download/latest/openwrt-armvirt-64-default-rootfs.tar.gz
+        #[[ "${?}" -ne "0" ]] && echo -e "The armvirt file download failed!" && exit 1
+        #wget -q -P openwrt https://github.com/very20101/Openwrt_retry/releases/download/OpenWrt_Armvirt_01.27.1503/openwrt-armvirt-64-default-rootfs.tar.gz
+        echo "status=success" >> $GITHUB_OUTPUT
+        echo "DATE=$(date +"%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
+        echo "DATE1=$(date +"%Y.%m.%d")" >> $GITHUB_ENV
+          
+    - name: Package Armvirt as OpenWrt
+      uses: ophub/amlogic-s9xxx-openwrt@main
+      with:
+        openwrt_path: openwrt/*rootfs.tar.gz
+        openwrt_board: s905d
+        openwrt_kernel: 5.15.120_6.1.38
+        gh_token: ${{ secrets.GH_TOKEN }}
+
+
+    - name: Upload OpenWrt To Release
+      uses: ncipollo/release-action@v1
+      with:
+        name: ARMv8_full
+        allowUpdates: true
+        removeArtifacts: true
+        tag: ${{ env.OPENWRT_TAG }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
+        body: |
+          **This is OpenWrt Firmware for Armvirt 64**
+          * 这是 ARMv8 精简版
+          默认 IP：192.168.1.100 默认密码：password
+          安装到 EMMC：系统 → 晶晨宝盒 → 安装 OpenWrt → 选择型号 → 安装
+          升级 OpenWrt：系统 → 晶晨宝盒 → 手动上传更新 或者 在线下载更新
+          当前使用版本:【编译前的最后一次➦[主源码](https://github.com/openwrt/openwrt)更新记录】
+          ${{ env.VERSION_INFO }}
