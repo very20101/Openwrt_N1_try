@@ -33,8 +33,8 @@ env:
   UPLOAD_FIRMWARE: false
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-  FILE_NAME: openwrt_armvirt
-  PRODUCT_NAME: openwrt_armvirt
+  FILE_NAME: openwrt_armsr
+  PRODUCT_NAME: openwrt_armsr
 
 jobs:
   build:
