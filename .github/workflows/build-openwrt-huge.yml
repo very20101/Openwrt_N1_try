@@ -5,10 +5,11 @@
 # See /LICENSE for more information.
 #
 # https://github.com/P3TERX/Actions-OpenWrt
+#https://github.com/breakings/openwrt
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt Huge
+name: Build Lede_Multi
 
 on:
   repository_dispatch:
@@ -19,15 +20,15 @@ on:
         required: false
         default: 'false'
   schedule:
-    - cron: 0 8 * * *
+    - cron: 0 8 * * */6
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ARMv8/lede-huge.config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  DIY_P1_SH: diy-sh/diy-part1-new.sh
+  DIY_P2_SH: diy-sh/diy-part2-new.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
   UPLOAD_RELEASE: true
@@ -196,7 +197,7 @@ jobs:
         commit: main
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
-          - 此为高大全底包，非完整固件，每日自动编译
+          - 此为高大全底包，非完整固件
           - 当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
           ${{ env.useVersionInfo }}
         artifacts: ${{ env.FIRMWARE }}/*
@@ -208,17 +209,6 @@ jobs:
         repository: ${{ github.repository }}
         retain_days: 60
         keep_minimum_runs: 60
-
-    - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@v0.2.0
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        repo:
-        keep_latest: 30
-        delete_tag_pattern:
-        delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Telegram notification
       run: |
