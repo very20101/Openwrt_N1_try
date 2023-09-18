@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #
 #	USAGE: git-short-commit.sh <GIT_URL> <GIT_REF> <GIT_DIR>
 #
