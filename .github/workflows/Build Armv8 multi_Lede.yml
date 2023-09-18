@@ -431,6 +431,14 @@ jobs:
         KERNEL_AUTO_LATEST: true
         DISTRIB_REVISION: R${{ env.DATE1 }} by very20101
 
+    - name: Delete workflow runs
+      uses: GitRML/delete-workflow-runs@main
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        repository: ${{ github.repository }}
+        retain_days: 60
+        keep_minimum_runs: 60
+
     - name: Upload OpenWrt To Artifact
       if: env.PACKAGED_STATUS == 'success' && env.OPENWRT_RELEASE != 'true'
       uses: kittaakos/upload-artifact-as-is@master
