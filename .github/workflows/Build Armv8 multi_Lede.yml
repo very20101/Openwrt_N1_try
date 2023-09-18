@@ -284,8 +284,8 @@ jobs:
 
     - name: Install Feeds
       run: |
-        make distclean
         cd $OPENWRT_PATH
+        make distclean
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
