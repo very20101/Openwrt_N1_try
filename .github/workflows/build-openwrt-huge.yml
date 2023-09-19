@@ -94,14 +94,6 @@ jobs:
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "DATE1=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
         
-    #- name: Cache Toolchain
-      #uses: klever1988/cachewrtbuild@main
-      #with:
-        #ccache: false
-        #skip: true
-        #toolchain: true
-        #clean: false
-        #prefix: ${{ github.workspace }}/openwrt
 
     - name: Load custom feeds
       run: |
@@ -123,13 +115,6 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-
-    - name: SSH connection to Actions
-      uses: P3TERX/ssh2actions@v1.0.0
-      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
-      env:
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
     - name: Download package
       id: package
@@ -211,12 +196,3 @@ jobs:
         repository: ${{ github.repository }}
         retain_days: 60
         keep_minimum_runs: 60
-
-    - name: Telegram notification
-      run: |
-        MSG="
-        编译时间：${{ env.DATE }}
-        OpenWrt 更新信息：${{ env.useVersionInfo }}
-        ${{ env.PRODUCT_NAME }} 编译完成
-        "
-        curl "https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage" -d "chat_id=${{ secrets.TELEGRAM_TO }}&text=${MSG}"
