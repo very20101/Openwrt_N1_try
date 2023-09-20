@@ -178,12 +178,15 @@ jobs:
     - name: Create release
       id: release
       uses: ncipollo/release-action@v1
+      env:
+        #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.RELEASES_TOKEN }}
       with:
         name: R${{ env.DATE }} for ${{ env.PRODUCT_NAME }}
         allowUpdates: true
         tag: ${{ env.FILE_NAME }}
         commit: main
-        token: ${{ secrets.RELEASES_TOKEN }}
+        #token: ${{ secrets.RELEASES_TOKEN }}
         body: |
           - 此为高大全底包，非完整固件
           - 当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
