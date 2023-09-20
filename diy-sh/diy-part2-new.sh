@@ -273,6 +273,7 @@ cp -rf $GITHUB_WORKSPACE/general/docker feeds/packages/utils/docker
 #sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' feeds/packages/utils/dockerd/Makefile
 rm -rf feeds/packages/utils/dockerd
 cp -rf $GITHUB_WORKSPACE/general/dockerd feeds/packages/utils/dockerd
+sudo chmod +x feeds/packages/utils/dockerd/git-short-commit.sh
 
 # docker-compose
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.21.0/g' feeds/packages/utils/docker-compose/Makefile
