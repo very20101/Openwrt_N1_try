@@ -26,7 +26,6 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_generate
 
-
 # 删除软件包
  #rm -rf feeds/packages/net/openssh
  #rm -rf feeds/packages/sound/fdk-aac
@@ -49,100 +48,103 @@ sed -i 's/DEPENDS:=@(.*/DEPENDS:=@(TARGET_bcm27xx||TARGET_bcm53xx||TARGET_ipq40x
 # Add cputemp.sh
 #cp -rf $GITHUB_WORKSPACE/PATCH/new/script/cputemp.sh ./package/base-files/files/bin/cputemp.sh
 
+# Modify default IP
+sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_generate
+
 #添加额外软件包
 #git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic package/luci-app-unblockneteasemusic
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
 #git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
-svn export https://github.com/jerrykuku/lua-maxminddb/trunk package/lua-maxminddb
-svn export https://github.com/jerrykuku/luci-app-vssr/trunk package/luci-app-vssr
-svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
+svn co https://github.com/jerrykuku/lua-maxminddb/trunk package/lua-maxminddb
+svn co https://github.com/jerrykuku/luci-app-vssr/trunk package/luci-app-vssr
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 #git clone https://github.com/project-lede/luci-app-godproxy package/luci-app-godproxy
-svn export https://github.com/iwrt/luci-app-ikoolproxy/trunk package/luci-app-ikoolproxy
-#svn export https://github.com/openwrt/luci/trunk/modules/luci-mod-dashboard feeds/luci/modules/luci-mod-dashboard
-#svn export https://github.com/openwrt/packages/trunk/net/openssh package/openssh
-#svn export https://github.com/openwrt/packages/trunk/libs/libfido2 package/libfido2
-#svn export https://github.com/openwrt/packages/trunk/libs/libcbor package/libcbor
-svn export https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
-#svn export https://github.com/breakings/OpenWrt/trunk/general/luci-app-cpufreq package/luci-app-cpufreq
-#svn export https://github.com/breakings/OpenWrt/trunk/general/ntfs3 package/lean/ntfs3
-#svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-socat package/luci-app-socat
-#svn export https://github.com/neheb/openwrt/branches/elf/package/libs/elfutils package/libs/elfutils
-#svn export https://github.com/breakings/OpenWrt/trunk/general/gnupg feeds/packages/utils/gnupg
-#svn export https://github.com/breakings/OpenWrt/trunk/general/n2n_v2 package/lean/n2n_v2
+svn co https://github.com/iwrt/luci-app-ikoolproxy/trunk package/luci-app-ikoolproxy
+#svn co https://github.com/openwrt/luci/trunk/modules/luci-mod-dashboard feeds/luci/modules/luci-mod-dashboard
+#svn co https://github.com/openwrt/packages/trunk/net/openssh package/openssh
+#svn co https://github.com/openwrt/packages/trunk/libs/libfido2 package/libfido2
+#svn co https://github.com/openwrt/packages/trunk/libs/libcbor package/libcbor
+svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
+#svn co https://github.com/breakings/OpenWrt/trunk/general/luci-app-cpufreq package/luci-app-cpufreq
+#svn co https://github.com/breakings/OpenWrt/trunk/general/ntfs3 package/lean/ntfs3
+#svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-socat package/luci-app-socat
+#svn co https://github.com/neheb/openwrt/branches/elf/package/libs/elfutils package/libs/elfutils
+#svn co https://github.com/breakings/OpenWrt/trunk/general/gnupg feeds/packages/utils/gnupg
+#svn co https://github.com/breakings/OpenWrt/trunk/general/n2n_v2 package/lean/n2n_v2
 
 # 编译 po2lmo (如果有po2lmo可跳过)
 pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
 popd
-#svn export https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/brook
+#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/brook
 cp -rf $GITHUB_WORKSPACE/general/brook package/brook
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/chinadns-ng package/chinadns-ng
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/tcping package/tcping
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/trojan-go package/trojan-go
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/trojan-plus package/trojan-plus
-#svn export https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-filebrowser package/luci-app-filebrowser
-#svn export https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/filebrowser package/filebrowser
-#svn export https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-fileassistant package/luci-app-fileassistant
-svn export https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/luci-app-passwall
-svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 package/luci-app-passwall2
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/chinadns-ng package/chinadns-ng
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/tcping package/tcping
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/trojan-go package/trojan-go
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/trojan-plus package/trojan-plus
+#svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-filebrowser package/luci-app-filebrowser
+#svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/filebrowser package/filebrowser
+#svn co https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-fileassistant package/luci-app-fileassistant
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/luci-app-passwall
+svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 package/luci-app-passwall2
 #cp -rf $GITHUB_WORKSPACE/general/luci-app-passwall package/luci-app-passwall
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/shadowsocks-rust package/shadowsocks-rust
-#svn export https://github.com/fw876/helloworld/trunk/shadowsocks-rust package/shadowsocks-rust
-#svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/xray-core package/xray-core
-#svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/xray-plugin package/xray-plugin
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/shadowsocks-rust package/shadowsocks-rust
+#svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust package/shadowsocks-rust
+#svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/xray-core package/xray-core
+#svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/xray-plugin package/xray-plugin
 cp -rf $GITHUB_WORKSPACE/general/xray-core package/xray-core
 cp -rf $GITHUB_WORKSPACE/general/xray-plugin package/xray-plugin
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/ssocks package/ssocks
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/dns2socks package/dns2socks
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/ipt2socks package/ipt2socks
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/microsocks package/microsocks 
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/pdnsd-alt package/pdnsd-alt
-#svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/shadowsocksr-libev package/shadowsocksr-libev
-svn export https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/shadowsocksr-libev
-svn export https://github.com/fw876/helloworld/trunk/lua-neturl package/lua-neturl
-#svn export https://github.com/fw876/helloworld/trunk/tcping package/tcping
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/v2ray-core package/v2ray-core
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/v2ray-plugin package/v2ray-plugin
-#svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/v2ray-geodata package/v2ray-geodata
-#svn export https://github.com/fw876/helloworld/trunk/v2ray-plugin package/v2ray-plugin
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/simple-obfs package/simple-obfs
-#svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/kcptun package/kcptun
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/trojan package/trojan
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/hysteria package/hysteria
-#svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/dns2tcp package/dns2tcp
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/sing-box package/sing-box
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/ssocks package/ssocks
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/dns2socks package/dns2socks
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/ipt2socks package/ipt2socks
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/microsocks package/microsocks 
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/pdnsd-alt package/pdnsd-alt
+#svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/shadowsocksr-libev package/shadowsocksr-libev
+svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/shadowsocksr-libev
+svn co https://github.com/fw876/helloworld/trunk/lua-neturl package/lua-neturl
+#svn co https://github.com/fw876/helloworld/trunk/tcping package/tcping
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/v2ray-core package/v2ray-core
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/v2ray-plugin package/v2ray-plugin
+#svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/v2ray-geodata package/v2ray-geodata
+#svn co https://github.com/fw876/helloworld/trunk/v2ray-plugin package/v2ray-plugin
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/simple-obfs package/simple-obfs
+#svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/kcptun package/kcptun
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/trojan package/trojan
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/hysteria package/hysteria
+#svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/dns2tcp package/dns2tcp
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/sing-box package/sing-box
 
-svn export https://github.com/fw876/helloworld/trunk/tuic-client package/tuic-client
-svn export https://github.com/fw876/helloworld/trunk/dns2tcp package/dns2tcp
-svn export https://github.com/fw876/helloworld/trunk/v2ray-geodata package/v2ray-geodata
-#svn export https://github.com/fw876/helloworld/trunk/xray-core package/xray-core
-#svn export https://github.com/fw876/helloworld/trunk/xray-plugin package/xray-plugin
-svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-gost package/luci-app-gost
+svn co https://github.com/fw876/helloworld/trunk/tuic-client package/tuic-client
+svn co https://github.com/fw876/helloworld/trunk/dns2tcp package/dns2tcp
+svn co https://github.com/fw876/helloworld/trunk/v2ray-geodata package/v2ray-geodata
+#svn co https://github.com/fw876/helloworld/trunk/xray-core package/xray-core
+#svn co https://github.com/fw876/helloworld/trunk/xray-plugin package/xray-plugin
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-gost package/luci-app-gost
 #cp -rf $GITHUB_WORKSPACE/general/luci-app-gost package/luci-app-gost
 cp -rf $GITHUB_WORKSPACE/general/gost package/gost
-#svn export https://github.com/kenzok8/openwrt-packages/trunk/gost package/gost
-#svn export https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-gost package/luci-app-gost
-#svn export https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gost package/gost
-svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/gost package/gost
+#svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-gost package/luci-app-gost
+#svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gost package/gost
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
-svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
-#svn export https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/naiveproxy package/naiveproxy
-svn export https://github.com/fw876/helloworld/trunk/redsocks2 package/redsocks2
-svn export https://github.com/rufengsuixing/luci-app-adguardhome/trunk package/luci-app-adguardhome
-svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser package/luci-app-filebrowser
-svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-ssr-mudb-server package/luci-app-ssr-mudb-server
-svn export https://gh.fakev.cn/kiddin9/openwrt-packages/trunk/luci-app-speederv2 package/luci-app-speederv2
+svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
+#svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/naiveproxy package/naiveproxy
+svn co https://github.com/fw876/helloworld/trunk/redsocks2 package/redsocks2
+svn co https://github.com/rufengsuixing/luci-app-adguardhome/trunk package/luci-app-adguardhome
+svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser package/luci-app-filebrowser
+svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ssr-mudb-server package/luci-app-ssr-mudb-server
+svn co https://gh.fakev.cn/kiddin9/openwrt-packages/trunk/luci-app-speederv2 package/luci-app-speederv2
 
 #添加smartdns
-#svn export https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/smartdns package/smartdns
-#svn export https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-smartdns package/luci-app-smartdns
-#svn export https://github.com/openwrt/luci/trunk/applications/luci-app-smartdns package/luci-app-smartdns
-svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/luci-app-smartdns
+#svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/smartdns package/smartdns
+#svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-smartdns package/luci-app-smartdns
+#svn co https://github.com/openwrt/luci/trunk/applications/luci-app-smartdns package/luci-app-smartdns
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/luci-app-smartdns
 
 #mosdns
-#svn export https://github.com/QiuSimons/openwrt-mos/trunk/mosdns package/mosdns
-#svn export https://github.com/QiuSimons/openwrt-mos/trunk/luci-app-mosdns package/luci-app-mosdns
+#svn co https://github.com/QiuSimons/openwrt-mos/trunk/mosdns package/mosdns
+#svn co https://github.com/QiuSimons/openwrt-mos/trunk/luci-app-mosdns package/luci-app-mosdns
 
 #修改bypass的makefile
 #git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
@@ -151,40 +153,40 @@ svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns p
 #find package/luci-app-bypass/*/ -maxdepth 8 -path "*" | xargs -i sed -i 's/smartdns-le/smartdns/g' {}
 
 #添加ddnsto
-#svn export https://github.com/linkease/ddnsto-openwrt/trunk/ddnsto package/ddnsto
-#svn export https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto package/luci-app-ddnsto
+#svn co https://github.com/linkease/ddnsto-openwrt/trunk/ddnsto package/ddnsto
+#svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto package/luci-app-ddnsto
 #添加udp2raw
 #git clone https://github.com/sensec/openwrt-udp2raw package/openwrt-udp2raw
-svn export https://github.com/sensec/openwrt-udp2raw/trunk package/openwrt-udp2raw
+svn co https://github.com/sensec/openwrt-udp2raw/trunk package/openwrt-udp2raw
 #git clone https://github.com/sensec/luci-app-udp2raw package/luci-app-udp2raw
-svn export https://github.com/sensec/luci-app-udp2raw/trunk package/luci-app-udp2raw
+svn co https://github.com/sensec/luci-app-udp2raw/trunk package/luci-app-udp2raw
 sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=f2f90a9a150be94d50af555b53657a2a4309f287/" package/openwrt-udp2raw/Makefile
 sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=20200920\.0/" package/openwrt-udp2raw/Makefile
 
 #themes
-svn export https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy package/luci-theme-rosy
+svn co https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy package/luci-theme-rosy
 #git clone https://github.com/rosywrt/luci-theme-purple.git package/luci-theme-purple
 #git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-theme-opentomcat
-svn export https://github.com/Leo-Jo-My/luci-theme-opentomcat/trunk package/luci-theme-opentomcat
-svn export https://github.com/Leo-Jo-My/luci-theme-opentomato/trunk package/luci-theme-opentomato
-#svn export https://github.com/sirpdboy/luci-theme-opentopd/trunk package/luci-theme-opentopd
+svn co https://github.com/Leo-Jo-My/luci-theme-opentomcat/trunk package/luci-theme-opentomcat
+svn co https://github.com/Leo-Jo-My/luci-theme-opentomato/trunk package/luci-theme-opentomato
+#svn co https://github.com/sirpdboy/luci-theme-opentopd/trunk package/luci-theme-opentopd
 #git clone https://github.com/kevin-morgan/luci-theme-argon-dark.git package/luci-theme-argon-dark
-#svn export https://github.com/kevin-morgan/luci-theme-argon-dark/trunk package/luci-theme-argon-dark
-#svn export https://github.com/openwrt/luci/trunk/themes/luci-theme-openwrt-2020 package/luci-theme-openwrt-2020
-svn export https://github.com/thinktip/luci-theme-neobird/trunk package/luci-theme-neobird
+#svn co https://github.com/kevin-morgan/luci-theme-argon-dark/trunk package/luci-theme-argon-dark
+#svn co https://github.com/openwrt/luci/trunk/themes/luci-theme-openwrt-2020 package/luci-theme-openwrt-2020
+svn co https://github.com/thinktip/luci-theme-neobird/trunk package/luci-theme-neobird
 
 # nginx-util
 rm -rf feeds/packages/net/nginx-util
-svn export https://github.com/openwrt/packages/trunk/net/nginx-util feeds/packages/net/nginx-util
+svn co https://github.com/openwrt/packages/trunk/net/nginx-util feeds/packages/net/nginx-util
 
 # fdk-aac
-#svn export https://github.com/openwrt/packages/trunk/sound/fdk-aac feeds/packages/sound/fdk-aac
+#svn co https://github.com/openwrt/packages/trunk/sound/fdk-aac feeds/packages/sound/fdk-aac
 
 # lvm2
-#svn export https://github.com/openwrt/packages/trunk/utils/lvm2 feeds/packages/utils/lvm2
+#svn co https://github.com/openwrt/packages/trunk/utils/lvm2 feeds/packages/utils/lvm2
 
 # tini
-#svn export https://github.com/openwrt/packages/trunk/utils/tini feeds/packages/utils/tini
+#svn co https://github.com/openwrt/packages/trunk/utils/tini feeds/packages/utils/tini
 
 #删除docker无脑初始化教程
 #sed -i '31,39d' package/lean/luci-app-docker/po/zh-cn/docker.po
@@ -194,7 +196,7 @@ svn export https://github.com/openwrt/packages/trunk/net/nginx-util feeds/packag
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=4.14.13/g' feeds/packages/net/samba4/Makefile
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=e1df792818a17d8d21faf33580d32939214694c92b84fb499464210d86a7ff75/g' feeds/packages/net/samba4/Makefile
 rm -rf feeds/packages/net/samba4
-svn export https://github.com/openwrt/packages/trunk/net/samba4 feeds/packages/net/samba4
+svn co https://github.com/openwrt/packages/trunk/net/samba4 feeds/packages/net/samba4
 
 # ffmpeg
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=5.1.1/g' feeds/packages/multimedia/ffmpeg/Makefile
@@ -239,7 +241,7 @@ sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=8.3.0/g' feeds/packages/net/curl/Makefile
 sed -i 's/PKG_HASH:=.*/PKG_HASH:=376d627767d6c4f05105ab6d497b0d9aba7111770dd9d995225478209c37ea63/g' feeds/packages/net/curl/Makefile
 sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' feeds/packages/net/curl/Makefile
 #rm -f feeds/packages/net/curl
-#svn export https://github.com/openwrt/packages/trunk/net/curl feeds/packages/net/curl
+#svn co https://github.com/openwrt/packages/trunk/net/curl feeds/packages/net/curl
 
 # Qt5 -qtbase
 sed -i "s/PKG_BUGFIX:=.*/PKG_BUGFIX:=10/g" feeds/packages/libs/qtbase/Makefile
@@ -286,6 +288,7 @@ cp -rf $GITHUB_WORKSPACE/general/docker feeds/packages/utils/docker
 #sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' feeds/packages/utils/dockerd/Makefile
 rm -rf feeds/packages/utils/dockerd
 cp -rf $GITHUB_WORKSPACE/general/dockerd feeds/packages/utils/dockerd
+sudo chmod +x feeds/packages/utils/dockerd/git-short-commit.sh
 
 # docker-compose
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.21.0/g' feeds/packages/utils/docker-compose/Makefile
@@ -336,7 +339,7 @@ sed -i 's/PKG_MIRROR_HASH:=.*/PKG_MIRROR_HASH:=45e0c37b8e275c8d088506f953aa25b30
 
 # php8
 #rm -rf feeds/packages/lang/php8
-#svn export https://github.com/openwrt/packages/trunk/lang/php8 feeds/packages/lang/php8
+#svn co https://github.com/openwrt/packages/trunk/lang/php8 feeds/packages/lang/php8
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=8.2.10/g' feeds/packages/lang/php8/Makefile
 sed -i 's/PKG_HASH:=.*/PKG_HASH:=561dc4acd5386e47f25be76f2c8df6ae854756469159248313bcf276e282fbb3/g' feeds/packages/lang/php8/Makefile
 
@@ -378,7 +381,7 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=3b43dbe33cca0f9a18601ebab56b7852b128ec1a3df3a9b
 
 # socat
 #rm -rf feeds/packages/net/socat
-#svn export https://github.com/openwrt/packages/trunk/net/socat feeds/packages/net/socat
+#svn co https://github.com/openwrt/packages/trunk/net/socat feeds/packages/net/socat
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.7.4.4/g' feeds/packages/net/socat/Makefile
 #sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' feeds/packages/net/socat/Makefile
 sed -i 's/PKG_HASH:=.*/PKG_HASH:=fbd42bd2f0e54a3af6d01bdf15385384ab82dbc0e4f1a5e153b3e0be1b6380ac/g' feeds/packages/net/socat/Makefile
@@ -397,7 +400,7 @@ sed -i 's/PYTHON3_VERSION_MICRO:=.*/PYTHON3_VERSION_MICRO:=9/g' feeds/packages/l
 sed -i 's/PYTHON3_SETUPTOOLS_VERSION:=.*/PYTHON3_SETUPTOOLS_VERSION:=65.5.0/g' feeds/packages/lang/python/python3-version.mk
 sed -i 's/PYTHON3_PIP_VERSION:=.*/PYTHON3_PIP_VERSION:=22.3.1/g' feeds/packages/lang/python/python3-version.mk
 #sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' feeds/packages/lang/python/python3/Makefile
-#svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/python/python3 feeds/packages/lang/python/python3
+#svn co https://github.com/openwrt/packages/branches/openwrt-21.02/lang/python/python3 feeds/packages/lang/python/python3
 sed -i 's/PKG_HASH:=.*/PKG_HASH:=5ae03e308260164baba39921fdb4dbf8e6d03d8235a939d4582b33f0b5e46a83/g' feeds/packages/lang/python/python3/Makefile
 rm -rf feeds/packages/lang/python/python3/patches-pip
 
@@ -433,7 +436,7 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=1a2994773706bbb4995c31a97bc94f1418314923bd1048c
 
 # python-pycparser
 #rm -rf feeds/packages/lang/python/python-pycparser
-#svn export https://github.com/openwrt/packages/trunk/lang/python/python-pycparser feeds/packages/lang/python/python-pycparser
+#svn co https://github.com/openwrt/packages/trunk/lang/python/python-pycparser feeds/packages/lang/python/python-pycparser
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.21/g' feeds/packages/lang/python/python-pycparser/Makefile
 #sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' feeds/packages/lang/python/python-pycparser/Makefile
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206/g' feeds/packages/lang/python/python-pycparser/Makefile
@@ -476,7 +479,7 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=a8df96034aae6d2d50a4ebe8216326c61c3eb6483677650
 
 # python-cryptography
 #rm -rf feeds/packages/lang/python/python-cryptography
-#svn export https://github.com/openwrt/packages/trunk/lang/python/python-cryptography feeds/packages/lang/python/python-cryptography
+#svn co https://github.com/openwrt/packages/trunk/lang/python/python-cryptography feeds/packages/lang/python/python-cryptography
 
 # python-distro
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.8.0/g' feeds/packages/lang/python/python-distro/Makefile
@@ -490,7 +493,7 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=a8df96034aae6d2d50a4ebe8216326c61c3eb6483677650
 
 # python-requests
 #rm -rf feeds/packages/lang/python/python-requests/patches
-#svn export https://github.com/openwrt/packages/trunk/lang/python/python-requests feeds/packages/lang/python/python-requests
+#svn co https://github.com/openwrt/packages/trunk/lang/python/python-requests feeds/packages/lang/python/python-requests
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.30.0/g' feeds/packages/lang/python/python-requests/Makefile
 sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' feeds/packages/lang/python/python-requests/Makefile
 sed -i 's/PKG_HASH:=.*/PKG_HASH:=239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4/g' feeds/packages/lang/python/python-requests/Makefile
@@ -539,7 +542,7 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=15f54bb72048eb105f8c0e936a04b899e74c3db9a19bbc1
 
 # softethervpn5
 #rm -rf feeds/packages/net/softethervpn5
-#svn export https://github.com/openwrt/packages/trunk/net/softethervpn5 feeds/packages/net/softethervpn5
+#svn co https://github.com/openwrt/packages/trunk/net/softethervpn5 feeds/packages/net/softethervpn5
 
 # hwdata
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=0.373/g' feeds/packages/utils/hwdata/Makefile
@@ -567,14 +570,14 @@ cp -rf $GITHUB_WORKSPACE/general/at feeds/packages/utils
 
 # mmc-utils
 #rm -rf feeds/packages/utils/mmc-utils
-#svn export https://github.com/openwrt/packages/trunk/utils/mmc-utils feeds/packages/utils/mmc-utils
+#svn co https://github.com/openwrt/packages/trunk/utils/mmc-utils feeds/packages/utils/mmc-utils
 #sed -i 's/PKG_SOURCE_DATE:=.*/PKG_SOURCE_DATE:=2022-04-17/g' feeds/packages/utils/mmc-utils/Makefile
 #sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=b7e4d5a6ae9942d26a11de9b05ae7d52c0802802/g' feeds/packages/utils/mmc-utils/Makefile
 #sed -i 's/PKG_MIRROR_HASH:=.*/PKG_MIRROR_HASH:=7865294ec7619d6696bb06a6e2ad4a3803a0bfbd9754b7d0d617bfb30ab828a1/g' feeds/packages/utils/mmc-utils/Makefile
 
 # nfs-kernel-server
 #rm -rf feeds/packages/net/nfs-kernel-server
-#svn export https://github.com/openwrt/packages/trunk/net/nfs-kernel-server feeds/packages/net/nfs-kernel-server
+#svn co https://github.com/openwrt/packages/trunk/net/nfs-kernel-server feeds/packages/net/nfs-kernel-server
 
 # alsa-utils
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.2.9/g' feeds/packages/sound/alsa-utils/Makefile
@@ -641,12 +644,12 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=13d25158408387995cbb294efe630f14bf1340f50305e89
 
 # mac80211
 #rm -rf package/kernel/mac80211
-#svn export https://github.com/openwrt/openwrt/branches/openwrt-21.02/package/kernel/mac80211 package/kernel/mac80211
-#svn export https://github.com/openwrt/openwrt/trunk/package/kernel/mac80211 package/kernel/mac80211
+#svn co https://github.com/openwrt/openwrt/branches/openwrt-21.02/package/kernel/mac80211 package/kernel/mac80211
+#svn co https://github.com/openwrt/openwrt/trunk/package/kernel/mac80211 package/kernel/mac80211
 
 # mt76
 #rm -rf package/kernel/mt76
-#svn export https://github.com/openwrt/openwrt/branches/openwrt-21.02/package/kernel/mt76 package/kernel/mt76
+#svn co https://github.com/openwrt/openwrt/branches/openwrt-21.02/package/kernel/mt76 package/kernel/mt76
 
 # 可道云
 #rm -rf package/lean/luci-app-kodexplorer
@@ -705,8 +708,8 @@ cp -rf $GITHUB_WORKSPACE/general/nginx feeds/packages/net/nginx
 cp -f $GITHUB_WORKSPACE/general/smartdns/Makefile feeds/packages/net/smartdns/Makefile
 
 # aliyundrive webdav
-#svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav package/aliyundrive-webdav
-#svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav package/luci-app-aliyundrive-webdav
+#svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav package/aliyundrive-webdav
+#svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav package/luci-app-aliyundrive-webdav
 
 # libpcap
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.10.1/g' package/libs/libpcap/Makefile
@@ -723,7 +726,7 @@ cp -f $GITHUB_WORKSPACE/general/smartdns/Makefile feeds/packages/net/smartdns/Ma
 
 # icu
 rm -rf feeds/packages/libs/icu
-svn export https://github.com/openwrt/packages/trunk/libs/icu feeds/packages/libs/icu
+svn co https://github.com/openwrt/packages/trunk/libs/icu feeds/packages/libs/icu
 #sed -i 's/MAJOR_VERSION:=.*/MAJOR_VERSION:=72/g' feeds/packages/libs/icu/Makefile
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=a2d2d38217092a7ed56635e34467f92f976b370e20182ad325edea6681a71d68/g' feeds/packages/libs/icu/Makefile
 
@@ -828,7 +831,7 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=83032399773901348c660d41c967530e794ab58172ccd07
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=c58ad39af0670efe6a8aee5e3a8b2331a1200418b64b7c51977fb396d4617114/g' feeds/packages/libs/gnutls/Makefile
 #sed -i 's/libzstd/zstd/g' feeds/packages/libs/gnutls/Makefile
 rm -rf feeds/packages/libs/gnutls
-svn export https://github.com/openwrt/packages/trunk/libs/gnutls feeds/packages/libs/gnutls
+svn co https://github.com/openwrt/packages/trunk/libs/gnutls feeds/packages/libs/gnutls
 
 # smartmontools
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=7.4/g' feeds/packages/utils/smartmontools/Makefile
@@ -859,7 +862,7 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=bdb77c11f72bce90214883159577fa24412013e62b2083c
 
 # verysync
 #rm -rf feeds/packages/net/verysync
-#svn export https://github.com/immortalwrt/packages/trunk/net/verysync feeds/packages/net/verysync
+#svn co https://github.com/immortalwrt/packages/trunk/net/verysync feeds/packages/net/verysync
 
 # haproxy
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.6.15/g' feeds/packages/net/haproxy/Makefile
@@ -873,7 +876,7 @@ cp -rf $GITHUB_WORKSPACE/general/perl feeds/packages/lang
 
 # zlib
 #rm -rf package/libs/zlib
-#svn export https://github.com/openwrt/openwrt/trunk/package/libs/zlib package/libs/zlib
+#svn co https://github.com/openwrt/openwrt/trunk/package/libs/zlib package/libs/zlib
 
 # tailscale
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.38.1/g' feeds/packages/net/tailscale/Makefile
@@ -886,7 +889,7 @@ cp -rf $GITHUB_WORKSPACE/general/tailscale feeds/packages/net/tailscale
 #sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' feeds/packages/lang/ruby/Makefile
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=8e22fc7304520435522253210ed0aa9a50545f8f13c959fe01a05aea06bef2f0/g' feeds/packages/lang/ruby/Makefile
 rm -rf feeds/packages/lang/ruby
-svn export https://github.com/openwrt/packages/trunk/lang/ruby feeds/packages/lang/ruby
+svn co https://github.com/openwrt/packages/trunk/lang/ruby feeds/packages/lang/ruby
 
 # libnetfilter-conntrack
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.0.9/g' package/libs/libnetfilter-conntrack/Makefile
@@ -974,29 +977,11 @@ rm -f feeds/packages/utils/ttyd/patches/090*.patch
 
 # libpfring
 rm -rf feeds/packages/libs/libpfring
-svn export https://github.com/openwrt/packages/trunk/libs/libpfring feeds/packages/libs/libpfring
+svn co https://github.com/openwrt/packages/trunk/libs/libpfring feeds/packages/libs/libpfring
 
 # alist
-svn export https://github.com/sbwml/luci-app-alist/trunk/alist package/alist
-svn export https://github.com/sbwml/luci-app-alist/trunk/luci-app-alist package/luci-app-alist
-
-
-## package refresh
-#rm -rf packages/tuic-client
-#svn export https://github.com/very20101/Openwrt_N1_try/trunk/tuic-client packages/tuic-client
-#rm -rf 	package/kernel/linux/modules/netsupport.mk
-#svn export https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/netsupport.mk package/kernel/linux/modules/netsupport.mk
-#rm -rf feeds/packages/lang/rust
-#svn export https://github.com/openwrt/packages/trunk/lang/rust feeds/packages/lang/rust
-#rm -rf package/lean/libcryptopp
-#svn export https://github.com/very20101/Openwrt_N1_try/trunk/libcryptopp package/lean/libcryptopp
-#rm -rf package/feeds/packages/ruby
-#svn export https://github.com/openwrt/packages/trunk/lang/ruby  package/feeds/packages/ruby
-#rm -rf feeds/packages/net/unbound
-#svn export https://github.com/openwrt/packages/trunk/net/unbound feeds/packages/net/unbound
-#rm -rf package/libs/openssl
-#svn export https://github.com/openwrt/openwrt/trunk/package/libs/openssl package/libs/openssl
-
+svn co https://github.com/sbwml/luci-app-alist/trunk/alist package/alist
+svn co https://github.com/sbwml/luci-app-alist/trunk/luci-app-alist package/luci-app-alist
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
