@@ -102,7 +102,7 @@ svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/pdnsd-al
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/shadowsocksr-libev package/shadowsocksr-libev
 #svn export https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/shadowsocksr-libev
 #svn export https://github.com/fw876/helloworld/trunk/lua-neturl package/lua-neturl
-svn export https://github.com/kenzok8/small-package/tree/main/lua-neturl package/lua-neturl
+svn export https://github.com/kenzok8/small-package/trunk/lua-neturl package/lua-neturl
 #svn export https://github.com/fw876/helloworld/trunk/tcping package/tcping
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/v2ray-core package/v2ray-core
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/v2ray-plugin package/v2ray-plugin
