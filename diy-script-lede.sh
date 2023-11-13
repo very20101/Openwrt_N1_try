@@ -132,7 +132,8 @@ git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-ser
 svn export https://github.com/kenzok8/small-package/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
 #svn export https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/naiveproxy package/naiveproxy
-svn export https://github.com/fw876/helloworld/trunk/redsocks2 package/redsocks2
+#svn export https://github.com/fw876/helloworld/trunk/redsocks2 package/redsocks2
+svn export https://github.com/kenzok8/small-package/trunk/redsocks2 package/redsocks2
 svn export https://github.com/rufengsuixing/luci-app-adguardhome/trunk package/luci-app-adguardhome
 svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser package/luci-app-filebrowser
 svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-ssr-mudb-server package/luci-app-ssr-mudb-server
