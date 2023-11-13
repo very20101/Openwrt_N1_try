@@ -129,7 +129,7 @@ cp -rf $GITHUB_WORKSPACE/general/gost package/gost
 #svn export https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gost package/gost
 svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
-svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
+svn export https://github.com/kenzok8/small-package/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
 #svn export https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/naiveproxy package/naiveproxy
 svn export https://github.com/fw876/helloworld/trunk/redsocks2 package/redsocks2
