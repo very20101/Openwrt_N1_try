@@ -115,10 +115,10 @@ svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/hysteria
 #svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/dns2tcp package/dns2tcp
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/sing-box package/sing-box
 
-svn export https://github.com/fw876/helloworld/trunk/shadow-tls package/shadow-tls
-svn export https://github.com/fw876/helloworld/trunk/tuic-client package/tuic-client
-svn export https://github.com/fw876/helloworld/trunk/dns2tcp package/dns2tcp
-svn export https://github.com/fw876/helloworld/trunk/v2ray-geodata package/v2ray-geodata
+svn export https://github.com/kenzok8/small-package/trunk/shadow-tls package/shadow-tls
+svn export https://github.com/kenzok8/small-package/trunk/tuic-client package/tuic-client
+svn export https://github.com/kenzok8/small-package/trunk/dns2tcp package/dns2tcp
+svn export https://github.com/kenzok8/small-package/trunk/v2ray-geodata package/v2ray-geodata
 #svn export https://github.com/fw876/helloworld/trunk/xray-core package/xray-core
 #svn export https://github.com/fw876/helloworld/trunk/xray-plugin package/xray-plugin
 svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-gost package/luci-app-gost
