@@ -303,6 +303,8 @@ jobs:
         sudo chmod +x feeds/packages/utils/dockerd/git-short-commit.sh
         echo -e "$(nproc) thread compile"
         make diffconfig
+        rm -rf feeds/packages/lang/python/python-dns
+        https://github.com/openwrt/packages/trunk/lang/python/python-dns  feeds/packages/lang/python/python-dns
         make target/compile -j$(nproc) IGNORE_ERRORS="m n" BUILD_LOG=1 || \
         yes n | make target/compile -j1 V=s IGNORE_ERRORS=1
         #make package/feeds/packages/xz/compile -j1 V=s
