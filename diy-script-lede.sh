@@ -99,9 +99,10 @@ svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/dns2socks pa
 svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/ipt2socks package/ipt2socks
 svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/microsocks package/microsocks 
 svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/pdnsd-alt package/pdnsd-alt
-#svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/shadowsocksr-libev package/shadowsocksr-libev
-svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/shadowsocksr-libev
-svn co https://github.com/fw876/helloworld/trunk/lua-neturl package/lua-neturl
+svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/shadowsocksr-libev package/shadowsocksr-libev
+#svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/shadowsocksr-libev
+#svn co https://github.com/fw876/helloworld/trunk/lua-neturl package/lua-neturl
+svn export https://github.com/kenzok8/small-package/tree/main/lua-neturl package/lua-neturl
 #svn co https://github.com/fw876/helloworld/trunk/tcping package/tcping
 svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/v2ray-core package/v2ray-core
 svn co https://github.com/xiaorouji/openwrt-passwall-packages/trunk/v2ray-plugin package/v2ray-plugin
