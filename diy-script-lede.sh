@@ -99,10 +99,11 @@ svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/dns2sock
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/ipt2socks package/ipt2socks
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/microsocks package/microsocks 
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/pdnsd-alt package/pdnsd-alt
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/shadowsocksr-libev package/shadowsocksr-libev
+#svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/shadowsocksr-libev package/shadowsocksr-libev
 #svn export https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/shadowsocksr-libev
+svn export https://github.com/fw876/helloworld/branches/main/shadowsocksr-libev package/shadowsocksr-libev
 #svn export https://github.com/fw876/helloworld/trunk/lua-neturl package/lua-neturl
-svn export https://github.com/kenzok8/small-package/trunk/lua-neturl package/lua-neturl
+svn export https://github.com/fw876/helloworld//branches/main/lua-neturl package/lua-neturl
 #svn export https://github.com/fw876/helloworld/trunk/tcping package/tcping
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/v2ray-core package/v2ray-core
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/v2ray-plugin package/v2ray-plugin
@@ -115,10 +116,10 @@ svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/hysteria
 #svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/dns2tcp package/dns2tcp
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/sing-box package/sing-box
 
-svn export https://github.com/kenzok8/small-package/trunk/shadow-tls package/shadow-tls
-svn export https://github.com/kenzok8/small-package/trunk/tuic-client package/tuic-client
-svn export https://github.com/kenzok8/small-package/trunk/dns2tcp package/dns2tcp
-svn export https://github.com/kenzok8/small-package/trunk/v2ray-geodata package/v2ray-geodata
+svn export https://github.com/fw876/helloworld/trunk/shadow-tls package/shadow-tls
+svn export https://github.com/fw876/helloworld/trunk/tuic-client package/tuic-client
+svn export https://github.com/fw876/helloworld/trunk/dns2tcp package/dns2tcp
+svn export https://github.com/fw876/helloworld/trunk/v2ray-geodata package/v2ray-geodata
 #svn export https://github.com/fw876/helloworld/trunk/xray-core package/xray-core
 #svn export https://github.com/fw876/helloworld/trunk/xray-plugin package/xray-plugin
 svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-gost package/luci-app-gost
@@ -129,11 +130,11 @@ cp -rf $GITHUB_WORKSPACE/general/gost package/gost
 #svn export https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gost package/gost
 svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
-svn export https://github.com/kenzok8/small-package/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
+#svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
+svn export https://github.com/fw876/helloworld/branches/main/luci-app-ssr-plus package/luci-app-ssr-plus
 #svn export https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
 svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/naiveproxy package/naiveproxy
-#svn export https://github.com/fw876/helloworld/trunk/redsocks2 package/redsocks2
-svn export https://github.com/kenzok8/small-package/trunk/redsocks2 package/redsocks2
+svn export https://github.com/fw876/helloworld/trunk/redsocks2 package/redsocks2
 svn export https://github.com/rufengsuixing/luci-app-adguardhome/trunk package/luci-app-adguardhome
 svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser package/luci-app-filebrowser
 svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-ssr-mudb-server package/luci-app-ssr-mudb-server
@@ -146,8 +147,10 @@ svn export https://gh.fakev.cn/kiddin9/openwrt-packages/trunk/luci-app-speederv2
 svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/luci-app-smartdns
 
 #mosdns
-#svn export https://github.com/QiuSimons/openwrt-mos/trunk/mosdns package/mosdns
-#svn export https://github.com/QiuSimons/openwrt-mos/trunk/luci-app-mosdns package/luci-app-mosdns
+rm -rf feeds/packages/net/mosdns
+rm -rf feeds/luci/applications/luci-app-mosdns
+svn export https://github.com/sbwml/luci-app-mosdns/trunk/mosdns feeds/packages/net/mosdns
+svn export https://github.com/sbwml/luci-app-mosdns/trunk/luci-app-mosdns feeds/luci/applications/luci-app-mosdns
 
 #修改bypass的makefile
 #git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
@@ -215,8 +218,8 @@ sed -i "s|s9xxx_lede|ARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
 #sed -i "s|.img.gz|..OPENWRT_SUFFIX|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 # btrfs-progs
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=6.5.2/g' feeds/packages/utils/btrfs-progs/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=c558b2ddd43f5747a2f5cb62aed3e5c5099703886485a480310fed4698d3610c/g' feeds/packages/utils/btrfs-progs/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=6.6.2/g' feeds/packages/utils/btrfs-progs/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=b426736dc94e2b04b6983e998c4dc427dc166d66ddea246c890ed9c2a450044f/g' feeds/packages/utils/btrfs-progs/Makefile
 rm -rf feeds/packages/utils/btrfs-progs/patches
 #sed -i '68i\	--disable-libudev \\' feeds/packages/utils/btrfs-progs/Makefile
 
@@ -293,8 +296,8 @@ rm -rf feeds/packages/utils/dockerd
 cp -rf $GITHUB_WORKSPACE/general/dockerd feeds/packages/utils/dockerd
 
 # docker-compose
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.23.0/g' feeds/packages/utils/docker-compose/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=805ff38df265d05c7b0c9d5df1b77e9391f7995ac5ec66bde0325b03563e7b23/g' feeds/packages/utils/docker-compose/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.23.3/g' feeds/packages/utils/docker-compose/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=29ba96c8d398fbc6f7c791c65e70b97e7df116223f2996062441093258d914fe/g' feeds/packages/utils/docker-compose/Makefile
 
 # containerd
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.5.11/g' feeds/packages/utils/containerd/Makefile
@@ -309,8 +312,8 @@ sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=ccaecfcbc907d70a7aa870a6650
 #sed -i '12d' feeds/packages/utils/runc/Makefile
 
 # bsdtar
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=3.7.1/g' feeds/packages/libs/libarchive/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=b17403ce670ff18d8e06fea05a9ea9accf70678c88f1b9392a2e29b51127895f/g' feeds/packages/libs/libarchive/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=3.7.2/g' feeds/packages/libs/libarchive/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=04357661e6717b6941682cde02ad741ae4819c67a260593dfb2431861b251acb/g' feeds/packages/libs/libarchive/Makefile
 sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' feeds/packages/libs/libarchive/Makefile
 
 # pcre
@@ -344,8 +347,8 @@ sed -i 's/PKG_MIRROR_HASH:=.*/PKG_MIRROR_HASH:=45e0c37b8e275c8d088506f953aa25b30
 # php8
 #rm -rf feeds/packages/lang/php8
 #svn export https://github.com/openwrt/packages/trunk/lang/php8 feeds/packages/lang/php8
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=8.2.11/g' feeds/packages/lang/php8/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=29af82e4f7509831490552918aad502697453f0869a579ee1b80b08f9112c5b8/g' feeds/packages/lang/php8/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=8.2.12/g' feeds/packages/lang/php8/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=e1526e400bce9f9f9f774603cfac6b72b5e8f89fa66971ebc3cc4e5964083132/g' feeds/packages/lang/php8/Makefile
 
 # python-docker
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=6.1.3/g' feeds/packages/lang/python/python-docker/Makefile
@@ -635,8 +638,8 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=eb872b4f0e1f0ebe59c9f7bd8c506c4204893ba6a8492de
 #cp -rf $GITHUB_WORKSPACE/general/nano feeds/packages/utils
 
 # dnsproxy
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=0.56.2/g' feeds/packages/net/dnsproxy/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=b20a77e88567fbcb80a07faa0f47aee7446b4d32ee7c17036fbdf07c03f05e3a/g' feeds/packages/net/dnsproxy/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=0.59.0/g' feeds/packages/net/dnsproxy/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=fe94a1113d9edd60bdad6075068c38cdfec2449a3e0d5a158ded53444aa2aae0/g' feeds/packages/net/dnsproxy/Makefile
 
 # libnl-tiny
 #sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' package/libs/libnl-tiny/Makefile
@@ -697,9 +700,9 @@ rm -rf feeds/packages/net/nginx
 cp -rf $GITHUB_WORKSPACE/general/nginx feeds/packages/net/nginx
 
 # openssl
-#sed -i 's/PKG_BUGFIX:=.*/PKG_BUGFIX:=v/g' package/libs/openssl/Makefile
-#sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' package/libs/openssl/Makefile
-#sed -i 's/PKG_HASH:=.*/PKG_HASH:=d6697e2871e77238460402e9362d47d18382b15ef9f246aba6c7bd780d38a6b0/g' package/libs/openssl/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=3.0.12/g' package/libs/openssl/Makefile
+sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' package/libs/openssl/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=f93c9e8edde5e9166119de31755fc87b4aa34863662f67ddfcba14d0b6b69b61/g' package/libs/openssl/Makefile
 
 # 修改makefile
 #find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's|include\ \.\.\/\.\.\/devel/meson/meson.mk|include \$(INCLUDE_DIR)\/meson.mk|g' {}
@@ -764,7 +767,7 @@ sed -i 's/DEPENDS:=.*/DEPENDS:=@(LINUX_5_4||LINUX_5_10) +kmod-nls-utf8/g' packag
 ##cp -f $GITHUB_WORKSPACE/general/01-export-nfs_ssc.patch target/linux/generic/backport-5.15
 #cp -f $GITHUB_WORKSPACE/general/003-add-module_supported_device-macro.patch target/linux/generic/backport-5.15
 #cp -f $GITHUB_WORKSPACE/general/crypto.mk package/kernel/linux/modules
-cp -f $GITHUB_WORKSPACE/general/netsupport.mk package/kernel/linux/modules
+#cp -f $GITHUB_WORKSPACE/general/netsupport.mk package/kernel/linux/modules
 #cp -f $GITHUB_WORKSPACE/general/netdevices.mk package/kernel/linux/modules
 #cp -f $GITHUB_WORKSPACE/general/651-rt2x00-driver-compile-with-kernel-5.15.patch package/kernel/mac80211/patches/rt2x00
 #rm -f target/linux/generic/pending-5.10/701-net-ethernet-mtk_eth_soc-add-ipv6-flow-offloading-support.patch
@@ -812,8 +815,8 @@ rm -rf feeds/packages/utils/coreutils
 cp -r $GITHUB_WORKSPACE/general/coreutils feeds/packages/utils
 
 # frp
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=0.52.1/g' feeds/packages/net/frp/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=f614142a7d87a8ff71b310041c3c5b8bc08a1813ab1dae90cc433bdeb040d30a/g' feeds/packages/net/frp/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=0.52.3/g' feeds/packages/net/frp/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=a35182a77747c22b8ee92fb9705aff21864a0d8c39e54db2549455aa92bf4de9/g' feeds/packages/net/frp/Makefile
 
 # openconnect
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=8.20/g' feeds/packages/net/openconnect/Makefile
@@ -911,11 +914,6 @@ cp -rf $GITHUB_WORKSPACE/general/util-linux package/utils
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=4.95.0/g' feeds/packages/utils/lsof/Makefile
 sed -i 's/PKG_HASH:=.*/PKG_HASH:=e9faa0fbcc48638c1d1f143e93573ac43b65e76646150f83e24bd8c18786303c/g' feeds/packages/utils/lsof/Makefile
 
-# libnetwork
-sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=05b93e0d3a95952f70c113b0bc5bdb538d7afdd7/g' feeds/packages/utils/libnetwork/Makefile
-sed -i 's/PKG_SOURCE_DATE:=.*/PKG_SOURCE_DATE:=2023-01-19/g' feeds/packages/utils/libnetwork/Makefile
-sed -i 's/PKG_MIRROR_HASH:=.*/PKG_MIRROR_HASH:=d1f590909e7e70dca3a02ce194015208291fcc28d1f13bb5c23d68194f18660f/g' feeds/packages/utils/libnetwork/Makefile
-
 # iptables
 #rm -rf package/network/utils/iptables
 #cp -rf $GITHUB_WORKSPACE/general/iptables package/network/utils
@@ -929,8 +927,8 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=9210b0113109f43be526ac5835d58a701411821a4d39e15
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=8f74213b56238c85a50a5329f77e06198771e70dd9a739779f4c02f65d971313/g' package/libs/libiconv-full/Makefile
 
 # bind
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=9.18.19/g' feeds/packages/net/bind/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=115e09c05439bebade1d272eda08fa88eb3b60129edef690588c87a4d27612cc/g' feeds/packages/net/bind/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=9.18.20/g' feeds/packages/net/bind/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=4b891ebf58d3f2a7ac3dd2682990f528a3448eaa1c992ddc5c141b8587a98ec5/g' feeds/packages/net/bind/Makefile
 sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' feeds/packages/net/bind/Makefile
 
 # libwebp
@@ -996,6 +994,13 @@ svn export https://github.com/openwrt/packages/trunk/lang/luajit2 feeds/packages
 # ymal
 rm -rf feeds/packages/libs/yaml
 svn export https://github.com/openwrt/packages/trunk/libs/yaml feeds/packages/libs/yaml
+
+# v2raya
+svn export https://github.com/v2rayA/v2raya-openwrt/trunk/v2raya package/v2raya
+svn export https://github.com/v2rayA/v2raya-openwrt/trunk/luci-app-v2raya package/luci-app-v2raya
+
+# helloworld
+svn export https://github.com/fw876/helloworld/branches/main package/helloworld
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
