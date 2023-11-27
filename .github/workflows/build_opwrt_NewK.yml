@@ -155,6 +155,8 @@ jobs:
         svn export https://github.com/openwrt/packages/trunk/lang/ruby  package/feeds/packages/ruby
         rm -rf feeds/packages/net/unbound
         svn export https://github.com/openwrt/packages/trunk/net/unbound feeds/packages/net/unbound
+        rm -rf feeds/small8/shadowsocks-rust
+        svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/shadowsocks-rust feeds/small8/shadowsocks-rust
         echo -e "$(nproc) thread compile"
         make defconfig
         make -j$(nproc) || make -j1 || make -j1 V=s
