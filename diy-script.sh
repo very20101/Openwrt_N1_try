@@ -50,17 +50,17 @@ rm -rf package/small-package/firewall4
 
 ## package refresh
 rm -rf packages/tuic-client
-svn export https://github.com/very20101/Openwrt_N1_try/trunk/tuic-client packages/tuic-client
+merge_package https://github.com/very20101/Openwrt_N1_try/trunk/tuic-client packages/tuic-client
 rm -rf 	package/kernel/linux/modules/netsupport.mk
-svn export https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/netsupport.mk package/kernel/linux/modules/netsupport.mk
+merge_package https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/netsupport.mk package/kernel/linux/modules/netsupport.mk
 rm -rf feeds/packages/lang/rust
-svn export https://github.com/openwrt/packages/trunk/lang/rust feeds/packages/lang/rust
+merge_package https://github.com/openwrt/packages/trunk/lang/rust feeds/packages/lang/rust
 rm -rf package/lean/libcryptopp
-svn export https://github.com/very20101/Openwrt_N1_try/trunk/libcryptopp package/lean/libcryptopp
+merge_package https://github.com/very20101/Openwrt_N1_try/trunk/libcryptopp package/lean/libcryptopp
 rm -rf package/feeds/packages/ruby
-svn export https://github.com/openwrt/packages/trunk/lang/ruby  package/feeds/packages/ruby
+merge_package https://github.com/openwrt/packages/trunk/lang/ruby  package/feeds/packages/ruby
 rm -rf feeds/packages/net/unbound
-svn export https://github.com/openwrt/packages/tree/master/net/unbound feeds/packages/net/unbound
+merge_package https://github.com/openwrt/packages/tree/master/net/unbound feeds/packages/net/unbound
 
 
 ./scripts/feeds update -a
