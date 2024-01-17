@@ -59,6 +59,20 @@ git clone https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git pac
 git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-theme-opentomcat
 git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme-opentopd
 
+# modify extra package
+rm -rf feeds/packages/lang/rust
+merge_package https://github.com/openwrt/packages/lang/rust feeds/packages/lang/rust
+rm -rf package/lean/libcryptopp
+merge_package https://github.com/very20101/Openwrt_N1_try/libcryptopp package/lean/libcryptopp
+rm -rf package/feeds/packages/ruby
+merge_package https://github.com/openwrt/packages/lang/ruby  package/feeds/packages/ruby
+rm -rf feeds/packages/net/unbound
+merge_package https://github.com/openwrt/packages/net/unbound feeds/packages/net/unbound
+rm -rf feeds/small8/shadowsocks-rust
+merge_package https://github.com/xiaorouji/openwrt-passwall-packages/shadowsocks-rust feeds/small8/shadowsocks-rust
+
+./scripts/feeds update -a
+./scripts/feeds install -a
 
 echo "========================="
 echo " DIY2 配置完成……"
