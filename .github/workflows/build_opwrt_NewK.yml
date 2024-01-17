@@ -148,15 +148,15 @@ jobs:
         #rm -rf 	package/kernel/linux/modules/netsupport.mk
         #svn export https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/netsupport.mk package/kernel/linux/modules/netsupport.mk
         rm -rf feeds/packages/lang/rust
-        merge_package https://github.com/openwrt/packages/trunk/lang/rust feeds/packages/lang/rust
+        git_sparse_clone master https://github.com/openwrt/packages/lang/rust feeds/packages/lang/rust
         rm -rf package/lean/libcryptopp
-        merge_package https://github.com/very20101/Openwrt_N1_try/trunk/libcryptopp package/lean/libcryptopp
+        git_sparse_clone main https://github.com/very20101/Openwrt_N1_try/libcryptopp package/lean/libcryptopp
         rm -rf package/feeds/packages/ruby
-        merge_package https://github.com/openwrt/packages/trunk/lang/ruby  package/feeds/packages/ruby
+        git_sparse_clone master https://github.com/openwrt/packages/lang/ruby  package/feeds/packages/ruby
         rm -rf feeds/packages/net/unbound
-        merge_package https://github.com/openwrt/packages/trunk/net/unbound feeds/packages/net/unbound
+        git_sparse_clone master https://github.com/openwrt/packages/net/unbound feeds/packages/net/unbound
         rm -rf feeds/small8/shadowsocks-rust
-        merge_package https://github.com/xiaorouji/openwrt-passwall-packages/trunk/shadowsocks-rust feeds/small8/shadowsocks-rust
+        git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages/shadowsocks-rust feeds/small8/shadowsocks-rust
         echo -e "$(nproc) thread compile"
         make defconfig
         make -j$(nproc) || make -j1 || make -j1 V=s
