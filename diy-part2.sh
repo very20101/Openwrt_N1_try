@@ -45,3 +45,6 @@ rm -rf package/custom; mkdir package/custom
 #sagernet-core
   #sed -i 's|$(LN) v2ray $(1)/usr/bin/xray|#$(LN) v2ray $(1)/usr/bin/xray|g' feeds/small8/sagernet-core/Makefile
   #sed -i 's|CONFLICTS:=v2ray-core xray-core|#CONFLICTS:=v2ray-core xray-core|g' feeds/small8/sagernet-core/Makefile
+
+echo "========================="
+echo " DIY2 配置完成……"
