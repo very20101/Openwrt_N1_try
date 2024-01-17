@@ -1013,5 +1013,9 @@ git_sparse_clone main https://github.com/v2rayA/v2raya-openwrt/luci-app-v2raya p
 # helloworld
 git_sparse_clone master https://github.com/fw876/helloworld/branches/main package/helloworld
 
+# ruby
+rm -rf package/feeds/packages/ruby
+git_sparse_clone master https://github.com/openwrt/packages/lang/ruby package/feeds/packages/ruby
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
