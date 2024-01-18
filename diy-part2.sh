@@ -51,7 +51,7 @@ rm -rf package/custom; mkdir package/custom
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 #echo  'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
 #echo  'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
- echo  'src-git small8 https://github.com/kenzok8/small-package' >>feeds.conf.default
+#echo  'src-git small8 https://github.com/kenzok8/small-package' >>feeds.conf.default
 
 # themes
 git clone https://github.com/rosywrt/luci-theme-rosy/tree/openwrt-18.06/luci-theme-rosy.git package/luci-theme-rosy
@@ -68,8 +68,8 @@ rm -rf package/feeds/packages/ruby
 merge_package https://github.com/openwrt/packages/lang/ruby  package/feeds/packages/ruby
 rm -rf feeds/packages/net/unbound
 merge_package https://github.com/openwrt/packages/net/unbound feeds/packages/net/unbound
-rm -rf feeds/small8/shadowsocks-rust
-merge_package https://github.com/xiaorouji/openwrt-passwall-packages/shadowsocks-rust feeds/small8/shadowsocks-rust
+#rm -rf feeds/small8/shadowsocks-rust
+#merge_package https://github.com/xiaorouji/openwrt-passwall-packages/shadowsocks-rust feeds/small8/shadowsocks-rust
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
