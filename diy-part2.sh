@@ -69,8 +69,8 @@ rm -rf package/feeds/packages/ruby
 merge_package https://github.com/openwrt/packages/lang/ruby  package/feeds/packages/ruby
 rm -rf feeds/packages/net/unbound
 merge_package https://github.com/openwrt/packages/net/unbound feeds/packages/net/unbound
-#rm -rf feeds/small8/shadowsocks-rust
-#merge_package https://github.com/xiaorouji/openwrt-passwall-packages/shadowsocks-rust feeds/small8/shadowsocks-rust
+rm -rf feeds/small8/shadowsocks-rust
+merge_package https://github.com/xiaorouji/openwrt-passwall-packages/shadowsocks-rust feeds/small8/shadowsocks-rust
 rm -rf package/feeds/packages/xfsprogs
 merge_package https://github.com/openwrt/packages/utils/xfsprogs package/feeds/packages/xfsprogs
 
