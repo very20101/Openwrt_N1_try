@@ -6,35 +6,11 @@
 # See /LICENSE for more information.
 #
 # https://github.com/P3TERX/Actions-OpenWrt
-# code from https://github.com/breakings/openwrt
+# Code from https://github.com/breakings/openwrt
+# Code from https://github.com/haiibo/openwrt
 # File name: diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
-
-echo "开始 DIY2 配置……"
-echo "========================="
-
-function merge_package(){
-    repo=`echo $1 | rev | cut -d'/' -f 1 | rev`
-    pkg=`echo $2 | rev | cut -d'/' -f 1 | rev`
-    # find package/ -follow -name $pkg -not -path "package/custom/*" | xargs -rt rm -rf
-    git clone --depth=1 --single-branch $1
-    mv $2 package/custom/
-    rm -rf $repo
-}
-function drop_package(){
-    find package/ -follow -name $1 -not -path "package/custom/*" | xargs -rt rm -rf
-}
-function merge_feed(){
-    if [ ! -d "feed/$1" ]; then
-        echo >> feeds.conf.default
-        echo "src-git $1 $2" >> feeds.conf.default
-    fi
-    ./scripts/feeds update $1
-    ./scripts/feeds install -a -p $1
-}
-rm -rf package/custom; mkdir package/custom
-
 
 # Modify default IP
   sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_generate
@@ -45,6 +21,16 @@ rm -rf package/custom; mkdir package/custom
 #sagernet-core
   #sed -i 's|$(LN) v2ray $(1)/usr/bin/xray|#$(LN) v2ray $(1)/usr/bin/xray|g' feeds/small8/sagernet-core/Makefile
   #sed -i 's|CONFLICTS:=v2ray-core xray-core|#CONFLICTS:=v2ray-core xray-core|g' feeds/small8/sagernet-core/Makefile
+
+# Git稀疏克隆，只克隆指定目录到本地
+function git_sparse_clone() {
+  branch="$1" repourl="$2" && shift 2
+  git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
+  repodir=$(echo $repourl | awk -F '/' '{print $(NF)}')
+  cd $repodir && git sparse-checkout set $@
+  mv -f $@ ../package
+  cd .. && rm -rf $repodir
+}
 
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
@@ -62,20 +48,17 @@ git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme
 
 # modify extra package
 rm -rf feeds/packages/lang/rust
-merge_package https://github.com/openwrt/packages/lang/rust feeds/packages/lang/rust
+git_sparse_clone master https://github.com/openwrt/packages/lang/rust package/lang/rust
 rm -rf package/lean/libcryptopp
-merge_package https://github.com/very20101/Openwrt_N1_try/libcryptopp package/lean/libcryptopp
+git_sparse_clone main https://github.com/very20101/Openwrt_N1_try/libcryptopp package/libcryptopp
 rm -rf package/feeds/packages/ruby
-merge_package https://github.com/openwrt/packages/lang/ruby  package/feeds/packages/ruby
+git_sparse_clone master https://github.com/openwrt/packages/lang/ruby  package/ruby
 rm -rf feeds/packages/net/unbound
-merge_package https://github.com/openwrt/packages/net/unbound feeds/packages/net/unbound
+git_sparse_clone master https://github.com/openwrt/packages/net/unbound package/unbound
 rm -rf feeds/small8/shadowsocks-rust
-merge_package https://github.com/xiaorouji/openwrt-passwall-packages/shadowsocks-rust feeds/small8/shadowsocks-rust
+git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages/shadowsocks-rust package/shadowsocks-rust
 rm -rf package/feeds/packages/xfsprogs
-merge_package https://github.com/openwrt/packages/utils/xfsprogs package/feeds/packages/xfsprogs
+git_sparse_clone master https://github.com/openwrt/packages/utils/xfsprogs package/xfsprogs
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
-
-echo "========================="
-echo " DIY2 配置完成……"
