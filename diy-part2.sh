@@ -58,7 +58,7 @@ git_sparse_clone master https://github.com/openwrt/packages/net/unbound package/
 rm -rf feeds/small8/shadowsocks-rust
 git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages/shadowsocks-rust package/shadowsocks-rust
 rm -rf package/feeds/packages/xfsprogs
-git_sparse_clone master https://github.com/openwrt/packages/utils/xfsprogs package/xfsprogs
+git_sparse_clone main https://github.com/very20101/Openwrt_N1_try/upload/xfsprogs package/xfsprogs
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
