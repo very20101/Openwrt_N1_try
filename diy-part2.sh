@@ -72,7 +72,7 @@ merge_package https://github.com/openwrt/packages packages/net/unbound
 rm -rf feeds/small8/shadowsocks-rust
 merge_package https://github.com/xiaorouji/openwrt-passwall-packages openwrt-passwall-packages/shadowsocks-rust
 rm -rf package/feeds/packages/xfsprogs
-merge_package merge_package https://github.com/openwrt/packages packages/utils/xfsprogs
+merge_package https://github.com/openwrt/packages packages/utils/xfsprogs
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
