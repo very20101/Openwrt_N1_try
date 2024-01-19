@@ -62,17 +62,17 @@ git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme
 
 # modify extra package
 rm -rf feeds/packages/lang/rust
-merge_package https://github.com/openwrt/packages/lang/rust package/rust
+merge_package https://github.com/openwrt/packages packages/lang/rust
 rm -rf package/lean/libcryptopp
-merge_package https://github.com/very20101/Openwrt_N1_try/libcryptopp package/libcryptopp
+merge_package https://github.com/very20101/Openwrt_N1_try package/libcryptopp
 rm -rf package/feeds/packages/ruby
-merge_package https://github.com/openwrt/packages/lang/ruby  package/ruby
+merge_package https://github.com/openwrt/packages  packages/lang/ruby
 rm -rf feeds/packages/net/unbound
-merge_package https://github.com/openwrt/packages/net/unbound package/unbound
+merge_package https://github.com/openwrt/packages packages/net/unbound
 rm -rf feeds/small8/shadowsocks-rust
-merge_package https://github.com/xiaorouji/openwrt-passwall-packages/shadowsocks-rust package/shadowsocks-rust
+merge_package https://github.com/xiaorouji/openwrt-passwall-packages openwrt-passwall-packages/shadowsocks-rust
 rm -rf package/feeds/packages/xfsprogs
-merge_package https://github.com/very20101/Openwrt_N1_try/upload/xfsprogs package/xfsprogs
+merge_package merge_package https://github.com/openwrt/packages packages/utils/xfsprogs
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
