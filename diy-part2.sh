@@ -48,7 +48,7 @@ git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme
 
 # modify extra package
 rm -rf feeds/packages/lang/rust
-git_sparse_clone master https://github.com/openwrt/packages/lang/rust package/lang/rust
+git_sparse_clone master https://github.com/openwrt/packages/lang/rust package/rust
 rm -rf package/lean/libcryptopp
 git_sparse_clone main https://github.com/very20101/Openwrt_N1_try/libcryptopp package/libcryptopp
 rm -rf package/feeds/packages/ruby
