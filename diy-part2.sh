@@ -28,7 +28,7 @@ echo "========================="
 function merge_package(){
     repo=`echo $1 | rev | cut -d'/' -f 1 | rev`
     pkg=`echo $2 | rev | cut -d'/' -f 1 | rev`
-    # find package/ -follow -name $pkg -not -path "package/custom/*" | xargs -rt rm -rf
+    find package/ -follow -name $pkg -not -path "package/custom/*" | xargs -rt rm -rf
     git clone --depth=1 --single-branch $1
     mv $2 package/custom/
     rm -rf $repo
@@ -64,7 +64,7 @@ git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme
 rm -rf feeds/packages/lang/rust
 merge_package https://github.com/openwrt/packages packages/lang/rust
 rm -rf package/lean/libcryptopp
-merge_package https://github.com/very20101/Openwrt_N1_try package/libcryptopp
+merge_package https://github.com/very20101/Openwrt_N1_try/libcryptopp packages/libcryptopp
 rm -rf package/feeds/packages/ruby
 merge_package https://github.com/openwrt/packages  packages/lang/ruby
 rm -rf feeds/packages/net/unbound
