@@ -65,8 +65,8 @@ rm -rf feeds/packages/lang/rust
 merge_package https://github.com/openwrt/packages packages/lang/rust
 rm -rf package/lean/libcryptopp
 merge_package https://github.com/very20101/Openwrt_N1_try Openwrt_N1_try/libcryptopp
-rm -rf package/feeds/packages/ruby
-merge_package https://github.com/openwrt/packages  packages/lang/ruby
+#rm -rf package/feeds/packages/ruby
+#merge_package https://github.com/openwrt/packages  packages/lang/ruby
 rm -rf feeds/packages/net/unbound
 merge_package https://github.com/openwrt/packages packages/net/unbound
 rm -rf feeds/small8/shadowsocks-rust
