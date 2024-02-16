@@ -70,7 +70,8 @@ merge_package https://github.com/very20101/Openwrt_N1_try Openwrt_N1_try/libcryp
 rm -rf feeds/packages/net/unbound
 merge_package https://github.com/openwrt/packages packages/net/unbound
 rm -rf feeds/small8/shadowsocks-rust
-merge_package https://github.com/xiaorouji/openwrt-passwall-packages openwrt-passwall-packages/shadowsocks-rust
+merge_package https://github.com/very20101/Openwrt_N1_try/general general/shadowsocks-rust
+#merge_package https://github.com/xiaorouji/openwrt-passwall-packages openwrt-passwall-packages/shadowsocks-rust
 #rm -rf package/feeds/packages/xfsprogs
 #merge_package https://github.com/openwrt/packages packages/utils/xfsprogs
 sed -i 's/TARGET_CFLAGS += -DHAVE_MAP_SYNC/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_LARGEFILE64_SOURCE/' feeds/packages/utils/xfsprogs/Makefile
