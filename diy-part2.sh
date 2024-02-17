@@ -69,7 +69,7 @@ merge_package https://github.com/very20101/Openwrt_N1_try Openwrt_N1_try/libcryp
 #merge_package https://github.com/openwrt/packages  packages/lang/ruby
 rm -rf feeds/packages/net/unbound
 merge_package https://github.com/openwrt/packages packages/net/unbound
-rm -rf feeds/small8/shadowsocks-rust
+rm -rf feeds/smpackage/shadowsocks-rust
 merge_package https://github.com/very20101/Openwrt_N1_try/general general/shadowsocks-rust
 #merge_package https://github.com/xiaorouji/openwrt-passwall-packages openwrt-passwall-packages/shadowsocks-rust
 #rm -rf package/feeds/packages/xfsprogs
