@@ -1073,6 +1073,11 @@ cp -rf $GITHUB_WORKSPACE/general/sing-box package/sing-box
 # v2dat
 sed -i '/CGO_ENABLED=0/{N;d;}' feeds/packages/utils/v2dat/Makefile
 
+# golang 
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
