@@ -76,6 +76,10 @@ merge_package https://github.com/very20101/Openwrt_N1_try/general general/shadow
 #merge_package https://github.com/openwrt/packages packages/utils/xfsprogs
 sed -i 's/TARGET_CFLAGS += -DHAVE_MAP_SYNC/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_LARGEFILE64_SOURCE/' feeds/packages/utils/xfsprogs/Makefile
 
+# golang 
+  rm -rf feeds/packages/lang/golang
+  git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
