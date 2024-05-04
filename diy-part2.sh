@@ -81,7 +81,7 @@ sed -i 's/TARGET_CFLAGS += -DHAVE_MAP_SYNC/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_L
   git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
 ./scripts/feeds update -a
-./scripts/feeds install -a
+./scripts/feeds install -f
 
 echo "============================"
 echo " DIY 配置完成……"
