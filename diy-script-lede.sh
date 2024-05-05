@@ -1138,7 +1138,7 @@ curl -so files/root/.bashrc https://raw.githubusercontent.com/sbwml/r4s_build_sc
 cp -fv $GITHUB_WORKSPACE/PATCH/001-elf.h-add-typedefs-for-Elf-_Relr.patch toolchain/musl/patches
 
 ./scripts/feeds update -a
-./scripts/feeds install -a
+./scripts/feeds install -f
 
 echo "========================="
 echo " DIY 配置完成……"
