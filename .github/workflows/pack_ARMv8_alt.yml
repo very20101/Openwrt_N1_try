@@ -41,7 +41,7 @@ jobs:
         echo "DATE1=$(date +"%Y.%m.%d")" >> $GITHUB_ENV
           
     - name: Package Armvirt as OpenWrt
-      uses: ophub/amlogic-s9xxx-openwrt@main
+      uses: ophub/flippy-openwrt-actions@main
       with:
         openwrt_path: openwrt/*rootfs.tar.gz
         openwrt_board: s905d
