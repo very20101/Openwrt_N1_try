@@ -39,14 +39,6 @@ jobs:
         echo "status=success" >> $GITHUB_OUTPUT
         echo "DATE=$(date +"%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "DATE1=$(date +"%Y.%m.%d")" >> $GITHUB_ENV
-          
-    - name: Package Armvirt as OpenWrt
-      uses: ophub/flippy-openwrt-actions@main
-      with:
-        openwrt_path: openwrt/*rootfs.tar.gz
-        openwrt_board: s905d
-        openwrt_kernel: 5.15.120_6.1.38
-        #GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Package Armvirt as OpenWrt
       if: (!cancelled())
