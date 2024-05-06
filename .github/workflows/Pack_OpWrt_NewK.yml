@@ -10,8 +10,8 @@ on:
   repository_dispatch:
   workflow_dispatch:
   
-  schedule:
-    - cron: 10 18 */2 * *
+  #schedule:
+    #- cron: 10 18 */2 * *
   
 env:
    
