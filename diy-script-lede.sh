@@ -32,6 +32,10 @@ sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_gener
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
+# kernel
+  #sed -i "s/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g" target/linux/armvirt/Makefile
+  sed -i "s/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=6.1/g" target/linux/armvirt/Makefile
+
 echo "开始 DIY 配置……"
 echo "========================="
 
