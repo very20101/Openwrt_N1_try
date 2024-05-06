@@ -46,7 +46,7 @@ jobs:
         openwrt_path: openwrt/*rootfs.tar.gz
         openwrt_board: s905d
         openwrt_kernel: 5.15.120_6.1.38
-        gh_token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
 
 
     - name: Upload OpenWrt To Release
