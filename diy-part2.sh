@@ -61,16 +61,16 @@ git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-th
 git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme-opentopd
 
 # modify extra package
-rm -rf feeds/packages/lang/rust
-merge_package https://github.com/openwrt/packages packages/lang/rust
-rm -rf package/lean/libcryptopp
-merge_package https://github.com/very20101/Openwrt_N1_try Openwrt_N1_try/libcryptopp
+#rm -rf feeds/packages/lang/rust
+#merge_package https://github.com/openwrt/packages packages/lang/rust
+#rm -rf package/lean/libcryptopp
+#merge_package https://github.com/very20101/Openwrt_N1_try Openwrt_N1_try/libcryptopp
 #rm -rf package/feeds/packages/ruby
 #merge_package https://github.com/openwrt/packages  packages/lang/ruby
-rm -rf feeds/packages/net/unbound
-merge_package https://github.com/openwrt/packages packages/net/unbound
-rm -rf feeds/smpackage/shadowsocks-rust
-merge_package https://github.com/very20101/Openwrt_N1_try/general general/shadowsocks-rust
+#rm -rf feeds/packages/net/unbound
+#merge_package https://github.com/openwrt/packages packages/net/unbound
+#rm -rf feeds/smpackage/shadowsocks-rust
+#merge_package https://github.com/very20101/Openwrt_N1_try/general general/shadowsocks-rust
 #merge_package https://github.com/xiaorouji/openwrt-passwall-packages openwrt-passwall-packages/shadowsocks-rust
 #rm -rf package/feeds/packages/xfsprogs
 #merge_package https://github.com/openwrt/packages packages/utils/xfsprogs
