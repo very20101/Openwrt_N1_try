@@ -4,7 +4,7 @@
 # Code modified from https://github.com/quanjindeng/Actions_OpenWrt-Amlogic
 #========================================================================================================================
 
-name: Pack_ARMv8_full
+name: Pack_ARMv8_huge
 
 on:
   repository_dispatch:
@@ -56,9 +56,10 @@ jobs:
       uses: ophub/amlogic-s9xxx-openwrt@main
       with:
         openwrt_path: openwrt/*rootfs.tar.gz
-        openwrt_board: s905d
-        openwrt_kernel: 5.15.150_6.1.60
-        token: ${{ secrets.GITHUB_TOKEN }}
+        build_target: kernel
+        kernel_version: 5.15.150_6.1.60
+        kernel_auto: true
+        kernel_sign: very20101
 
 
     - name: Upload OpenWrt To Release
