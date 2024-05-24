@@ -36,9 +36,9 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-  FILE_NAME: OpenWrt-NewK
-  PRODUCT_NAME: OpenWrt-NewK
-  OPENWRT_TAG: OpenWrt-NewK
+  FILE_NAME: OpenWrt-NovaK
+  PRODUCT_NAME: OpenWrt-NovaK
+  OPENWRT_TAG: OpenWrt-NovaK
   
 jobs:
   build:
