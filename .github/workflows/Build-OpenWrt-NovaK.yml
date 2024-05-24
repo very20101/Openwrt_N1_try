@@ -22,7 +22,7 @@ on:
         default: 'false'
         
   schedule:
-    - cron: 10 12 */2 * *
+    - cron: 10 15 */2 * *
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -162,7 +162,7 @@ jobs:
       uses: ncipollo/release-action@main
       if: ${{ steps.compile.outputs.status }} == 'success' && !cancelled()
       with:
-        name: openwrt_NewK
+        name: openwrt_Novak
         tag: ${{ env.OPENWRT_TAG }}
         makeLatest: true
         replacesArtifacts: true
