@@ -4,7 +4,7 @@
 # Code modified from https://github.com/quanjindeng/Actions_OpenWrt-Amlogic
 #========================================================================================================================
 
-name: Pack_ARMv8_alt
+name: Pack_ARMv8_NovaK
 
 on:
   repository_dispatch:
