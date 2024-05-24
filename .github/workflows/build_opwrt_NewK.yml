@@ -25,8 +25,8 @@ on:
     - cron: 10 12 */2 * *
 
 env:
-  #REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  #REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: small.feeds.conf.default
   CONFIG_FILE: .confign1try0619
