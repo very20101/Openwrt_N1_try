@@ -14,7 +14,7 @@ on:
     - cron: 40 18 */2 * *
 env:
    
-  OPENWRT_TAG: ARMv8_alt
+  OPENWRT_TAG: ARMv8_Alt
   TZ: Asia/Shanghai 
     
 jobs:
@@ -68,7 +68,7 @@ jobs:
     - name: Upload OpenWrt To Release
       uses: ncipollo/release-action@v1
       with:
-        name: ARMv8_alt
+        name: ARMv8_Alt
         allowUpdates: true
         removeArtifacts: true
         tag: ${{ env.OPENWRT_TAG }}
