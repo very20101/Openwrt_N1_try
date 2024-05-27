@@ -344,7 +344,6 @@ cp -rf $GITHUB_WORKSPACE/general/docker feeds/packages/utils/docker
 #sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' feeds/packages/utils/dockerd/Makefile
 rm -rf feeds/packages/utils/dockerd
 cp -rf $GITHUB_WORKSPACE/general/dockerd feeds/packages/utils/dockerd
-sudo chmod +x feeds/packages/utils/dockerd/git-short-commit.sh
 
 # docker-compose
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.27.0/g' feeds/packages/utils/docker-compose/Makefile
@@ -546,9 +545,9 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=a8df96034aae6d2d50a4ebe8216326c61c3eb6483677650
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=02e111d1dc6a50abb8eed6bf31c3e48ed8b0830d1ea2a1b78c61765c2513fdd8/g' feeds/packages/lang/python/python-distro/Makefile
 
 # python-dateutil
-#sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.8.2/g' feeds/packages/lang/python/python-dateutil/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.9.0/g' feeds/packages/lang/python/python-dateutil/Makefile
 #sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' feeds/packages/lang/python/python-dateutil/Makefile
-#sed -i 's/PKG_HASH:=.*/PKG_HASH:=0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86/g' feeds/packages/lang/python/python-dateutil/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=78e73e19c63f5b20ffa567001531680d939dc042bf7850431877645523c66709/g' feeds/packages/lang/python/python-dateutil/Makefile
 
 # python-requests
 #rm -rf feeds/packages/lang/python/python-requests/patches
@@ -574,8 +573,8 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=7454eb6935db17c6655576c2e1b0fabefd38b4d0936e0f8
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=507eb7b8d1015fbec5b935f34ebed15bf346bed04a11ab82b8eee848c4205aea/g' feeds/packages/libs/libev/Makefile
 
 # zerotier
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.12.2/g' feeds/packages/net/zerotier/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=7c6512cfc208374ea9dc9931110e35f71800c34890e0f35991ea485aae66e31c/g' feeds/packages/net/zerotier/Makefile
+#sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.12.2/g' feeds/packages/net/zerotier/Makefile
+#sed -i 's/PKG_HASH:=.*/PKG_HASH:=7c6512cfc208374ea9dc9931110e35f71800c34890e0f35991ea485aae66e31c/g' feeds/packages/net/zerotier/Makefile
 #rm -rf feeds/packages/net/zerotier
 #cp -rf $GITHUB_WORKSPACE/general/zerotier feeds/packages/net
 
@@ -690,11 +689,12 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=eb872b4f0e1f0ebe59c9f7bd8c506c4204893ba6a8492de
 # nano
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=7.2/g' feeds/packages/utils/nano/Makefile
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=86f3442768bd2873cec693f83cdf80b4b444ad3cc14760b74361474fc87a4526/g' feeds/packages/utils/nano/Makefile
-#cp -rf $GITHUB_WORKSPACE/general/nano feeds/packages/utils
+rm -rf feeds/packages/utils/nano
+cp -rf $GITHUB_WORKSPACE/general/nano feeds/packages/utils
 
 # dnsproxy
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=0.71.0/g' feeds/packages/net/dnsproxy/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=a3b604974ccd4dd7ae7c22fe53e9b49bae9ca7e2130d9b07446bce1fd1de4519/g' feeds/packages/net/dnsproxy/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=0.71.1/g' feeds/packages/net/dnsproxy/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=9c55c83ce3521c5197293a7618ed3ff103d236344aabf73ba37055e3964d2087/g' feeds/packages/net/dnsproxy/Makefile
 
 # libnl-tiny
 #sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' package/libs/libnl-tiny/Makefile
@@ -937,10 +937,10 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=cc740c6bbea104398cc3e466befc515a25896ec85e44a66
 #svn co https://github.com/immortalwrt/packages/trunk/net/verysync feeds/packages/net/verysync
 
 # haproxy
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.8.7/g' feeds/packages/net/haproxy/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.8.9/g' feeds/packages/net/haproxy/Makefile
 sed -i 's/PKG_RELEASE:=.*/PKG_RELEASE:=1/g' feeds/packages/net/haproxy/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=0d1a61161789c8ec50662955deffba50ab4ebe7efc6c0d947ff570ee7098e7f8/g' feeds/packages/net/haproxy/Makefile
-sed -i 's/BASE_TAG:=.*/BASE_TAG=v2.8.7/g' feeds/packages/net/haproxy/get-latest-patches.sh
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=7a821478f36f847607f51a51e80f4f890c37af4811d60438e7f63783f67592ff/g' feeds/packages/net/haproxy/Makefile
+sed -i 's/BASE_TAG:=.*/BASE_TAG=v2.8.9/g' feeds/packages/net/haproxy/get-latest-patches.sh
 sed -i 's|PKG_SOURCE_URL:=.*|PKG_SOURCE_URL:=https://www.haproxy.org/download/2.8/src|g' feeds/packages/net/haproxy/Makefile
 
 # perl
