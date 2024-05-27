@@ -9,7 +9,7 @@
 # Original Code from https://github.com/ophub/amlogic-s9xxx-openwrt
 #
 
-name: Build-ARMv8-MiniNK
+name: Build-Opwrt-MiniNK
 
 on:
   repository_dispatch:
@@ -36,9 +36,9 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-  FILE_NAME: ARMv8-MiniNK
-  PRODUCT_NAME: ARMv8-MiniNK
-  OPENWRT_TAG: ARMv8-MiniNK
+  FILE_NAME: Opwrt-MiniNK
+  PRODUCT_NAME: Opwrt-MiniNK
+  OPENWRT_TAG: Opwrt-MiniNK
   
 jobs:
   build:
@@ -150,7 +150,7 @@ jobs:
       uses: ncipollo/release-action@main
       if: ${{ steps.compile.outputs.status }} == 'success' && !cancelled()
       with:
-        name: openwrt_Novak
+        name: Opwrt-MiniNK
         tag: ${{ env.OPENWRT_TAG }}
         makeLatest: true
         replacesArtifacts: true
