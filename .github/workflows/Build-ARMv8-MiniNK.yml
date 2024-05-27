@@ -9,7 +9,7 @@
 # Original Code from https://github.com/ophub/amlogic-s9xxx-openwrt
 #
 
-name: Build-ARMv8-Novak
+name: Build-ARMv8-MiniNK
 
 on:
   repository_dispatch:
@@ -36,9 +36,9 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-  FILE_NAME: ARMv8-NovaK
-  PRODUCT_NAME: ARMv8-NovaK
-  OPENWRT_TAG: ARMv8-NovaK
+  FILE_NAME: ARMv8-MiniNK
+  PRODUCT_NAME: ARMv8-MiniNK
+  OPENWRT_TAG: ARMv8-MiniNK
   
 jobs:
   build:
