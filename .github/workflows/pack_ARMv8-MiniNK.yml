@@ -14,7 +14,7 @@ on:
     - cron: 40 8 */2 * *
 env:
    
-  OPENWRT_TAG: ARMv8_NovaK
+  OPENWRT_TAG: ARMv8_MiniNK
   TZ: Asia/Shanghai 
     
 jobs:
