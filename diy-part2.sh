@@ -88,9 +88,6 @@ sed -i 's/TARGET_CFLAGS += -DHAVE_MAP_SYNC/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_L
 
 #rm -rf package/op-N1_try
 
-## extra package
-git clone https://github.com/kenzok8/small-package smpackage
-
 ./scripts/feeds update -a
 ./scripts/feeds install -f
 
