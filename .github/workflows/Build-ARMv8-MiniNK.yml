@@ -35,7 +35,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
-  TZ: Asia/Shanghai
+  TZ: US/Eastern
   FILE_NAME: Opwrt-MiniNK
   PRODUCT_NAME: Opwrt-MiniNK
   OPENWRT_TAG: Opwrt-MiniNK
