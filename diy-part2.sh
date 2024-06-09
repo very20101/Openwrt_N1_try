@@ -82,11 +82,14 @@ sed -i 's/TARGET_CFLAGS += -DHAVE_MAP_SYNC/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_L
   rm -rf feeds/packages/lang/golang
   git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
-## extra package luci-app-turboacc  
+##luci-app-turboacc  
 #git clone -b main https://github.com/very20101/Openwrt_N1_try package/op-N1_try
 #mv package/op-N1_try/package_extra/shortcut-fe package/shortcut-fe
 
 #rm -rf package/op-N1_try
+
+## extra package
+git clone https://github.com/kenzok8/small-package smpackage
 
 ./scripts/feeds update -a
 ./scripts/feeds install -f
