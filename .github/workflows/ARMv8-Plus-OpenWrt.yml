@@ -29,7 +29,7 @@ env:
   FIRMWARE_TAG: ROOTFS_multi
   OPENWRT_RELEASE: true
   OPENWRT_TAG: ARMv8_multi
-  TZ: Asia/Shanghai
+  TZ: Asia/Chongqing
 
 jobs:
   Build:
