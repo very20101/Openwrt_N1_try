@@ -35,7 +35,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
-  TZ: Asia/Shanghai
+  TZ: US/Eastern
   FILE_NAME: OpenWrt-NewK
   PRODUCT_NAME: OpenWrt-NewK
   OPENWRT_TAG: OpenWrt-NewK
