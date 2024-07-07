@@ -1159,6 +1159,7 @@ mv package/openwrt_N1_try//extra_pack/python-installer feeds/packages/lang/pytho
 mv package/openwrt_N1_try//extra_pack/python-build feeds/packages/lang/python/python-build
 mv package/openwrt_N1_try//extra_pack/python-packaging feeds/packages/lang/python/python-packaging
 mv package/openwrt_N1_try//extra_pack/python-typing-extensions feeds/packages/lang/python/python-typing-extensions
+mv package/openwrt_N1_try//extra_pack/python3-host-build.mk feeds/packages/lang/python/python3-host-build.mk
 
 rm -rf package/openwrt_N1_try
 
