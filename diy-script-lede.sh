@@ -1148,18 +1148,18 @@ rm -rf feeds/packages/lang/python/python-setuptools-scm feeds/packages/lang/pyth
 rm -rf feeds/packages/lang/python/python-wheel feeds/packages/lang/python/python-installer \
 feeds/packages/lang/python/python-build feeds/packages/lang/python/python-packaging feeds/packages/lang/python/python-typing-extensions
 git clone https://github.com/very20101/openwrt_N1_try/ package/openwrt_N1_try
-mv package/openwrt_N1_try//perl feeds/packages/lang/perl-xml-parser
-mv package/openwrt_N1_try//extra_pack/python-bidict feeds/packages/lang/python/python-bidict
-mv package/openwrt_N1_try//extra_pack/hostapd package/network/services/hostapd
-mv package/openwrt_N1_try//extra_pack/python-setuptools-scm feeds/packages/lang/python/python-setuptools-scm
-mv package/openwrt_N1_try//extra_pack/python-dateutil feeds/packages/lang/python/python-dateutil
+mv package/openwrt_N1_try/perl feeds/packages/lang/perl-xml-parser
+mv package/openwrt_N1_try/extra_pack/python-bidict feeds/packages/lang/python/python-bidict
+mv package/openwrt_N1_try/extra_pack/hostapd package/network/services/hostapd
+mv package/openwrt_N1_try/extra_pack/python-setuptools-scm feeds/packages/lang/python/python-setuptools-scm
+mv package/openwrt_N1_try/extra_pack/python-dateutil feeds/packages/lang/python/python-dateutil
 
-mv package/openwrt_N1_try//extra_pack/python-wheel feeds/packages/lang/python/python-wheel
-mv package/openwrt_N1_try//extra_pack/python-installer feeds/packages/lang/python/python-installer
-mv package/openwrt_N1_try//extra_pack/python-build feeds/packages/lang/python/python-build
-mv package/openwrt_N1_try//extra_pack/python-packaging feeds/packages/lang/python/python-packaging
-mv package/openwrt_N1_try//extra_pack/python-typing-extensions feeds/packages/lang/python/python-typing-extensions
-mv package/openwrt_N1_try//extra_pack/python3-host-build.mk feeds/packages/lang/python/python3-host-build.mk
+mv package/openwrt_N1_try/extra_pack/python-wheel feeds/packages/lang/python/python-wheel
+mv package/openwrt_N1_try/extra_pack/python-installer feeds/packages/lang/python/python-installer
+mv package/openwrt_N1_try/extra_pack/python-build feeds/packages/lang/python/python-build
+mv package/openwrt_N1_try/extra_pack/python-packaging feeds/packages/lang/python/python-packaging
+mv package/openwrt_N1_try/extra_pack/python-typing-extensions feeds/packages/lang/python/python-typing-extensions
+mv package/openwrt_N1_try/extra_pack/python3-host-build.mk feeds/packages/lang/python/python3-host-build.mk
 
 rm -rf package/openwrt_N1_try
 
