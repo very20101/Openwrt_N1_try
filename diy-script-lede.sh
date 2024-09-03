@@ -1148,7 +1148,7 @@ rm -rf feeds/packages/lang/python/python-setuptools-scm feeds/packages/lang/pyth
 rm -rf feeds/packages/lang/python/python-wheel feeds/packages/lang/python/python-installer \
 feeds/packages/lang/python/python-build feeds/packages/lang/python/python-packaging feeds/packages/lang/python/python-typing-extensions
 git clone https://github.com/very20101/openwrt_N1_try/ package/openwrt_N1_try
-mv package/openwrt_N1_try/perl feeds/packages/lang/perl-xml-parser
+mv package/openwrt_N1_try/extra_pack/perl-xml-parse feeds/packages/lang/perl-xml-parser
 mv package/openwrt_N1_try/extra_pack/python-bidict feeds/packages/lang/python/python-bidict
 mv package/openwrt_N1_try/extra_pack/hostapd package/network/services/hostapd
 mv package/openwrt_N1_try/extra_pack/python-setuptools-scm feeds/packages/lang/python/python-setuptools-scm
