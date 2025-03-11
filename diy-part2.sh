@@ -79,8 +79,8 @@ sed -i 's/TARGET_CFLAGS += -DHAVE_MAP_SYNC/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_L
 # golang 
   #rm -rf feeds/packages/lang/golang
   #git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-  rm -rf feeds/packages/lang/golang
-  git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+ # rm -rf feeds/packages/lang/golang
+ # git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
 ##luci-app-turboacc  
 #git clone -b main https://github.com/very20101/Openwrt_N1_try package/op-N1_try
