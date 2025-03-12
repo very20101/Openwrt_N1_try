@@ -34,7 +34,6 @@ env:
 jobs:
   Build:
     runs-on: ubuntu-22.04
-
     outputs:
       COMMIT_AUTHOR: ${{ steps.clone.outputs.COMMIT_AUTHOR }}
       COMMIT_DATE: ${{ steps.clone.outputs.COMMIT_DATE }}
