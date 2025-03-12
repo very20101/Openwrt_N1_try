@@ -59,10 +59,10 @@ jobs:
         OPENWRT_ARMVIRT: https://github.com/very20101/Openwrt_N1_try/releases/download/OpenWrt-NovaK/openwrt-armvirt-64-generic-rootfs.tar.gz
         PACKAGE_SOC: s905d
         WHOAMI: very20101
-        KERNEL_VERSION_NAME: 5.15.160_6.1.100_6.6.62
+        KERNEL_REPO_URL: https://github.com/ophub/kernel/tree/main/pub/stable
+        KERNEL_VERSION_NAME: 5.15.160_6.1.80_6.6.30
         KERNEL_AUTO_LATEST: true
-        GZIP_IMGS: .gz
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DISTRIB_REVISION: R${{ env.DATE1 }} by very20101
 
 
     - name: Upload OpenWrt To Release
