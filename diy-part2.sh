@@ -13,7 +13,7 @@
 #
 
 # Modify default IP
-  sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_generate
+  sed -i 's/192.168.1.1/192.168.1.200/g' package/base-files/files/bin/config_generate
 # kernel
   #sed -i "s/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g" target/linux/armvirt/Makefile
   #sed -i "s/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=5.15/g" target/linux/armvirt/Makefile
