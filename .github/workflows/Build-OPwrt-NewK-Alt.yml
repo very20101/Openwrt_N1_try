@@ -9,7 +9,7 @@
 # Original Code from https://github.com/ophub/amlogic-s9xxx-openwrt
 #
 
-name: Build-OpenWrt-NewK
+name: Build-OpenWrt-NewK-Alt
 
 on:
   repository_dispatch:
@@ -36,9 +36,9 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: US/Eastern
-  FILE_NAME: OpenWrt-NewK
-  PRODUCT_NAME: OpenWrt-NewK
-  OPENWRT_TAG: OpenWrt-NewK
+  FILE_NAME: OpenWrt-NewK-Alt
+  PRODUCT_NAME: OpenWrt-NewK_Alt
+  OPENWRT_TAG: OpenWrt-NewK-Alt
   
 jobs:
   build:
