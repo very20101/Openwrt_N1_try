@@ -135,6 +135,7 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
+        rm -rf package/feeds/routing/batman-adv package/feeds/routing/batctl
         
     - name: Compile the firmware
       id: compile
