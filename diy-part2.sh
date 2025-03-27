@@ -86,7 +86,11 @@ sed -i 's/TARGET_CFLAGS += -DHAVE_MAP_SYNC/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_L
 #git clone -b main https://github.com/very20101/Openwrt_N1_try package/op-N1_try
 #mv package/op-N1_try/package_extra/shortcut-fe package/shortcut-fe
 
-#rm -rf package/op-N1_try
+##luci-app-diskman
+git clone -b main https://github.com/very20101/Openwrt_N1_try package/op-N1_try
+mv package/op-N1_try/package_extra/luci-app-diskman package/luci-app-diskman
+
+rm -rf package/op-N1_try
 
 ./scripts/feeds update -a
 ./scripts/feeds install -f
