@@ -70,7 +70,9 @@ jobs:
         sudo -E apt-get -y update
         sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
         sudo -E apt-get -y install $(curl -fsSL https://tinyurl.com/ubuntu2204-make-openwrt)
-        sudo -E apt-get -y install flit python3-installer clang llvm lld
+        sudo -E apt-get -y install clang llvm lld
+        sudo apt-get install -y python3-pip
+        pip install flit-core build installer
         sudo -E systemctl daemon-reload
         #sudo -E apt-get -y full-upgrade
         sudo -E apt-get -y autoremove --purge
@@ -164,6 +166,7 @@ jobs:
       id: compile
       run: |
         cd $OPENWRT_PATH
+        make tools/zlib/clean
         mkdir -p files/etc/uci-defaults
         cp $GITHUB_WORKSPACE/scripts/init-settings.sh files/etc/uci-defaults/99-init-settings
         chmod +x feeds/packages/utils/dockerd/git-short-commit.sh
