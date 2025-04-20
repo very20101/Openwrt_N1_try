@@ -1161,6 +1161,12 @@ mv package/openwrt_N1_try/extra_pack/python-packaging feeds/packages/lang/python
 mv package/openwrt_N1_try/extra_pack/python-typing-extensions feeds/packages/lang/python/python-typing-extensions
 mv package/openwrt_N1_try/extra_pack/python3-host-build.mk feeds/packages/lang/python/python3-host-build.mk
 
+## zlib dl error 
+rm -rf tools/zlib/Makefile
+mv package/openwrt_N1_try/patch/Makefile-zlib tools/zlib/Makefile
+
+##
+
 rm -rf package/openwrt_N1_try
 
 ./scripts/feeds update -a
