@@ -138,11 +138,13 @@ jobs:
         rm -rf package/feeds/routing/batman-adv package/feeds/routing/batctl
       
     - name: Clean up workspace before build
-      run: rm -rf build_dir staging_dir tmp
+      run: |
+           rm -rf build_dir staging_dir tmp
            df -h
           
     - name: Increase disk space
-      run: sudo mount -o remount,size=20G /tmp || echo "Disk space adjustment not supported" 
+      run: |
+           sudo mount -o remount,size=20G /tmp || echo "Disk space adjustment not supported" 
            df -h
         
     - name: Compile the firmware
