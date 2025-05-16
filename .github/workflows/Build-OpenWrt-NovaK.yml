@@ -47,7 +47,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@main
+      uses: actions/checkout@v3
       
     - name: Check server configuration
       run: |
@@ -104,7 +104,7 @@ jobs:
         echo "useVersionInfo=$useVersionInfo" >> $GITHUB_ENV
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "DATE1=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
-       
+
     - name: Load custom feeds
       run: |
           [[ -e "${FEEDS_CONF}" ]] && cp -f ${FEEDS_CONF} openwrt/feeds.conf.default
@@ -118,6 +118,14 @@ jobs:
     - name: Install feeds
       run: cd openwrt/ && ./scripts/feeds install -a
 
+      
+    - name: Clean up disk space
+      run: sudo rm -rf /workdir/temp/*
+
+    - name: Fix repository URLs
+      run: |
+        sed -i 's|https://github.com/rosywrt/luci-theme-rosy/tree/openwrt-18.06/luci-theme-rosy.git/|https://github.com/rosywrt/luci-theme-rosy.git|' path/to/config/file
+       
     - name: Load custom configuration
       run: |
           [[ -d "files" ]] && mv -f files openwrt/files
