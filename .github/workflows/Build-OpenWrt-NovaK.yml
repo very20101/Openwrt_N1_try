@@ -122,10 +122,6 @@ jobs:
     - name: Clean up disk space
       run: sudo rm -rf /workdir/temp/*
 
-    - name: Fix repository URLs
-      run: |
-        sed -i 's|https://github.com/rosywrt/luci-theme-rosy/tree/openwrt-18.06/luci-theme-rosy.git/|https://github.com/rosywrt/luci-theme-rosy.git|' path/to/config/file
-       
     - name: Load custom configuration
       run: |
           [[ -d "files" ]] && mv -f files openwrt/files
