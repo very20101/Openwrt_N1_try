@@ -86,7 +86,9 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        #docker rmi -a ubuntu
+        if [ -n "$IMAGE_NAME" ]; then
+        docker rmi "$IMAGE_NAME" || true
+        fi
         #docker rmi --force image
         #docker rmi $(docker images -q)
         sudo rm -rf /usr/share/dotnet /etc/apt/sources.list.d /usr/local/lib/android $AGENT_TOOLSDIRECTORY
