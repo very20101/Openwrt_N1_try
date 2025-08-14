@@ -85,7 +85,9 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        docker rmi -a ubuntu
+        if [ -n "$IMAGE_NAME" ]; then
+        docker rmi "$IMAGE_NAME" || true
+        fi
         #docker rmi $(docker images -q) 2>/dev/null
         [[ -n "${AGENT_TOOLSDIRECTORY}" ]] && sudo rm -rf "${AGENT_TOOLSDIRECTORY}"
         sudo rm -rf /usr/share/dotnet /etc/apt/sources.list.d /usr/local/lib/android 2>/dev/null
