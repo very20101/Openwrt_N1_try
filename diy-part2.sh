@@ -13,7 +13,7 @@
 #
 
 # Modify default IP
-  sed -i 's/192.168.1.1/192.168.1.200/g' package/base-files/files/bin/config_generate
+  sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_generate
 # kernel
   #sed -i "s/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g" target/linux/armvirt/Makefile
   #sed -i "s/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=5.15/g" target/linux/armvirt/Makefile
@@ -53,7 +53,7 @@ git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme
 #merge_package https://github.com/xiaorouji/openwrt-passwall-packages openwrt-passwall-packages/shadowsocks-rust
 #rm -rf package/feeds/packages/xfsprogs
 #merge_package https://github.com/openwrt/packages packages/utils/xfsprogs
-sed -i 's/TARGET_CFLAGS += -DHAVE_MAP_SYNC/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_LARGEFILE64_SOURCE/' feeds/packages/utils/xfsprogs/Makefile
+#sed -i 's/TARGET_CFLAGS += -DHAVE_MAP_SYNC/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_LARGEFILE64_SOURCE/' feeds/packages/utils/xfsprogs/Makefile
 
 # golang 
   #rm -rf feeds/packages/lang/golang
