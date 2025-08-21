@@ -66,15 +66,15 @@ sed -i 's/TARGET_CFLAGS += -DHAVE_MAP_SYNC/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_L
 #mv package/op-N1_try/package_extra/shortcut-fe package/shortcut-fe
 
 ##luci-app-diskman
-git clone -b main https://github.com/very20101/Openwrt_N1_try package/op-N1_try
-mv package/op-N1_try/package_extra/luci-app-diskman package/luci-app-diskman
+git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
+#mv package/op-N1_try/package_extra/luci-app-diskman package/luci-app-diskman
 
 ##luci-app-adblock
 rm -rf feeds/packages/net/adblock feeds/luci/applications/luci-app-adblock
-cp -rf package/op-N1_try/package_extra/adblock feeds/packages/net/adblock
-cp -rf package/op-N1_try/package_extra/luci-app-adblock feeds/luci/applications/luci-app-adblock
+cp -rf package/openwrt_N1_testpackage_extra/adblock feeds/packages/net/adblock
+cp -rf package/openwrt_N1_test/package_extra/luci-app-adblock feeds/luci/applications/luci-app-adblock
 
-rm -rf package/op-N1_try
+rm -rf package/openwrt_N1_test
 
 ./scripts/feeds update -a
 ./scripts/feeds install -f
