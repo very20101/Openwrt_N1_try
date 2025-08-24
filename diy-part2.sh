@@ -71,10 +71,15 @@ git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
 
 ##luci-app-adblock
 rm -rf feeds/packages/net/adblock feeds/luci/applications/luci-app-adblock
-cp -rf package/openwrt_N1_testpackage_extra/adblock feeds/packages/net/adblock
+cp -rf package/openwrt_N1_test/package_extra/adblock feeds/packages/net/adblock
+rm -rf feeds/luci/applications/luci-app-adblock
 cp -rf package/openwrt_N1_test/package_extra/luci-app-adblock feeds/luci/applications/luci-app-adblock
+rm -rf feeds/packages/net/miniupnpc
+cp -rf package/openwrt_N1_test/extra_pack/miniupnpc feeds/packages/net/miniupnpc
+rm -rf feeds/packages/net/miniupnpd
+cp -rf package/openwrt_N1_test/extra_pack/miniupnpc feeds/packages/net/miniupnpd
 
-rm -rf package/openwrt_N1_test
+#rm -rf package/openwrt_N1_test
 
 ./scripts/feeds update -a
 ./scripts/feeds install -f
