@@ -166,6 +166,7 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
+        ssh-keygen -t rsa -b 2048 -f /workdir/openwrt/public-key.pem
         cd openwrt
         echo -e "$(nproc) thread compile"
         make defconfig
