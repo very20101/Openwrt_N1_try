@@ -167,7 +167,7 @@ jobs:
       id: compile
       run: |
         openssl genpkey -algorithm RSA -out /workdir/openwrt/key-build -pkeyopt rsa_keygen_bits:2048
-        chmod 600 /workdir/openwrt/key-build
+        chmod 755 /workdir/openwrt/key-build
         openssl pkey -in /workdir/openwrt/key-build -pubout -out /workdir/openwrt/public-key.pem
         cd openwrt
         echo -e "$(nproc) thread compile"
