@@ -79,9 +79,9 @@ cp -rf package/openwrt_N1_test/extra_pack/miniupnpc feeds/packages/net/miniupnpc
 rm -rf feeds/packages/net/miniupnpd
 cp -rf package/openwrt_N1_test/extra_pack/miniupnpd feeds/packages/net/miniupnpd
 
-#rm -rf package/openwrt_N1_test
+rm -rf package/openwrt_N1_test
 
-rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
+#rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 
 ./scripts/feeds update -a
 ./scripts/feeds install -f
