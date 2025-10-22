@@ -77,7 +77,7 @@ cp -rf package/openwrt_N1_test/extra_pack/luci-app-adblock feeds/luci/applicatio
 rm -rf feeds/packages/net/miniupnpc
 cp -rf package/openwrt_N1_test/extra_pack/miniupnpc feeds/packages/net/miniupnpc
 rm -rf feeds/packages/net/miniupnpd
-cp -rf package/openwrt_N1_test/extra_pack/miniupnpc feeds/packages/net/miniupnpd
+cp -rf package/openwrt_N1_test/extra_pack/miniupnpd feeds/packages/net/miniupnpd
 
 #rm -rf package/openwrt_N1_test
 
