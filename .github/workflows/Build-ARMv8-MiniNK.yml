@@ -167,7 +167,8 @@ jobs:
       id: compile
       run: |
         ssh-keygen -t rsa -b 2048 -f /workdir/openwrt/public-key.pem
-        #chmod 755 /workdir/openwrt/key-build
+        ls -la /workdir/openwrt/key-build stat /workdir/openwrt/key-build
+        chmod 755 /workdir/openwrt/key-build
         cd openwrt
         echo -e "$(nproc) thread compile"
         make defconfig
