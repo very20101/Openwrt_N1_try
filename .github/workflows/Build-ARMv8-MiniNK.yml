@@ -171,6 +171,9 @@ jobs:
         openssl pkey -in /workdir/openwrt/key-build -pubout -out /workdir/openwrt/public-key.pem
         openssl pkey -pubin -in /workdir/openwrt/public-key.pem -text -noout
         cd openwrt
+        make clean
+        #make dirclean
+        make defconfig clean
         echo -e "$(nproc) thread compile"
         make defconfig
         rm -rf package/feeds/packages/sing-box
