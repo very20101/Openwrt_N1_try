@@ -166,11 +166,11 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
+        #openssl genpkey -algorithm RSA -out /workdir/openwrt/key-build -pkeyopt rsa_keygen_bits:2048
+        #sudo chmod 755 /workdir/openwrt/key-build
+        #openssl pkey -in /workdir/openwrt/key-build -pubout -out /workdir/openwrt/public-key.pem
+        #openssl pkey -pubin -in /workdir/openwrt/public-key.pem -text -noout
         cd openwrt
-        openssl genpkey -algorithm RSA -out key-build -pkeyopt rsa_keygen_bits:2048
-        sudo chmod 755 key-build
-        openssl pkey -in key-build -pubout -out public-key.pem
-        openssl pkey -pubin -in public-key.pem -text -noout
         echo -e "$(nproc) thread compile"
         make defconfig
         rm -rf package/feeds/packages/sing-box
