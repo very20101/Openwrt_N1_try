@@ -132,8 +132,8 @@ jobs:
           ${GITHUB_WORKSPACE}/${DIY_P1_SH}
           
     - name: Update feeds
-      run: cd openwrt/ && make distclean && ./scripts/feeds update -af
-
+      run: cd openwrt/ && make clean && make distclean && ./scripts/feeds update -af
+          
     - name: Install feeds
       run: cd openwrt/ && ./scripts/feeds install -af
 
