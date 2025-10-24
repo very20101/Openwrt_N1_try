@@ -132,10 +132,10 @@ jobs:
           ${GITHUB_WORKSPACE}/${DIY_P1_SH}
           
     - name: Update feeds
-      run: cd openwrt/ && ./scripts/feeds update -a
+      run: cd openwrt/ && make distclean && ./scripts/feeds update -af
 
     - name: Install feeds
-      run: cd openwrt/ && ./scripts/feeds install -a
+      run: cd openwrt/ && ./scripts/feeds install -af
 
     - name: Load custom configuration
       run: |
@@ -166,9 +166,9 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
-        openssl genpkey -algorithm RSA -out /workdir/openwrt/key-build -pkeyopt rsa_keygen_bits:2048
-        chmod 755 /workdir/openwrt/key-build
-        openssl pkey -in /workdir/openwrt/key-build -pubout -out /workdir/openwrt/public-key.pem
+        #openssl genpkey -algorithm RSA -out /workdir/openwrt/key-build -pkeyopt rsa_keygen_bits:2048
+        #chmod 755 /workdir/openwrt/key-build
+        #openssl pkey -in /workdir/openwrt/key-build -pubout -out /workdir/openwrt/public-key.pem
         #openssl pkey -pubin -in /workdir/openwrt/public-key.pem -text -noout
         cd openwrt
         make clean
