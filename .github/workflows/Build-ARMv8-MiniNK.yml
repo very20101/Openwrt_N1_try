@@ -155,9 +155,9 @@ jobs:
         find dl -size -1024c -exec rm -f {} \;
         rm -rf package/feeds/routing/batman-adv package/feeds/routing/batctl
       
-    - name: Clean up workspace before build
-      run: |
-           rm -rf build_dir staging_dir tmp
+   # - name: Clean up workspace before build
+    #  run: |
+    #       rm -rf build_dir staging_dir tmp
           
     - name: Increase disk space
       run: |
@@ -166,9 +166,9 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
-        #openssl genpkey -algorithm RSA -out /workdir/openwrt/key-build -pkeyopt rsa_keygen_bits:2048
-        #chmod 755 /workdir/openwrt/key-build
-        #openssl pkey -in /workdir/openwrt/key-build -pubout -out /workdir/openwrt/public-key.pem
+        openssl genpkey -algorithm RSA -out /workdir/openwrt/key-build -pkeyopt rsa_keygen_bits:2048
+        chmod 755 /workdir/openwrt/key-build
+        openssl pkey -in /workdir/openwrt/key-build -pubout -out /workdir/openwrt/public-key.pem
         #openssl pkey -pubin -in /workdir/openwrt/public-key.pem -text -noout
         cd openwrt
         make clean
