@@ -85,7 +85,7 @@ cp -rf package/openwrt_N1_test/extra_pack/openwrt-keyring package/system/openwrt
 rm -rf package/base-files/Makefile
 cp -rf package/openwrt_N1_test/extra_pack/base-files_Makefile package/base-files/Makefile
 
-rm -rf package/openwrt_N1_test
+#rm -rf package/openwrt_N1_test
 
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 
