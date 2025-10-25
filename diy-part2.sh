@@ -79,6 +79,10 @@ cp -rf package/openwrt_N1_test/extra_pack/miniupnpc feeds/packages/net/miniupnpc
 rm -rf feeds/packages/net/miniupnpd
 cp -rf package/openwrt_N1_test/extra_pack/miniupnpd feeds/packages/net/miniupnpd
 
+## package/system/openwrt-keyring
+rm -rf package/system/openwrt-keyring
+cp -rf package/openwrt_N1_test/extra_pack/openwrt-keyring package/system/openwrt-keyring
+
 rm -rf package/openwrt_N1_test
 
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
