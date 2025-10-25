@@ -170,9 +170,11 @@ jobs:
         #chmod 755 /workdir/openwrt/key-build
         #openssl pkey -in /workdir/openwrt/key-build -pubout -out /workdir/openwrt/public-key.pem
         #openssl pkey -pubin -in /workdir/openwrt/public-key.pem -text -noout
-        cd openwrt
+        cd openwrt/
         make clean
         #make dirclean
+        openssl genrsa -out private.key 2048
+        openssl rsa -in private.pem -pubout -out public-key.pem
         make defconfig clean
         echo -e "$(nproc) thread compile"
         make defconfig
