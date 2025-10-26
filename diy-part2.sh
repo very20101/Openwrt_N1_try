@@ -80,10 +80,10 @@ rm -rf feeds/packages/net/miniupnpd
 cp -rf package/openwrt_N1_test/extra_pack/miniupnpd feeds/packages/net/miniupnpd
 
 ## package/system/openwrt-keyring
-rm -rf package/system/openwrt-keyring
-cp -rf package/openwrt_N1_test/extra_pack/openwrt-keyring package/system/openwrt-keyring
-rm -rf package/base-files/Makefile
-cp -rf package/openwrt_N1_test/extra_pack/base-files_Makefile package/base-files/Makefile
+#rm -rf package/system/openwrt-keyring
+#cp -rf package/openwrt_N1_test/extra_pack/openwrt-keyring package/system/openwrt-keyring
+#rm -rf package/base-files/Makefile
+#cp -rf package/openwrt_N1_test/extra_pack/base-files_Makefile package/base-files/Makefile
 
 #rm -rf package/openwrt_N1_test
 
