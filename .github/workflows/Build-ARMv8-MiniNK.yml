@@ -133,6 +133,9 @@ jobs:
           
     - name: Update feeds
       run: cd openwrt/ &&  make distclean && ./scripts/feeds update -a
+
+    - name : create a local signing key
+       run cd openwrt/ && ./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
           
     - name: Install feeds
       run: cd openwrt/ && ./scripts/feeds install -af
@@ -157,7 +160,8 @@ jobs:
       
     - name: Clean up workspace before build
       run: |
-           rm -rf build_dir staging_dir tmp
+           #rm -rf build_dir staging_dir tmp
+           rm -rf build_dir tmp
           
     - name: Increase disk space
       run: |
@@ -172,7 +176,6 @@ jobs:
         #openssl pkey -pubin -in /workdir/openwrt/public-key.pem -text -noout
         cd openwrt/
         #cp -rf package/openwrt_N1_test/extra_pack/public.pem public-key.pem 
-        ./scripts/feeds install base-files
         make clean
         #make dirclean
         make defconfig clean
