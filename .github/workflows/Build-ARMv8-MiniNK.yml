@@ -133,9 +133,6 @@ jobs:
           
     - name: Update feeds
       run: cd openwrt/ &&  make distclean && ./scripts/feeds update -a
-
-    - name : create a local signing key
-       run cd openwrt/ && ./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
           
     - name: Install feeds
       run: cd openwrt/ && ./scripts/feeds install -af
