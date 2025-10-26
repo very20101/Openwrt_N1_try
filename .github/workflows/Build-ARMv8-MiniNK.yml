@@ -171,7 +171,7 @@ jobs:
         #openssl pkey -in /workdir/openwrt/key-build -pubout -out /workdir/openwrt/public-key.pem
         #openssl pkey -pubin -in /workdir/openwrt/public-key.pem -text -noout
         cd openwrt/
-        #cp -rf package/openwrt_N1_test/extra_pack/public-key.pem public-key.pem 
+        cp -rf package/openwrt_N1_test/extra_pack/public.pem public-key.pem 
         ./scripts/feeds install base-files
         make clean
         #make dirclean
