@@ -168,8 +168,7 @@ jobs:
       id: compile
       run: |
         cd openwrt/
-        #cp -rf package/openwrt_N1_test/extra_pack/public.pem public-key.pem 
-        #./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
+        
         make clean
         #make dirclean
         make defconfig clean
