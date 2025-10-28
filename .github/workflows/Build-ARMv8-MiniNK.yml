@@ -166,12 +166,8 @@ jobs:
         
     - name: Build host tools 
       run: |
-        git clone https://github.com/openwrt/usign.git
-        cd usign
-        mkdir build
-        cmake ..
-        make
-        sudo make install
+        make package/system/usign/compile V=s
+        make package/system/usign/install
          
     - name: Setup signing keys  
       run: |  
