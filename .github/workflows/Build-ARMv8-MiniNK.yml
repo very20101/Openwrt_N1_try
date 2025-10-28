@@ -167,8 +167,7 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
-        cd openwrt/
-        openssl req -x509 -newkey rsa:2048 -keyout private.key -out public-key.pem -days 365 -nodes  
+        cd openwrt/  
         make clean
         #make dirclean
         make defconfig clean
