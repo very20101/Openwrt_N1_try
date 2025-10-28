@@ -167,8 +167,8 @@ jobs:
     - name: Build host tools  
       run: |  
          cd /workdir/openwrt  
-         make tools/usign/compile -j$(nproc)  
-         make tools/usign/install  
+         make tools/install -j$(nproc)
+         make toolchain/install -j$(nproc) 
          
     - name: Setup signing keys  
       run: |  
