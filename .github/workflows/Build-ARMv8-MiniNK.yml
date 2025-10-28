@@ -180,7 +180,7 @@ jobs:
       run: |  
         cd /workdir/openwrt  
         # Generate usign keys for package signing  
-        .usr/local/bin/usign -G -s key-build -p key-build.pub -c "OpenWrt Build Key"  
+        /usr/local/bin/usign -G -s key-build -p key-build.pub -c "OpenWrt Build Key"  
         openssl genrsa -out private-key.pem 2048
         openssl rsa -in private-key.pem -pubout -out public-key.pem
        
