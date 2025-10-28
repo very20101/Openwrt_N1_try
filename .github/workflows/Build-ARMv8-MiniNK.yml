@@ -166,6 +166,9 @@ jobs:
         
     - name: Build usign 
       run: |
+        make tools/install
+        make toolchain/install
+        make package/base-files/compile V=s
         make package/system/usign/compile V=s
         make package/system/usign/install
          
