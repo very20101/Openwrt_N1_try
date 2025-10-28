@@ -164,6 +164,11 @@ jobs:
       run: |
            sudo mount -o remount,size=20G /tmp || echo "Disk space adjustment not supported" 
         
+    - name: Build host tools  
+      run: |  
+         cd /workdir/openwrt  
+         make tools/install -j$(nproc)  
+         
     - name: Setup signing keys  
       run: |  
         cd /workdir/openwrt  
