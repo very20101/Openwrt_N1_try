@@ -164,18 +164,20 @@ jobs:
       run: |
            sudo mount -o remount,size=20G /tmp || echo "Disk space adjustment not supported" 
         
-    - name: Build host tools  
-      run: |  
-         cd /workdir/openwrt  
-         make -j1 V=s package/system/usign/install 
-         #make tools/install -j$(nproc)
-         #make toolchain/install -j$(nproc) 
+    - name: Build host tools 
+      run: |
+        git clone https://github.com/openwrt/usign.git
+        cd usign
+        mkdir build
+        cmake ..
+        make
+        sudo make install
          
     - name: Setup signing keys  
       run: |  
         cd /workdir/openwrt  
         # Generate usign keys for package signing  
-        staging_dir/host/bin/usign -G -s key-build -p key-build.pub -c "OpenWrt Build Key"  
+        /usr/local/bin/usign -G -s key-build -p key-build.pub -c "OpenWrt Build Key"  
         openssl genrsa -out private-key.pem 2048
         openssl rsa -in private-key.pem -pubout -out public-key.pem
        
