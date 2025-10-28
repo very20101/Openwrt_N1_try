@@ -155,10 +155,10 @@ jobs:
         find dl -size -1024c -exec rm -f {} \;
         rm -rf package/feeds/routing/batman-adv package/feeds/routing/batctl
       
-    - name: Clean up workspace before build
-      run: |
+    #- name: Clean up workspace before build
+      #run: |
            #rm -rf build_dir staging_dir tmp
-           rm -rf build_dir tmp
+           #rm -rf build_dir tmp
           
     - name: Increase disk space
       run: |
