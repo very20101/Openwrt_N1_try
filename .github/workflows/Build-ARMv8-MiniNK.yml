@@ -166,11 +166,12 @@ jobs:
         
     - name: Setup signing keys  
       run: |  
-          cp ${{ github.workspace }}/keys/key-build /workdir/openwrt/  
-          cp ${{ github.workspace }}/keys/key-build.pub /workdir/openwrt/  
-          cp ${{ github.workspace }}/keys/private-key.pem /workdir/openwrt/  
-          cp ${{ github.workspace }}/keys/public-key.pem /workdir/openwrt/
-          
+        cd /workdir/openwrt  
+        # Generate usign keys for package signing  
+        staging_dir/host/bin/usign -G -s key-build -p key-build.pub -c "OpenWrt Build Key"  
+        openssl genrsa -out private-key.pem 2048
+        openssl rsa -in private-key.pem -pubout -out public-key.pem
+       
     - name: Compile the firmware
       id: compile
       run: |
