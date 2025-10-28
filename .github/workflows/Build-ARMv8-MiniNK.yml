@@ -164,7 +164,7 @@ jobs:
       run: |
            sudo mount -o remount,size=20G /tmp || echo "Disk space adjustment not supported" 
         
-    - name: Build host tools 
+    - name: Build usign 
       run: |
         make package/system/usign/compile V=s
         make package/system/usign/install
