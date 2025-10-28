@@ -94,10 +94,3 @@ rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftabl
 
 echo "============================"
 echo " DIY 配置完成……"
-
-## usign
-git clone https://github.com/openwrt/usign.git
-mkdir build
-cmake ..
-make
-sudo make install
