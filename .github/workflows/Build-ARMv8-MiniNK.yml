@@ -164,6 +164,13 @@ jobs:
       run: |
            sudo mount -o remount,size=20G /tmp || echo "Disk space adjustment not supported" 
         
+    - name: Setup signing keys  
+      run: |  
+          cp ${{ github.workspace }}/keys/key-build /workdir/openwrt/  
+          cp ${{ github.workspace }}/keys/key-build.pub /workdir/openwrt/  
+          cp ${{ github.workspace }}/keys/private-key.pem /workdir/openwrt/  
+          cp ${{ github.workspace }}/keys/public-key.pem /workdir/openwrt/
+          
     - name: Compile the firmware
       id: compile
       run: |
