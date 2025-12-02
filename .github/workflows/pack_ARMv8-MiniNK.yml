@@ -54,9 +54,9 @@ jobs:
         
     - name: Package Armvirt as OpenWrt
       if: (!cancelled())
-      uses: ophub/flippy-openwrt-actions@main
+      #uses: ophub/flippy-openwrt-actions@main
+      uses: unifreq/openwrt_packit@master
       env:
-        SCRIPT_REPO_URL: unifreq/openwrt_packit
         OPENWRT_ARMVIRT: https://github.com/very20101/Openwrt_N1_try/releases/download/Opwrt-MiniNK/openwrt-armsr-armv8-generic-rootfs.tar.gz
         PACKAGE_SOC: s905d
         WHOAMI: very20101
