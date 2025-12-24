@@ -101,7 +101,6 @@ jobs:
         sudo -E apt-get -y update
         sudo apt-get upgrade -y
         sudo -E apt-get -y install clang rename cmake
-        cmake --version
         sudo -E apt-get -y install $(curl -fsSL https://raw.githubusercontent.com/very20101/Openwrt_retry/refs/heads/main/refs/ubuntu2204-update)
         sudo -E systemctl daemon-reload
         sudo -E apt-get -y autoremove --purge
@@ -111,6 +110,7 @@ jobs:
         sudo chown $USER:$GROUPS /workdir
         echo "status=success" >> ${GITHUB_OUTPUT}
         df -h
+        cmake --version
         
     - name: Clone source code
       working-directory: /workdir
@@ -191,8 +191,13 @@ jobs:
       id: compile
       run: |
         cd openwrt/  
-        make clean
+        #make clean
         #make dirclean
+        sudo apt-get remove cmake
+        rm -rf ~/.local/bin/cmake
+        sudo apt-get -y install cmake
+        which cmake
+        cmake --version
         make defconfig clean
         echo -e "$(nproc) thread compile"
         make defconfig
