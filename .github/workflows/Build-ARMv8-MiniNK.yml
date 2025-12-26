@@ -193,11 +193,6 @@ jobs:
         cd openwrt/  
         #make clean
         #make dirclean
-        sudo apt-get remove cmake
-        rm -rf ~/.local/bin/cmake
-        pip install cmake --upgrade
-        which cmake
-        cmake --version
         make defconfig clean
         echo -e "$(nproc) thread compile"
         make defconfig
