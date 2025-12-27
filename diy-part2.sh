@@ -90,6 +90,10 @@ cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/firmware-utils tools/fir
 cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/xz  tools/xz
 cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/erofs-utils tools/erofs-utils
 
+rm -rf package/libs/libnl-tiny package/system/fwtool
+cp -rf package/openwrt_N1_test/extra_pack/libnl-tiny package/libs/libnl-tiny
+cp -rf package/openwrt_N1_test/extra_pack/fwtool package/system/fwtool
+
 rm -rf package/openwrt_N1_test
 
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
