@@ -90,9 +90,10 @@ cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/firmware-utils tools/fir
 cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/xz  tools/xz
 cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/erofs-utils tools/erofs-utils
 
-rm -rf package/libs/libnl-tiny package/system/fwtool
+rm -rf package/libs/libnl-tiny package/system/fwtool package/libs/libjson-c
 cp -rf package/openwrt_N1_test/extra_pack/libnl-tiny package/libs/libnl-tiny
 cp -rf package/openwrt_N1_test/extra_pack/fwtool package/system/fwtool
+cp -rf package/openwrt_N1_test/extra_pack/libjson-c package/libs/libjson-c
 
 rm -rf package/openwrt_N1_test
 
