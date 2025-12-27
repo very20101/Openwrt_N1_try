@@ -84,10 +84,11 @@ cp -rf package/openwrt_N1_test/extra_pack/miniupnpd feeds/packages/net/miniupnpd
 #cp -rf package/openwrt_N1_test/extra_pack/openwrt-keyring package/system/openwrt-keyring
 #rm -rf package/base-files/Makefile
 #cp -rf package/openwrt_N1_test/extra_pack/base-files_Makefile package/base-files/Makefile
-rm -rf tools/cmake tools/firmware-utils tools/xz  
+rm -rf tools/cmake tools/firmware-utils tools/xz  tools/erofs-utils
 cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/cmake  tools/cmake
 cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/firmware-utils tools/firmware-utils
 cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/xz  tools/xz
+cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/erofs-utils tools/erofs-utils
 
 rm -rf package/openwrt_N1_test
 
