@@ -28,8 +28,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: small.feeds.conf.default
-  #CONFIG_FILE: ARMv8/config-lede-new
-  CONFIG_FILE: ARMv8/config2025122801
+  CONFIG_FILE: ARMv8/config-lede-new
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -42,7 +41,7 @@ env:
   
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     #if: github.event.repository.owner.id == github.event.sender.id || ! github.event.sender.id
 
     steps:
@@ -67,7 +66,7 @@ jobs:
       run: |
         echo "警告⚠"
         echo "若分配的服务器性能不足，务必及时取消，重新运行！"
-        echo "已知编译成功CPU型号：7763,8370C,8272CL"
+        echo "已知编译成功CPU型号：8370C,8272CL"
         echo "已知性能不足CPU型号：8171M,E5系列"
         echo "--------------------------CPU信息--------------------------"
         echo "CPU物理数量:$(cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l)"
@@ -87,24 +86,31 @@ jobs:
         sudo rm -f /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock /var/cache/apt/archives/lock
         sudo dpkg --configure -a
    
-    - name: Initialization Environment
+    - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        docker rmi -f $(docker images -q) 2>/dev/null || true
-        sudo rm -rf /usr/share/dotnet /usr/local/lib/android $AGENT_TOOLSDIRECTORY
+        if [ -n "$IMAGE_NAME" ]; then
+        docker rmi "$IMAGE_NAME" || true
+        fi
+        #docker rmi --force image
+        #docker rmi $(docker images -q)
+        sudo rm -rf /usr/share/dotnet /etc/apt/sources.list.d /usr/local/lib/android $AGENT_TOOLSDIRECTORY
         sudo swapoff -a && sudo rm -f /swapfile /mnt/swapfile
         sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
         sudo -E apt-get -y update
-        sudo -E apt-get -y install rename $(curl -fsSL is.gd/depends_ubuntu_2404)
+        sudo apt-get -y upgrade 
+        sudo -E apt-get -y install clang rename
+        sudo -E apt-get -y install $(curl -fsSL https://raw.githubusercontent.com/very20101/Openwrt_retry/refs/heads/main/refs/ubuntu2204-update)
         sudo -E systemctl daemon-reload
         sudo -E apt-get -y autoremove --purge
-        sudo -E apt-get -y clean
+        sudo -E apt-get -y clean & sudo -E apt-get -y autoclean
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
         echo "status=success" >> ${GITHUB_OUTPUT}
         df -h
+        cmake --version
         
     - name: Clone source code
       working-directory: /workdir
