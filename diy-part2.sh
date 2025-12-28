@@ -91,12 +91,13 @@ cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/xz  tools/xz
 cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/erofs-utils tools/erofs-utils
 
 rm -rf package/libs/libnl-tiny package/system/fwtool package/libs/libjson-c package/libs/libubox  
-rm -rf package/system/ubus
+rm -rf package/system/ubus package/system/uci 
 cp -rf package/openwrt_N1_test/extra_pack/libnl-tiny package/libs/libnl-tiny
 cp -rf package/openwrt_N1_test/extra_pack/fwtool package/system/fwtool
 cp -rf package/openwrt_N1_test/extra_pack/libjson-c package/libs/libjson-c
 cp -rf package/openwrt_N1_test/extra_pack/libubox package/libs/libubox
 cp -rf package/openwrt_N1_test/extra_pack/ubus package/system/ubus
+cp -rf package/openwrt_N1_test/extra_pack/package-system_uci package/system/uci
 
 rm -rf package/openwrt_N1_test
 
