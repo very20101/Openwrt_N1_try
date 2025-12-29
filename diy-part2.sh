@@ -100,10 +100,11 @@ cp -rf package/openwrt_N1_test/extra_pack/libubox package/libs/libubox
 cp -rf package/openwrt_N1_test/extra_pack/ubus package/system/ubus
 cp -rf package/openwrt_N1_test/extra_pack/package-system_uci package/system/uci
 cp -rf package/openwrt_N1_test/extra_pack/net-softethervpn5 feeds/packages/net/softethervpn5
-cp -rf package/openwrt_N1_test/extra_pack/ucert package/system/ucert
+cp -rf package/openwrt_N1_test/extra_pack/ucert package/system/ucert feeds/packages/utils/tini
 cp -rf package/openwrt_N1_test/extra_pack/netifd package/network/config/netifd
 cp -rf package/openwrt_N1_test/extra_pack/udebug package/lib/udebug
 cp -rf package/openwrt_N1_test/extra_pack/lzo feeds/packages/libs/lzo
+cp -rf package/openwrt_N1_test/extra_pack/tini feeds/packages/utils/tini
 
 rm -rf package/openwrt_N1_test
 
