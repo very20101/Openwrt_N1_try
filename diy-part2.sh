@@ -107,7 +107,7 @@ cp -rf package/openwrt_N1_test/extra_pack/udebug package/libs/udebug
 cp -rf package/openwrt_N1_test/extra_pack/lzo feeds/packages/libs/lzo
 cp -rf package/openwrt_N1_test/extra_pack/tini feeds/packages/utils/tini
 cp -rf package/openwrt_N1_test/extra_pack/expat feeds/packages/libs/expat
-cp -rf package/openwrt_N1_test/extra_pack/ubox package/libs/ubox
+cp -rf package/openwrt_N1_test/extra_pack/ubox package/system/ubox
 
 rm -rf package/openwrt_N1_test
 
