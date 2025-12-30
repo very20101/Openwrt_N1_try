@@ -84,38 +84,7 @@ cp -rf package/openwrt_N1_test/extra_pack/miniupnpd feeds/packages/net/miniupnpd
 #cp -rf package/openwrt_N1_test/extra_pack/openwrt-keyring package/system/openwrt-keyring
 #rm -rf package/base-files/Makefile
 #cp -rf package/openwrt_N1_test/extra_pack/base-files_Makefile package/base-files/Makefile
-rm -rf tools/cmake tools/firmware-utils tools/xz  tools/erofs-utils
-cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/cmake  tools/cmake
-cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/firmware-utils tools/firmware-utils
-cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/xz  tools/xz
-cp -rf package/openwrt_N1_test/extra_pack/openwrt-tools/erofs-utils tools/erofs-utils
 
-rm -rf package/libs/libnl-tiny package/system/fwtool package/libs/libjson-c package/libs/libubox  
-rm -rf package/system/ubus package/system/uci feeds/packages/net/softethervpn5 package/system/ucert 
-rm -rf package/network/config/netifd feeds/packages/libs/lzo package/libs/udebug feeds/packages/utils/tini
-rm -rf feeds/packages/libs/expat package/system/ubox package/libs/libpcap package/libs/zlib package/system/fstools
-rm -rf feeds/packages/libs/libjpeg-turbo package/utils/jsonfilter feeds/packages/libs/pcre2 feeds/packages/libs/libnatpmp
-cp -rf package/openwrt_N1_test/extra_pack/libnl-tiny package/libs/libnl-tiny
-cp -rf package/openwrt_N1_test/extra_pack/fwtool package/system/fwtool
-cp -rf package/openwrt_N1_test/extra_pack/libjson-c package/libs/libjson-c
-cp -rf package/openwrt_N1_test/extra_pack/libubox package/libs/libubox
-cp -rf package/openwrt_N1_test/extra_pack/ubus package/system/ubus
-cp -rf package/openwrt_N1_test/extra_pack/package-system_uci package/system/uci
-cp -rf package/openwrt_N1_test/extra_pack/net-softethervpn5 feeds/packages/net/softethervpn5
-cp -rf package/openwrt_N1_test/extra_pack/ucert package/system/ucert 
-cp -rf package/openwrt_N1_test/extra_pack/netifd package/network/config/netifd
-cp -rf package/openwrt_N1_test/extra_pack/udebug package/libs/udebug
-cp -rf package/openwrt_N1_test/extra_pack/lzo feeds/packages/libs/lzo
-cp -rf package/openwrt_N1_test/extra_pack/tini feeds/packages/utils/tini
-cp -rf package/openwrt_N1_test/extra_pack/expat feeds/packages/libs/expat
-cp -rf package/openwrt_N1_test/extra_pack/ubox package/system/ubox
-cp -rf package/openwrt_N1_test/extra_pack/libpcap package/libs/libpcap
-cp -rf package/openwrt_N1_test/extra_pack/zlib package/libs/zlib
-cp -rf package/openwrt_N1_test/extra_pack/fstools package/system/fstools
-cp -rf package/openwrt_N1_test/extra_pack/linjpeg-turbo feeds/packages/libs/libjpeg-turbo
-cp -rf package/openwrt_N1_test/extra_pack/jsonfilter feeds/packages/utils/jsonfilter
-cp -rf package/openwrt_N1_test/extra_pack/pcre2 feeds/packages/libs/pcre2
-cp -rf package/openwrt_N1_test/extra_pack/libnatpmp feeds/packages/libs/libnatpmp
 
 rm -rf package/openwrt_N1_test
 
