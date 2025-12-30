@@ -95,6 +95,7 @@ rm -rf package/system/ubus package/system/uci feeds/packages/net/softethervpn5 p
 rm -rf package/network/config/netifd feeds/packages/libs/lzo package/libs/udebug feeds/packages/utils/tini
 rm -rf feeds/packages/libs/expat package/system/ubox package/libs/libpcap package/libs/zlib package/system/fstools
 rm -rf feeds/packages/libs/libjpeg-turbo package/utils/jsonfilter feeds/packages/libs/pcre2 feeds/packages/libs/libnatpmp
+rm -rf package/system/procd
 cp -rf package/openwrt_N1_test/extra_pack/libnl-tiny package/libs/libnl-tiny
 cp -rf package/openwrt_N1_test/extra_pack/fwtool package/system/fwtool
 cp -rf package/openwrt_N1_test/extra_pack/libjson-c package/libs/libjson-c
@@ -116,6 +117,7 @@ cp -rf package/openwrt_N1_test/extra_pack/linjpeg-turbo feeds/packages/libs/libj
 cp -rf package/openwrt_N1_test/extra_pack/jsonfilter feeds/packages/utils/jsonfilter
 cp -rf package/openwrt_N1_test/extra_pack/pcre2 feeds/packages/libs/pcre2
 cp -rf package/openwrt_N1_test/extra_pack/libnatpmp feeds/packages/libs/libnatpmp
+cp -rf package/openwrt_N1_test/extra_pack/procd package/system/procd
 
 rm -rf package/openwrt_N1_test
 
