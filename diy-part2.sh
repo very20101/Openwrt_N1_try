@@ -87,7 +87,7 @@ cp -rf package/openwrt_N1_test/extra_pack/miniupnpd feeds/packages/net/miniupnpd
 rm -rf tools/erofs-utils
 cp -rf package/openwrt_N1_test/extra_pack/erofs-utils tools/erofs-utils
 
-rm -rf package/openwrt_N1_test
+#rm -rf package/openwrt_N1_test
 
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 
