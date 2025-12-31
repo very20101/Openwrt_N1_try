@@ -92,7 +92,7 @@ jobs:
       run: |
         sudo -E apt-get -qq update > /dev/null
         sudo -E apt-get -qq install -y $(curl -fsSL https://raw.githubusercontent.com/nantayo/My-Pkg/master/2410) > /dev/null
-        sudo -E apt-get -qq install liblz4-dev liblzma-dev zlib1g-dev libuuid-dev  
+        sudo -E apt-get -qq install liblz4-dev liblzma-dev zlib1g-dev libuuid-dev  > /dev/null
         sudo -E apt-get -qq autoremove --purge > /dev/null
         sudo -E apt-get -qq clean > /dev/null
         sudo timedatectl set-timezone "$TZ"
