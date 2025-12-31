@@ -28,7 +28,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: small.feeds.conf.default
-  CONFIG_FILE: ARMv8/config-lede-new
+  CONFIG_FILE: ARMv8/config2025122801
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -41,7 +41,7 @@ env:
   
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     #if: github.event.repository.owner.id == github.event.sender.id || ! github.event.sender.id
 
     steps:
@@ -101,7 +101,8 @@ jobs:
         sudo -E apt-get -y update
         sudo apt-get -y upgrade 
         sudo -E apt-get -y install clang rename
-        sudo -E apt-get -y install $(curl -fsSL https://raw.githubusercontent.com/very20101/Openwrt_retry/refs/heads/main/refs/ubuntu2204-update)
+        #sudo -E apt-get -y install $(curl -fsSL https://raw.githubusercontent.com/very20101/Openwrt_retry/refs/heads/main/refs/ubuntu2204-update)
+        sudo -E apt-get -y install $(curl -fsSL is.gd/depends_ubuntu_2404)
         sudo -E systemctl daemon-reload
         sudo -E apt-get -y autoremove --purge
         sudo -E apt-get -y clean & sudo -E apt-get -y autoclean
