@@ -9,7 +9,7 @@
 # Original Code from https://github.com/ophub/amlogic-s9xxx-openwrt
 #
 
-name: Build-Opwrt-MiniNK
+name: Build-Opwrt-MiniNK-New
 
 on:
   repository_dispatch:
@@ -35,9 +35,9 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: US/Eastern
-  FILE_NAME: Opwrt-MiniNK
-  PRODUCT_NAME: Opwrt-MiniNK
-  OPENWRT_TAG: Opwrt-MiniNK
+  FILE_NAME: Opwrt-MiniNK-New
+  PRODUCT_NAME: Opwrt-MiniNK-New
+  OPENWRT_TAG: Opwrt-MiniNK-New
   
 jobs:
   build:
@@ -223,7 +223,7 @@ jobs:
       uses: ncipollo/release-action@main
       if: ${{ steps.compile.outputs.status }} == 'success' && !cancelled()
       with:
-        name: Opwrt-MiniNK
+        name: Opwrt-MiniNK-New
         tag: ${{ env.OPENWRT_TAG }}
         makeLatest: true
         replacesArtifacts: true
