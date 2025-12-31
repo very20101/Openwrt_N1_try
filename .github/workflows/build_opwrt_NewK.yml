@@ -67,7 +67,7 @@ jobs:
         echo "硬盘详情："
         df -Th
         
-   - name: Initialization Environment
+    - name: Initialization Environment
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
