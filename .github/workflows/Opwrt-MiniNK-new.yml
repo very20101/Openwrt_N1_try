@@ -100,7 +100,7 @@ jobs:
         sudo -E apt-get -qq purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
         sudo -E apt-get -qq update
         #sudo -E apt-get -qq install $(curl -fsSL https://raw.githubusercontent.com/very20101/Openwrt_retry/refs/heads/main/refs/ubuntu2204-update)
-        sudo -E apt-get -qq install $(curl -fsSL https://raw.githubusercontent.com/nantayo/My-Pkg/master/2410)
+        sudo -E apt-get -qq install autoconf automake  binutils bison build-essential bzip2  cpio curl flex gawk  git  haveged lib32gcc-s1 libncurses-dev libpython3-dev libssl-dev libtool libyaml-dev libz-dev  nano p7zip p7zip-full patch pkgconf python3 python3-pip rsync  squashfs-tools swig texinfo  upx-ucl unzip vim wget xxd zlib1g-dev zstd
         sudo -E systemctl daemon-reload
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean & sudo -E apt-get -y autoclean
