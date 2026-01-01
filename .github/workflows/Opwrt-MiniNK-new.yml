@@ -154,26 +154,6 @@ jobs:
     - name: Increase disk space
       run: |
            sudo mount -o remount,size=20G /tmp || echo "Disk space adjustment not supported" 
-        
-    - name: Build usign 
-      run: |
-        cd openwrt/
-        git clone https://github.com/openwrt/usign.git
-        cd usign
-        mkdir build
-        cd build
-        cmake ..
-        make 
-        sudo make install
-        which usign
-         
-    - name: Setup signing keys  
-      run: |  
-        cd /workdir/openwrt  
-        # Generate usign keys for package signing  
-        /usr/local/bin/usign -G -s key-build -p key-build.pub -c "OpenWrt Build Key"  
-        openssl genrsa -out private-key.pem 2048
-        openssl rsa -in private-key.pem -pubout -out public-key.pem
        
     - name: Compile the firmware
       id: compile
