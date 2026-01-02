@@ -57,7 +57,7 @@ jobs:
       #uses: ophub/flippy-openwrt-actions@main
       uses: unifreq/openwrt_packit@master
       env:
-        OPENWRT_ARMVIRT: https://github.com/very20101/Openwrt_N1_try/releases/download/Opwrt-MiniNK-New/openwrt-amlogic-mesongx-phicomm_n1-rootfs.tar.gz
+        OPENWRT_ARMVIRT: https://github.com/very20101/Openwrt_N1_try/releases/download/Opwrt-MiniNK-New/openwrt-amlogic-mesongx-rootfs.tar.gz 
         PACKAGE_SOC: s905d
         WHOAMI: very20101
         KERNEL_REPO_URL: https://github.com/ophub/kernel/tree/main/pub/stable
