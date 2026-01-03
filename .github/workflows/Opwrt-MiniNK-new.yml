@@ -9,7 +9,7 @@
 # Original Code from https://github.com/ophub/amlogic-s9xxx-openwrt
 #
 
-name: Build-Opwrt-MiniNK-New
+name: Build-Opwrt-MiniNK-New_T
 
 on:
   repository_dispatch:
