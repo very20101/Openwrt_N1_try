@@ -191,7 +191,7 @@ jobs:
       uses: ncipollo/release-action@main
       if: ${{ steps.compile.outputs.status }} == 'success' && !cancelled()
       with:
-        name: Opwrt-MiniNK-New_Ext
+        name: Opwrt-MiniNK-New
         tag: ${{ env.OPENWRT_TAG }}
         makeLatest: true
         replacesArtifacts: true
