@@ -29,7 +29,7 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: small.feeds.conf.default
   #CONFIG_FILE: ARMv8/config2026010201
-  CONFIG_FILE: ARMv8/config20260103001
+  CONFIG_FILE: ARMv8/config20260103002
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
