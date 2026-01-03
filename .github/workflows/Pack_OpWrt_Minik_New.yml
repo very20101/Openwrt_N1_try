@@ -14,7 +14,7 @@ on:
     - cron: 40 18 */21 * *
 env:
    
-  OPENWRT_TAG: ARMv8_MiniNK_New
+  OPENWRT_TAG: ARMv8_MiniNK_New_Ext
   TZ: Asia/Shanghai 
     
 jobs:
@@ -57,7 +57,7 @@ jobs:
       #uses: ophub/flippy-openwrt-actions@main
       uses: unifreq/openwrt_packit@master
       env:
-        OPENWRT_ARMVIRT: https://github.com/very20101/Openwrt_N1_try/releases/download/Opwrt-MiniNK-New/openwrt-amlogic-mesongx-rootfs.tar.gz 
+        OPENWRT_ARMVIRT: https://github.com/very20101/Openwrt_N1_try/releases/download/Opwrt-MiniNK-New/openwrt-armsr-armv8-rootfs.tar.gz 
         PACKAGE_SOC: s905d
         WHOAMI: very20101
         KERNEL_REPO_URL: https://github.com/ophub/kernel/tree/main/pub/stable
@@ -69,7 +69,7 @@ jobs:
     - name: Upload OpenWrt To Release
       uses: ncipollo/release-action@v1
       with:
-        name: ARMv8-MiniNK_New
+        name: ARMv8-MiniNK_New_Ext
         allowUpdates: true
         removeArtifacts: true
         tag: ${{ env.OPENWRT_TAG }}
