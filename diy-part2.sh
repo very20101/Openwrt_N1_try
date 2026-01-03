@@ -86,6 +86,8 @@ cp -rf package/openwrt_N1_test/extra_pack/miniupnpd feeds/packages/net/miniupnpd
 #cp -rf package/openwrt_N1_test/extra_pack/base-files_Makefile package/base-files/Makefile
 rm -rf tools/erofs-utils
 cp -rf package/openwrt_N1_test/extra_pack/erofs-utils tools/erofs-utils
+rm -rf tools/autoconf
+cp -rf package/openwrt_N1_test/extra_pack/autoconf tools/autoconf
 
 rm -rf package/openwrt_N1_test
 
