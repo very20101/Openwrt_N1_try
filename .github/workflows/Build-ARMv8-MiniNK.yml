@@ -41,7 +41,7 @@ env:
   
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     #if: github.event.repository.owner.id == github.event.sender.id || ! github.event.sender.id
 
     steps:
@@ -86,31 +86,19 @@ jobs:
         sudo rm -f /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock /var/cache/apt/archives/lock
         sudo dpkg --configure -a
    
-    - name: Initialization environment
+    - name: Initialize environment
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        if [ -n "$IMAGE_NAME" ]; then
-        docker rmi "$IMAGE_NAME" || true
-        fi
-        #docker rmi --force image
-        #docker rmi $(docker images -q)
-        sudo rm -rf /usr/share/dotnet /etc/apt/sources.list.d /usr/local/lib/android $AGENT_TOOLSDIRECTORY
-        sudo swapoff -a && sudo rm -f /swapfile /mnt/swapfile
-        sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
-        sudo -E apt-get -y update
-        sudo apt-get -y upgrade 
-        sudo -E apt-get -y install clang rename
-        sudo -E apt-get -y install $(curl -fsSL https://raw.githubusercontent.com/very20101/Openwrt_retry/refs/heads/main/refs/ubuntu2204-update)
-        sudo -E systemctl daemon-reload
-        sudo -E apt-get -y autoremove --purge
-        sudo -E apt-get -y clean & sudo -E apt-get -y autoclean
+        sudo -E apt-get -qq update > /dev/null
+        sudo -E apt-get -qq install -y $(curl -fsSL https://raw.githubusercontent.com/nantayo/My-Pkg/master/2410) > /dev/null
+        sudo -E apt-get -qq autoremove --purge > /dev/null
+        sudo -E apt-get -qq clean > /dev/null
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
         echo "status=success" >> ${GITHUB_OUTPUT}
         df -h
-        cmake --version
         
     - name: Clone source code
       working-directory: /workdir
