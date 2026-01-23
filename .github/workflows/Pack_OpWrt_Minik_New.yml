@@ -60,7 +60,7 @@ jobs:
         OPENWRT_ARMVIRT: https://github.com/very20101/Openwrt_N1_try/releases/download/Opwrt-MiniNK-New/openwrt-armsr-armv8-rootfs.tar.gz 
         PACKAGE_SOC: s905d
         WHOAMI: very20101
-        KERNEL_REPO_URL: https://github.com/ophub/kernel/tree/main/pub/stable
+        #KERNEL_REPO_URL: https://github.com/ophub/kernel/tree/main/pub/stable
         KERNEL_VERSION_NAME: 5.15.160_6.1.80_6.6.30_6.12.y
         KERNEL_AUTO_LATEST: true
         DISTRIB_REVISION: R${{ env.DATE1 }} by very20101
