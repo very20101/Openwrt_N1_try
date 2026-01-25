@@ -169,10 +169,10 @@ jobs:
         #rm -rf feeds/packages/net/tailscale
         #rm -rf package/system/usign
         rm -rf feeds/smpackage/naiveproxy
-        git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
-        rm -rf package/Makefile
-        cp -rf package/openwrt_N1_test/extra_pack/Makefile-install package/Makefile
-        rm -rf package/openwrt_N1_test
+        #git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
+        #rm -rf package/Makefile
+        #cp -rf package/openwrt_N1_test/extra_pack/Makefile-install package/Makefile
+        #rm -rf package/openwrt_N1_test
         make world -j$(nproc) || make world -j1 || make world -j1 V=s
         echo "status=success" >> ${GITHUB_OUTPUT}
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
