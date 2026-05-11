@@ -37,16 +37,12 @@ jobs:
         sudo -E apt-get -y clean
         sudo timedatectl set-timezone "$TZ"
         
-    - name: Download Armvirt Firmware
+    
+    - name: Download Armsr(Armvirt) Firmware
       id: download
       run: |
-        [ -d openwrt-armvirt ] || mkdir -p openwrt
-        cd openwrt
-        #curl -s https://api.github.com/repos/very20101/Openwrt_N1_try/releases/latest | grep "browser_download_url.*tar.gz" | cut -d : -f 2,3 | tr -d \" | wget -qi -
-        #openwrt_url="$(curl -H "authorization: Bearer " -s "https://api.github.com/very20101   /Openwrt_retry/releases/latest | grep "*rootfs.tar.gz" )"
-        #[[ -z "${openwrt_url}" ]] && echo -e "OpenWrt file not found!" && exit 1
-        #wget -q -P openwrt https://github.com/very20101/Openwrt_retry/releases/download/latest/openwrt-armvirt-64-default-rootfs.tar.gz
-        #[[ "${?}" -ne "0" ]] && echo -e "The armvirt file download failed!" && exit 1
+        FIRMWARE_PATH=openwrt/bin/targets/armsr/64
+        [ -d $FIRMWARE_PATH ] || mkdir -p $FIRMWARE_PATH
         wget -q -P $FIRMWARE_PATH https://github.com/very20101/Openwrt_N1_try/releases/download/ARMv8_MiniNK_New_Ext/openwrt-armsr-armv8-generic-rootfs.tar.gz
         echo "status=success" >> $GITHUB_OUTPUT
         echo "DATE=$(date +"%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
