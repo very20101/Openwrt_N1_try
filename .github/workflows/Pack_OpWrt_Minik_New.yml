@@ -43,7 +43,7 @@ jobs:
       run: |
         FIRMWARE_PATH=openwrt/bin/targets/armsr/64
         [ -d $FIRMWARE_PATH ] || mkdir -p $FIRMWARE_PATH
-        wget -q -P $FIRMWARE_PATH https://github.com/very20101/Openwrt_N1_try/releases/download/ARMv8_MiniNK_New_Ext/openwrt-armsr-armv8-generic-rootfs.tar.gz
+        wget -q -P $FIRMWARE_PATH https://github.com/very20101/Openwrt_N1_try/releases/download/Opwrt-MiniNK-New/openwrt-armsr-armv8-rootfs.tar.gz
         echo "status=success" >> $GITHUB_OUTPUT
         echo "DATE=$(date +"%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "DATE1=$(date +"%Y.%m.%d")" >> $GITHUB_ENV
