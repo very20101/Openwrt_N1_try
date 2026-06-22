@@ -173,6 +173,9 @@ jobs:
         rm -rf feeds/smpackage/dapnet-gateway
         cp -rf package/openwrt_N1_test/extra_pack/dapnet-gateway feeds/smpackage/dapnet-gateway
         #rm -rf feeds/smpackage/shadowsocksr-libev
+        rm -rf package/feeds/packages/vim feeds/packages/utils/vim
+        cp -rf package/openwrt_N1_test/extra_pack/vim feeds/packages/utils/vim
+        rm -rf package/openwrt_N1_test
         rm -rf package/openwrt_N1_test
         make -j$(nproc) || make -j1 || make -j1 V=s
         echo "status=success" >> ${GITHUB_OUTPUT}
