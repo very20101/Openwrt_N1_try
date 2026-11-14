@@ -95,6 +95,8 @@ rm -rf tools/erofs-utils
 cp -rf package/openwrt_N1_test/extra_pack/erofs-utils tools/erofs-utils
 #rm #rm -rf tools/auto
 #cp -rf package/openwrt_N1_test/extra_pack/autoconf tools/autoconf
+rm -rf package/libs/gettext-full
+cp -rf package/openwrt_N1_test/extra_pack/gettext-full package/libs/gettext-full
 
 rm -rf package/openwrt_N1_test
 
