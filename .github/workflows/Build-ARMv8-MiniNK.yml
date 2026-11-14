@@ -179,6 +179,8 @@ jobs:
         rm -rf feeds/packages/net/softethervpn5  package/network/config/netifd 
         #cp -rf package/openwrt_N1_test/extra_pack/softethervpn5 feeds/packages/net/softethervpn5 
         cp -rf package/openwrt_N1_test/extra_pack/netifd package/network/config/netifd 
+        rm -rf package/libs/gettext-full
+        cp -rf package/openwrt_N1_test/extra_pack/gettext-full package/libs/gettext-full
         rm -rf package/openwrt_N1_test
         make world -j$(nproc) || make world -j1 || make world -j1 V=s
         echo "status=success" >> ${GITHUB_OUTPUT}
